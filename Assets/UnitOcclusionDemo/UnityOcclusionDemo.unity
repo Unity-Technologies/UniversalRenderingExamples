@@ -105,7 +105,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.75
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -113,7 +113,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.25
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -317,7 +317,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 29.3
+  field of view: 35.7
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -342,13 +342,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.30447555, y: 0.29216126, z: -0.09870876, w: 0.9012176}
-  m_LocalPosition: {x: -10.396728, y: 14.136444, z: -15.875578}
+  m_LocalRotation: {x: 0.32007563, y: 0, z: 0, w: 0.94739205}
+  m_LocalPosition: {x: 0, y: 11.7, z: -15.875578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.335003, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +427,80 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255836419659987785, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a4634125816a86e4599447c0ebbbb0ed, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d7094a1663ab0a44ab8e11c1defd922, type: 3}
+--- !u!1001 &1651608997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2803772846224482086, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_Name
+      value: Warrior Blue (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3996890723051639377, guid: 3d7094a1663ab0a44ab8e11c1defd922,
         type: 3}
@@ -556,7 +630,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.25
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: f8e8acafab4414cc986fc0f1b891ae6e, type: 2}
 --- !u!1001 &1821202327

@@ -13,15 +13,29 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 360
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 3
+--- !u!114 &8131607839401126117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803772846224482086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_GeneratorAsset: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 4415536ab3e464f43812b33f032f806a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRange: 10
 --- !u!1001 &7622771902705290886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,15 +603,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7622771902705290886}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8633518121392637169 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2169024548510517879, guid: 36e93c435d1648a4c86d516057a9cbe2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7622771902705290886}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2803772846224482086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5701704621631426976, guid: 36e93c435d1648a4c86d516057a9cbe2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7622771902705290886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7349253132344303844 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 879411809513959010, guid: 36e93c435d1648a4c86d516057a9cbe2,
     type: 3}
   m_PrefabInstance: {fileID: 7622771902705290886}
   m_PrefabAsset: {fileID: 0}
@@ -775,9 +789,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7622771902705290886}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7349253132344303844 stripped
+--- !u!4 &8633518121392637169 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 879411809513959010, guid: 36e93c435d1648a4c86d516057a9cbe2,
+  m_CorrespondingSourceObject: {fileID: 2169024548510517879, guid: 36e93c435d1648a4c86d516057a9cbe2,
     type: 3}
   m_PrefabInstance: {fileID: 7622771902705290886}
   m_PrefabAsset: {fileID: 0}
