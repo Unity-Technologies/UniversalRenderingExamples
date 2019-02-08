@@ -22,12 +22,12 @@ MonoBehaviour:
   - LightweightForward
   overrideMaterial: {fileID: 2100000, guid: 8040ca297378843bfbbcb1207273c7a7, type: 2}
   overrideMaterialPassIndex: 0
-  overrideDepthState: 1
-  depthCompareFunction: 6
+  overrideDepthState: 0
+  depthCompareFunction: 2
   enableWrite: 1
-  overrideStencilState: 0
+  overrideStencilState: 1
   stencilReference: 1
-  stencilCompareFunction: 2
+  stencilCompareFunction: 3
   passOperation: 0
   failOperation: 0
   zFailOperation: 0

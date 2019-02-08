@@ -2,3 +2,5 @@ obj
 Logs
 .idea
 *.user
+Library/
+Temp/

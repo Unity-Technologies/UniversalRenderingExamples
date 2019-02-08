@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 4621d1f0d19720d42a8884910fa9012c, type: 3}
-  m_Name: Character
+  m_Name: CharacterStencil
   m_EditorClassIdentifier: 
   callback: 1
   renderQueueType: 0
@@ -22,12 +22,12 @@ MonoBehaviour:
   - LightweightForward
   overrideMaterial: {fileID: 0}
   overrideMaterialPassIndex: 0
-  overrideDepthState: 1
-  depthCompareFunction: 1
+  overrideDepthState: 0
+  depthCompareFunction: 2
   enableWrite: 1
   overrideStencilState: 0
   stencilReference: 1
   stencilCompareFunction: 8
   passOperation: 0
   failOperation: 0
-  zFailOperation: 0
+  zFailOperation: 2
