@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Trail1
+  m_Shader: {fileID: 4800000, guid: 291565c7581480140a836e91b42d087d, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaMap1:
+        m_Texture: {fileID: 2800000, guid: cb8e23e386d1d1444902a08247425c04, type: 3}
+        m_Scale: {x: -1, y: -1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 485815487dadf844c876badb71717e37, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SubTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Amplitude: 1
+    - _AnimSpeed: 1
+    - _Blend: 1
+    - _Des: 1
+    - _Frequency: 1
+    - _Index: 2
+    - _InvFade: 1
+    - _Lacunarity: 1.92
+    - _Octaves: 8
+    - _Persistence: 0.8
+    - _SpeedBlendU: 0
+    - _SpeedBlendV: 0
+    - _SpeedMainAlphaU: 1.5
+    - _SpeedMainAlphaV: 0
+    - _SpeedMainU: -3
+    - _SpeedMainV: 0
+    - _SpeedSubAlphaU: 0
+    - _SpeedSubAlphaV: 0
+    - _SpeedSubU: 0
+    - _SpeedSubV: 0
+    - _Src: 1
+    m_Colors:
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}

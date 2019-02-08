@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Mage_FireFace
+  m_Shader: {fileID: 4800000, guid: 41bdcf874fd27b34ab48103a6fc3db56, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_C0594E55:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E084CBA8:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_55143475_Texture:
+        m_Texture: {fileID: 2800000, guid: 76df92bfc85abba40a344173e039bda7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_56F02D83_Texture:
+        m_Texture: {fileID: 2800000, guid: 6b19bab4e8e236946942cec9fd20f0dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_C190AB37_Texture:
+        m_Texture: {fileID: 2800000, guid: 44de917a634f59e45af3595d39b8b2df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_381761BA: 1
+    - Vector1_68E3F29A: 1
+    - Vector1_A67EF5BD: 1
+    - Vector1_E2E3DEB3: 0
+    m_Colors:
+    - Color_B07BFB3F: {r: 4, g: 2.1490197, b: 1.882353, a: 0}
+    - Color_FFCA4499: {r: 2.608238, g: 1.404251, b: 0, a: 0}
+    - Vector2_BDB5F60A: {r: 0, g: -0.2, b: 0, a: 0}
+    - Vector2_D122C23C: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_D61580B9: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - Vector2_F25F846E: {r: -0.1, g: -0.5, b: 0, a: 0}
