@@ -15,6 +15,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderPassFeatures:
   - {fileID: 11400000, guid: 32c1ced9342764e00a77a773234125d0, type: 2}
+  - {fileID: 11400000, guid: e66d35a042a793b4ea51458d2b6ed8c0, type: 2}
   m_BlitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
   m_CopyDepthShader: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
   m_ScreenSpaceShadowShader: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
