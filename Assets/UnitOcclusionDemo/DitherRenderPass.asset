@@ -14,13 +14,14 @@ MonoBehaviour:
   m_Name: DitherRenderPass
   m_EditorClassIdentifier: 
   settings:
-    callback: 20
-    renderQueueType: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    passNames:
-    - LightweightForward
+    Event: 20
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames:
+      - LightweightForward
     overrideMaterial: {fileID: 2100000, guid: 8040ca297378843bfbbcb1207273c7a7, type: 2}
     overrideMaterialPassIndex: 0
     overrideDepthState: 1

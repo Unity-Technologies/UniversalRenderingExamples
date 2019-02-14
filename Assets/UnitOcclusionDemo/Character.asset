@@ -14,20 +14,21 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   settings:
-    callback: 20
-    renderQueueType: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    passNames:
-    - LightweightForward
+    Event: 20
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames:
+      - LightweightForward
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 0
     depthCompareFunction: 2
     enableWrite: 1
     overrideStencilState: 0
-    stencilReference: 1
+    stencilReference: 0
     stencilCompareFunction: 8
     passOperation: 0
     failOperation: 0
