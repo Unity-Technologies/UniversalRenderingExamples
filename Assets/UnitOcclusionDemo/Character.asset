@@ -14,7 +14,7 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   settings:
-    callback: 1
+    callback: 20
     renderQueueType: 0
     layerMask:
       serializedVersion: 2
