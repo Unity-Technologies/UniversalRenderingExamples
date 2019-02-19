@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
@@ -47,9 +48,9 @@ namespace UnityEngine.Rendering.LWRP
 	    private const int minStencilValue = 0;
 	    private const int maxStencilValue = (1 << stencilBits) - 1;
 
-	    SavedBool m_FiltersFoldout;
+	    private HeaderBool m_FiltersFoldout;
 	    private int m_FilterLines = 3;
-	    SavedBool m_RenderFoldout;
+	    private HeaderBool m_RenderFoldout;
 	    private int m_RenderLines = 3;
 	    private int m_DepthLines = 3;
 	    private int m_StencilLines = 5;
@@ -82,8 +83,9 @@ namespace UnityEngine.Rendering.LWRP
 	    private void Init(SerializedProperty property)
 	    {
 		    //Header bools
-		    m_FiltersFoldout = new SavedBool($"{property.GetType()}.FiltersFoldout", true);
-		    m_RenderFoldout = new SavedBool($"{property.GetType()}.FiltersFoldout", false);
+		    var key = $"{this.ToString().Split('.').Last()}.{property.serializedObject.targetObject.name}";
+		    m_FiltersFoldout = new HeaderBool($"{key}.FiltersFoldout", true);
+		    m_RenderFoldout = new HeaderBool($"{key}.RenderFoldout");
 
 		    m_Callback = property.FindPropertyRelative("Event");
 		    //Filter props
@@ -138,6 +140,7 @@ namespace UnityEngine.Rendering.LWRP
 			DoFilters(ref rect);
 
 			m_RenderFoldout.value = EditorGUI.Foldout(rect, m_RenderFoldout.value, Styles.renderHeader);
+			SaveHeaderBool(m_RenderFoldout);
 			rect.y += Styles.defaultLineSpace;
 			if (m_RenderFoldout.value)
 			{
@@ -167,6 +170,7 @@ namespace UnityEngine.Rendering.LWRP
 	    void DoFilters(ref Rect rect)
 	    {
 	        m_FiltersFoldout.value = EditorGUI.Foldout(rect, m_FiltersFoldout.value, Styles.filtersHeader);
+	        SaveHeaderBool(m_FiltersFoldout);
 		    rect.y += Styles.defaultLineSpace;
 		    if (m_FiltersFoldout.value)
 		    {
@@ -258,6 +262,27 @@ namespace UnityEngine.Rendering.LWRP
 		    }
 
 		    return height;
+	    }
+	    
+	    private void SaveHeaderBool(HeaderBool boolObj)
+	    {
+		    EditorPrefs.SetBool(boolObj.key, boolObj.value);
+	    }
+
+	    class HeaderBool
+	    {
+		    public string key;
+		    public bool value;
+
+		    public HeaderBool(string _key, bool _default = false)
+		    {
+			    key = _key;
+			    if (EditorPrefs.HasKey(key))
+				    value = EditorPrefs.GetBool(key);
+			    else
+					value = _default;
+			    EditorPrefs.SetBool(key, value);
+		    }
 	    }
     }
 }
