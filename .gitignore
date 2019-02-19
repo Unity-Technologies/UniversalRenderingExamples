@@ -4,3 +4,5 @@ Logs
 *.user
 Library/
 Temp/
+.vs/
+*.csproj

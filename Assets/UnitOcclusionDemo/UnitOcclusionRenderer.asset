@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
   m_Name: UnitOcclusionRenderer
   m_EditorClassIdentifier: 
-  m_RenderPassFeatures:
+  m_RendererFeatures:
   - {fileID: 11400000, guid: 32c1ced9342764e00a77a773234125d0, type: 2}
   - {fileID: 11400000, guid: e66d35a042a793b4ea51458d2b6ed8c0, type: 2}
   m_BlitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}

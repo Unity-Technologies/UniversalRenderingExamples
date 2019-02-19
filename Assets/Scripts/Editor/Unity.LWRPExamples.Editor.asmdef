@@ -1,0 +1,16 @@
+{
+    "name": "Unity.LWRPExamples.Editor",
+    "references": [
+        "GUID:c579267770062bf448e75eb160330b7f",
+        "GUID:31835922405d750419dbc377898d7946"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
