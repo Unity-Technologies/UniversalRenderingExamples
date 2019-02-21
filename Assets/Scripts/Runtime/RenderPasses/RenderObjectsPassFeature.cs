@@ -8,7 +8,7 @@ namespace UnityEngine.Rendering.LWRP
         Transparent,
     }
 
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "RenderObjectsFeature", menuName = "Rendering/Lightweight Render Pipeline/Renderer Features/RenderObjectsFeature", order = CoreUtils.assetCreateMenuPriority1)]
     public class RenderObjectsPassFeature : ScriptableRendererFeature
     {
         [System.Serializable]
