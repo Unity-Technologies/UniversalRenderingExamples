@@ -31,6 +31,8 @@ namespace UnityEngine.Rendering.LWRP
             public StencilOp passOperation = StencilOp.Keep;
             public StencilOp failOperation = StencilOp.Keep;
             public StencilOp zFailOperation = StencilOp.Keep;
+
+            public CustomCameraSettings cameraSettings;
         }
         
         [System.Serializable]
@@ -49,24 +51,23 @@ namespace UnityEngine.Rendering.LWRP
             }
         }
 
+        [System.Serializable]
+        public class CustomCameraSettings
+        {
+            public bool overrideCamera = false;
+            public bool restoreCamera = true;
+            public Vector4 offset;
+            public float cameraFieldOfView = 60.0f;
+        }
+
         public RenderObjectsSettings settings = new RenderObjectsSettings();
 
         RenderObjectsPass renderObjectsPass;
 
-        void OnEnable()
-        {
-            Initialize();
-        }
-
-        void OnValidate()
-        {
-            Initialize();
-        }
-
-        void Initialize()
+        public override void Create()
         {
             FilterSettings filter = settings.filterSettings;
-            renderObjectsPass = new RenderObjectsPass(settings.Event, filter.PassNames, filter.RenderQueueType, filter.LayerMask);
+            renderObjectsPass = new RenderObjectsPass(settings.Event, filter.PassNames, filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
             renderObjectsPass.overrideMaterial = settings.overrideMaterial;
             renderObjectsPass.overrideMaterialPassIndex = settings.overrideMaterialPassIndex;
 

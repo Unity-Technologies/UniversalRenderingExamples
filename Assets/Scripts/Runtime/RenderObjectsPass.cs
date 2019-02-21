@@ -1,9 +1,12 @@
+using UnityEngine.Rendering;
+
 namespace UnityEngine.Rendering.LWRP
 {
     public class RenderObjectsPass : ScriptableRenderPass
     {
         RenderQueueType renderQueueType;
         FilteringSettings m_FilteringSettings;
+        RenderObjectsPassFeature.CustomCameraSettings m_CameraSettings;
 
         public Material overrideMaterial { get; set; }
         public int overrideMaterialPassIndex { get; set; }
@@ -30,7 +33,7 @@ namespace UnityEngine.Rendering.LWRP
 
         RenderStateBlock m_RenderStateBlock;
 
-        public RenderObjectsPass(RenderPassEvent renderPassEvent, string[] shaderTags, RenderQueueType renderQueueType, int layerMask)
+        public RenderObjectsPass(RenderPassEvent renderPassEvent, string[] shaderTags, RenderQueueType renderQueueType, int layerMask, RenderObjectsPassFeature.CustomCameraSettings cameraSettings)
         {
             this.renderPassEvent = renderPassEvent;
             this.renderQueueType = renderQueueType;
@@ -44,6 +47,7 @@ namespace UnityEngine.Rendering.LWRP
                 RegisterShaderPassName(passName);
 
             m_RenderStateBlock = new RenderStateBlock(RenderStateMask.Nothing);
+            m_CameraSettings = cameraSettings;
 
         }
 
@@ -57,7 +61,34 @@ namespace UnityEngine.Rendering.LWRP
             drawingSettings.overrideMaterial = overrideMaterial;
             drawingSettings.overrideMaterialPassIndex = overrideMaterialPassIndex;
 
+            Camera camera = renderingData.cameraData.camera;
+            float cameraAspect = (float) camera.pixelWidth / (float) camera.pixelHeight;
+            CommandBuffer cmd = CommandBufferPool.Get("Set Camera Matrix");
+            if (m_CameraSettings.overrideCamera)
+            {
+                Matrix4x4 projectionMatrix = Matrix4x4.Perspective(m_CameraSettings.cameraFieldOfView, cameraAspect,
+                    camera.nearClipPlane, camera.farClipPlane);
+
+                Matrix4x4 viewMatrix = camera.worldToCameraMatrix;
+                Vector4 cameraTranslation = viewMatrix.GetColumn(3);
+                viewMatrix.SetColumn(3, cameraTranslation + m_CameraSettings.offset);
+
+                cmd.SetViewProjectionMatrices(viewMatrix, projectionMatrix);
+                context.ExecuteCommandBuffer(cmd);
+            }
+
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref m_FilteringSettings, ref m_RenderStateBlock);
+
+            if (m_CameraSettings.overrideCamera && m_CameraSettings.restoreCamera)
+            {
+                Matrix4x4 projectionMatrix = Matrix4x4.Perspective(camera.fieldOfView, cameraAspect,
+                    camera.nearClipPlane, camera.farClipPlane);
+
+                cmd.Clear();
+                cmd.SetViewProjectionMatrices(camera.worldToCameraMatrix, projectionMatrix);
+                context.ExecuteCommandBuffer(cmd);
+            }
+            CommandBufferPool.Release(cmd);
         }
     }
 }

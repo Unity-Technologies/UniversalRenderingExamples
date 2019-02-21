@@ -6,3 +6,4 @@ Library/
 Temp/
 .vs/
 *.csproj
+*.sln
