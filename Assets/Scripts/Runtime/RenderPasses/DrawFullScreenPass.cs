@@ -21,6 +21,13 @@ public class DrawFullScreenPass : ScriptableRenderPass
 
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
-        DrawFullscreen(context, ref renderingData.cameraData, m_Settings.material);
+        Camera camera = renderingData.cameraData.camera;
+
+        var cmd = CommandBufferPool.Get(m_ProfilerTag);
+        cmd.SetViewProjectionMatrices(Matrix4x4.identity, Matrix4x4.identity);
+        cmd.DrawMesh(fullscreenMesh, Matrix4x4.identity, m_Settings.material);
+        cmd.SetViewProjectionMatrices(camera.worldToCameraMatrix, camera.projectionMatrix);
+        context.ExecuteCommandBuffer(cmd);
+        CommandBufferPool.Release(cmd);
     }
 }
