@@ -42,21 +42,32 @@ namespace UnityEngine.Rendering.LWRP
 		    public static GUIContent stencilPass = new GUIContent("Pass", "What happens to the stencil value when passing.");
 		    public static GUIContent stencilFail = new GUIContent("Fail", "What happens the the stencil value when failing.");
 		    public static GUIContent stencilZFail = new GUIContent("Z Fail", "What happens the the stencil value when failing Z testing.");
-		}
+		    
+		    //Camera Settings
+		    public static GUIContent overrideCamera = new GUIContent("Override Camera", "Override camera projections.");
+		    public static GUIContent cameraFOV = new GUIContent("Field Of View", "Field Of View to render this pass in.");
+		    public static GUIContent positionOffset = new GUIContent("Position Offset", "This Vector acts as a relative offset for the camera.");
+		    public static GUIContent restoreCamera = new GUIContent("Restore", "Restore to the original camera projection before this pass.");
 
+	    }
+
+	    //Stencil rendering
 	    private const int stencilBits = 3;
 	    private const int minStencilValue = 0;
 	    private const int maxStencilValue = (1 << stencilBits) - 1;
 
+	    //Headers and layout
 	    private HeaderBool m_FiltersFoldout;
 	    private int m_FilterLines = 3;
 	    private HeaderBool m_RenderFoldout;
 	    private int m_RenderLines = 3;
 	    private int m_DepthLines = 3;
 	    private int m_StencilLines = 5;
+	    private int m_CameraLines = 4;
 	    
 	    private bool firstTime = true;
 	    
+	    // Serialized Properties
 	    private SerializedProperty m_Callback;
 	    //Filter props
 	    private SerializedProperty m_FilterSettings;
@@ -77,6 +88,12 @@ namespace UnityEngine.Rendering.LWRP
 	    private SerializedProperty m_StencilPass;
 	    private SerializedProperty m_StencilFail;
 	    private SerializedProperty m_StencilZFail;
+	    //Caemra props
+	    private SerializedProperty m_CameraSettings;
+	    private SerializedProperty m_OverrideCamera;
+	    private SerializedProperty m_FOV;
+	    private SerializedProperty m_CameraOffset;
+	    private SerializedProperty m_RestoreCamera;
 
 	    private ReorderableList m_ShaderPassesList;
 
@@ -107,6 +124,12 @@ namespace UnityEngine.Rendering.LWRP
 		    m_StencilPass = property.FindPropertyRelative("passOperation");
 		    m_StencilFail = property.FindPropertyRelative("failOperation");
 		    m_StencilZFail = property.FindPropertyRelative("zFailOperation");
+		    //Camera
+		    m_CameraSettings = property.FindPropertyRelative("cameraSettings");
+		    m_OverrideCamera = m_CameraSettings.FindPropertyRelative("overrideCamera");
+		    m_FOV = m_CameraSettings.FindPropertyRelative("cameraFieldOfView");
+		    m_CameraOffset = m_CameraSettings.FindPropertyRelative("offset");
+		    m_RestoreCamera = m_CameraSettings.FindPropertyRelative("restoreCamera");
 		    
 		    m_ShaderPassesList = new ReorderableList(null, m_ShaderPasses, true, true, true, true);
 
@@ -139,7 +162,7 @@ namespace UnityEngine.Rendering.LWRP
 
 			DoFilters(ref rect);
 
-			m_RenderFoldout.value = EditorGUI.Foldout(rect, m_RenderFoldout.value, Styles.renderHeader);
+			m_RenderFoldout.value = EditorGUI.Foldout(rect, m_RenderFoldout.value, Styles.renderHeader, true);
 			SaveHeaderBool(m_RenderFoldout);
 			rect.y += Styles.defaultLineSpace;
 			if (m_RenderFoldout.value)
@@ -159,7 +182,11 @@ namespace UnityEngine.Rendering.LWRP
 				rect.y += Styles.defaultLineSpace;
 				//Override stencil
 				DoStencilOverride(ref rect);
-				
+				rect.y += Styles.defaultLineSpace;
+				//Override camera
+				DoCameraOverride(ref rect);
+				rect.y += Styles.defaultLineSpace;
+
 				EditorGUI.indentLevel--;
 			}
 			
@@ -169,7 +196,7 @@ namespace UnityEngine.Rendering.LWRP
 
 	    void DoFilters(ref Rect rect)
 	    {
-	        m_FiltersFoldout.value = EditorGUI.Foldout(rect, m_FiltersFoldout.value, Styles.filtersHeader);
+	        m_FiltersFoldout.value = EditorGUI.Foldout(rect, m_FiltersFoldout.value, Styles.filtersHeader, true);
 	        SaveHeaderBool(m_FiltersFoldout);
 		    rect.y += Styles.defaultLineSpace;
 		    if (m_FiltersFoldout.value)
@@ -244,6 +271,31 @@ namespace UnityEngine.Rendering.LWRP
 			    EditorGUI.indentLevel--;
 		    }
 	    }
+	    
+	    void DoCameraOverride(ref Rect rect)
+	    {
+		    EditorGUI.PropertyField(rect, m_OverrideCamera, Styles.overrideCamera);
+		    if (m_OverrideCamera.boolValue)
+		    {
+			    rect.y += Styles.defaultLineSpace;
+			    EditorGUI.indentLevel++;
+			    //FOV
+			    EditorGUI.Slider(rect, m_FOV, 4f, 179f, Styles.cameraFOV);
+			    rect.y += Styles.defaultLineSpace;
+			    //Offset vector
+			    var offset = m_CameraOffset.vector4Value;
+			    EditorGUI.BeginChangeCheck();
+			    var newOffset = EditorGUI.Vector3Field(rect, Styles.positionOffset, new Vector3(offset.x, offset.y, offset.z));
+			    if(EditorGUI.EndChangeCheck())
+					m_CameraOffset.vector4Value = new Vector4(newOffset.x, newOffset.y, newOffset.z, 1f);
+			    rect.y += Styles.defaultLineSpace;
+			    //Restore prev camera projections
+			    EditorGUI.PropertyField(rect, m_RestoreCamera, Styles.restoreCamera);
+			    rect.y += Styles.defaultLineSpace;
+			    
+			    EditorGUI.indentLevel--;
+		    }
+	    }
 
 	    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	    {
@@ -258,6 +310,7 @@ namespace UnityEngine.Rendering.LWRP
 			    {
 				    height += Styles.defaultLineSpace * (m_OverrideDepth.boolValue ? m_DepthLines : 1);
 				    height += Styles.defaultLineSpace * (m_OverrideStencil.boolValue ? m_StencilLines : 1);
+				    height += Styles.defaultLineSpace * (m_OverrideCamera.boolValue ? m_CameraLines : 1);
 			    }
 		    }
 

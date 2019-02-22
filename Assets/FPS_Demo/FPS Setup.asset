@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gun Transparent
   m_EditorClassIdentifier: 
   settings:
-    Event: 20
+    Event: 40
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -24,7 +24,7 @@ MonoBehaviour:
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 0
-    depthCompareFunction: 2
+    depthCompareFunction: 8
     enableWrite: 1
     overrideStencilState: 0
     stencilReference: 1
@@ -33,10 +33,10 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
     cameraSettings:
-      overrideCamera: 0
+      overrideCamera: 1
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
-      cameraFieldOfView: 60
+      cameraFieldOfView: 40
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
