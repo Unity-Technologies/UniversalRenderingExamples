@@ -1,0 +1,29 @@
+In the Aircraft folder you'll find a few ready-made Aircraft prefabs, which are used in the Aircraft sample scenes. These prefabs demonstrate how you can use the Aircraft scripts we've included, including some AI-controlled variants which are able to fly directly towards a specified target, or follow a waypoint-based route.
+
+The Jet Plane and the Propeller Plane prefabs share most of the same scripts (and some of the same 3D artwork), but their main difference is in their power and aerodynamic handling settings.
+
+The scripts included have been designed to be modular in nature, so that the extra features of a particular aircraft can be set up (such as propellers, flaps, landing gear), however it's possible to get any GameObject flying by simply adding the AeroplaneController script and either the "UserControl" or "AiControl" scripts. (If you add the AiControl script, you'll need to assign it a target).
+
+To set up your own aircraft from scratch, use the following steps:
+
+1) Start with a suitable scene. There ought to be enough flat ground for a sensible take-off.
+2) Place your 3d model in the scene.
+3) Add the AeroplaneController script. (this will automatically add a required Rigidbody component).
+4) Add the AeroplaneUserControl script.
+5) Add a suitable Collider (or set of Colliders), so that it doesn't fall through the floor.
+6) Hit play, try taking off. (Arrows/WSAD for power and rudder, Mouse for roll and pitch).
+7) You may find the friction of your Colliders against the ground prevent take-off, or cause the plane to turn awkwardly during take-off. In this case you'll either need to reduce the friction of the Colliders touching the ground (by assigning a low-friction physics material to the Colliders), or add Wheel Colliders to your plane so that it can roll along the ground before take-off (as we have done in the sample prefabs provided).
+
+You can then mix and match the other optional components to add features such as engine sound, animated flaps, and propellers.
+
+You'll probably want to add a camera rig, so that the camera follows the aircraft as it flies off. See the Camera Rig guidelines for instructions on how to do that.
+
+The Aeroplane script exposes a number of properties which determine the power and handling of the aircraft, however ultimately the script is designed to provide a fun arcade game-like feel rather than attempting to be a realistic simulation of aircraft aerodynamics. It is possible to set up aircraft that will glide and stall, but ultimately the emphasis is on performance and fun rather than realism!
+
+For more detail about each setting, see the comments in the script.
+
+The AeroplaneUserControl script takes input from the "CrossPlatformInput" class included in the sample assets, however if you're not targeting mobile or prefer to use a different system to read input, you can simply use unity's built in Input class in place of CrossPlatformInput. For more information, see the Cross Platform Input guidelines.
+
+The AeroplaneAIControl component can be added instead of the AeroplaneUserControl component, allowing the plane to be AI controlled. You can set it up to either fly towards a specified target, or (by using the WaypointProgressTracker) follow a waypoint-defined route. See the WaypointCircuit guidelines for instructions.
+
+

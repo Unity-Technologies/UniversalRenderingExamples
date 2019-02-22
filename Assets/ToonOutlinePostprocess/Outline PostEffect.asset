@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: 804bf49869d3b4315a850958d8530433, type: 3}
   m_Name: Outline PostEffect
   m_EditorClassIdentifier: 
@@ -17,6 +16,5 @@ MonoBehaviour:
     Event: 20
     blitMaterial: {fileID: 2100000, guid: f012cc041ddc048eca800cbc9cc5fd6d, type: 2}
     blitMaterialPassIndex: 0
-    source: 0
     dest: 0
-    texture: {fileID: 0}
+    textureId: _BlitPassTexture

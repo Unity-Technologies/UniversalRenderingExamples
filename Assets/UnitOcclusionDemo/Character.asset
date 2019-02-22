@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   settings:
-    Event: 20
+    Event: 10
     filterSettings:
       RenderQueueType: 0
       LayerMask:

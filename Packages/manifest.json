@@ -1,11 +1,12 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.2",
     "com.unity.cinemachine": "2.3.3",
     "com.unity.collab-proxy": "1.2.15",
     "com.unity.package-manager-ui": "2.1.1",
-    "com.unity.purchasing": "2.0.1",
+    "com.unity.purchasing": "2.0.5",
     "com.unity.render-pipelines.core": "file:/Users/andremcgrail/Documents/UnityProjects/Github/SRP_Master/com.unity.render-pipelines.core",
     "com.unity.render-pipelines.lightweight": "file:/Users/andremcgrail/Documents/UnityProjects/Github/SRP_Master/com.unity.render-pipelines.lightweight",
     "com.unity.shadergraph": "file:/Users/andremcgrail/Documents/UnityProjects/Github/SRP_Master/com.unity.shadergraph",

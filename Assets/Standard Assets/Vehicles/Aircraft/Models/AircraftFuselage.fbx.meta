@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: 4fea6053a1424d44daf193f09be2d491
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: vehicle_planeGeneric_fuselage
+    100004: vehicle_planeGeneric_left_gearDoor
+    100006: vehicle_planeGeneric_left_rudder
+    100008: vehicle_planeGeneric_right_gearDoor
+    100010: vehicle_planeGeneric_right_rudder
+    100012: aircraft_generic_fuselage
+    100014: aircraft_generic_left_gearDoor
+    100016: aircraft_generic_left_rudder
+    100018: aircraft_generic_right_gearDoor
+    100020: aircraft_generic_right_rudder
+    100022: AircraftFuselageBody
+    100024: AircraftFuselageGearDoorLeft
+    100026: AircraftFuselageGearDoorRight
+    100028: AircraftFuselageRudderLeft
+    100030: AircraftFuselageRudderRight
+    400000: //RootNode
+    400002: vehicle_planeGeneric_fuselage
+    400004: vehicle_planeGeneric_left_gearDoor
+    400006: vehicle_planeGeneric_left_rudder
+    400008: vehicle_planeGeneric_right_gearDoor
+    400010: vehicle_planeGeneric_right_rudder
+    400012: aircraft_generic_fuselage
+    400014: aircraft_generic_left_gearDoor
+    400016: aircraft_generic_left_rudder
+    400018: aircraft_generic_right_gearDoor
+    400020: aircraft_generic_right_rudder
+    400022: AircraftFuselageBody
+    400024: AircraftFuselageGearDoorLeft
+    400026: AircraftFuselageGearDoorRight
+    400028: AircraftFuselageRudderLeft
+    400030: AircraftFuselageRudderRight
+    2300000: vehicle_planeGeneric_fuselage
+    2300002: vehicle_planeGeneric_left_gearDoor
+    2300004: vehicle_planeGeneric_left_rudder
+    2300006: vehicle_planeGeneric_right_gearDoor
+    2300008: vehicle_planeGeneric_right_rudder
+    2300010: aircraft_generic_fuselage
+    2300012: aircraft_generic_left_gearDoor
+    2300014: aircraft_generic_left_rudder
+    2300016: aircraft_generic_right_gearDoor
+    2300018: aircraft_generic_right_rudder
+    2300020: AircraftFuselageBody
+    2300022: AircraftFuselageGearDoorLeft
+    2300024: AircraftFuselageGearDoorRight
+    2300026: AircraftFuselageRudderLeft
+    2300028: AircraftFuselageRudderRight
+    3300000: vehicle_planeGeneric_fuselage
+    3300002: vehicle_planeGeneric_left_gearDoor
+    3300004: vehicle_planeGeneric_left_rudder
+    3300006: vehicle_planeGeneric_right_gearDoor
+    3300008: vehicle_planeGeneric_right_rudder
+    3300010: aircraft_generic_fuselage
+    3300012: aircraft_generic_left_gearDoor
+    3300014: aircraft_generic_left_rudder
+    3300016: aircraft_generic_right_gearDoor
+    3300018: aircraft_generic_right_rudder
+    3300020: AircraftFuselageBody
+    3300022: AircraftFuselageGearDoorLeft
+    3300024: AircraftFuselageGearDoorRight
+    3300026: AircraftFuselageRudderLeft
+    3300028: AircraftFuselageRudderRight
+    4300000: vehicle_planeGeneric_left_rudder
+    4300002: vehicle_planeGeneric_fuselage
+    4300004: vehicle_planeGeneric_left_gearDoor
+    4300006: vehicle_planeGeneric_right_gearDoor
+    4300008: vehicle_planeGeneric_right_rudder
+    4300010: aircraft_generic_left_rudder
+    4300012: aircraft_generic_fuselage
+    4300014: aircraft_generic_left_gearDoor
+    4300016: aircraft_generic_right_gearDoor
+    4300018: aircraft_generic_right_rudder
+    4300020: AircraftFuselageRudderLeft
+    4300022: AircraftFuselageBody
+    4300024: AircraftFuselageGearDoorLeft
+    4300026: AircraftFuselageGearDoorRight
+    4300028: AircraftFuselageRudderRight
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    pivotNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 0
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
