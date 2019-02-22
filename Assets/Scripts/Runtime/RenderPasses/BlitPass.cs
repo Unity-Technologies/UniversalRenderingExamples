@@ -23,6 +23,7 @@ namespace UnityEngine.Rendering.LWRP
         private RenderTargetHandle destination { get; set; }
 
         RenderTargetHandle m_TemporaryColorTexture;
+        string m_ProfilerTag;
 
         /// <summary>
         /// Create the CopyColorPass
@@ -32,7 +33,7 @@ namespace UnityEngine.Rendering.LWRP
             this.renderPassEvent = renderPassEvent;
             this.blitMaterial = blitMaterial;
             this.blitShaderPassIndex = blitShaderPassIndex;
-            profilerTag = tag;
+            m_ProfilerTag = tag;
             m_TemporaryColorTexture.Init("_TemporaryColorTexture");
         }
 
@@ -62,7 +63,7 @@ namespace UnityEngine.Rendering.LWRP
         /// <inheritdoc/>
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
-            CommandBuffer cmd = CommandBufferPool.Get(profilerTag);
+            CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
             
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
             opaqueDesc.msaaSamples = 1;
