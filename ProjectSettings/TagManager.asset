@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Portal Camera
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Character
   - Postprocessing
   - First Person Objects
-  - 
+  - IgnoreRefelctions
   - 
   - 
   - 

@@ -43,8 +43,17 @@ namespace UnityEngine.Rendering.LWRP
                 ? RenderQueueRange.transparent
                 : RenderQueueRange.opaque;
             m_FilteringSettings = new FilteringSettings(renderQueueRange, layerMask);
-            foreach (var passName in shaderTags)
-                RegisterShaderPassName(passName);
+
+            if (shaderTags.Length > 0)
+            {
+                foreach (var passName in shaderTags)
+                    RegisterShaderPassName(passName);
+            }
+            else
+            {
+                RegisterShaderPassName("LightweightForward");
+                RegisterShaderPassName("SRPDefaultUnlit");
+            }
 
             m_RenderStateBlock = new RenderStateBlock(RenderStateMask.Nothing);
             m_CameraSettings = cameraSettings;

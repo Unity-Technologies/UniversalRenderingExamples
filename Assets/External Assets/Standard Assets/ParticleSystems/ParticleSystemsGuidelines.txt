@@ -1,0 +1,38 @@
+Particle System Sample Assets.
+
+We've selected a few sample effects to show a variety of ways our particle system technology can be used. Some use the particle system component alone, and some are augmented using other components. We've provided a sandbox demo scene which allows you to spawn particles and interact with the scene. Here are notes about each system included in the demo scene.
+
+Explosion. 
+A powerful effect which uses sub emitters to leave streaks of smoke arcing out from the central effect. Also makes use of a script which applies physics force to objects within a radius.
+
+FireComplex
+Uses a combination of many particles, including spritesheet animation, sparks and smoke. This effect also has a Light GameObject, whose position is animated by a script so that the lighting in the scene appears to flicker around as the effect plays.
+
+FireMobile
+Designed for fast performance on mobile, this effect is a minimal version of the previous Fire effect.
+
+Duststorm
+This effect demonstrates how to cover a wide area with a single particle effect. The emmission zone is a large box that covers the area, and a single particle effect generates rolling clouds across the scene. This effect is not interactive, in our demo scene.
+
+Steam
+Another single-system effect, which generates rushing steam emitting from the surface on which it is placed. In our demo scene, this effect is aligned with the surface normal of the object on which it is placed, so you can see the effect of the rising steam when it is emitted from different angles.
+
+Hose
+The water hose particle system demonstrates a number of things including particle stretching (in the direction of the water travel), flow rate controlled by a script, and particles interacting with physics objects using the particle collision callback feature. In this effect, for optimisation, we used a low-rate emitter emitting invisible particles (by switching off the renderer) for the particles which actually interact with the scene and apply forces, and higher-rate emitters for the visual effects.
+
+Fireworks
+This is a demonstration of chaining together many sub-emitters to create a complex visual effect.
+
+Flare
+This effect shows off the world collision feature available to particles, resulting in hundreds of bouncing sparks showering across the floor.
+
+WildFire
+This effect is an example of using sub emitters to create hundreds of simple particle systems around a scene which are all processed as a single system, which enables Unity to process hundreds of particle systems at the same time. In the demo scene, you can click (or touch) and hold to "draw" wildfire across the objects in the scene. 
+
+
+
+
+
+
+
+

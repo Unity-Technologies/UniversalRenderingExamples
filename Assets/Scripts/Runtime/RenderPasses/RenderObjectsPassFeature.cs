@@ -47,7 +47,6 @@ namespace UnityEngine.Rendering.LWRP
             {
                 RenderQueueType = RenderQueueType.Opaque;
                 LayerMask = -1;
-                PassNames = new []{"LightweightForward"};
             }
         }
 

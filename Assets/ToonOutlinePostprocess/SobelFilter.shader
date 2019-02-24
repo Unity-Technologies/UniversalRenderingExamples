@@ -2,8 +2,11 @@
 {
 	Properties 
 	{
-		_MainTex ("Base (RGB)", 2D) = "white" {}
-		_Delta ("Delta", Float) = 0.01
+	    [HideInInspector]_MainTex ("Base (RGB)", 2D) = "white" {}
+		_Delta ("Line Thickness", Range(0.0005, 0.0025)) = 0.001
+		[Toggle(RAW_OUTLINE)]_Raw ("Outline Only", Float) = 0
+		[Toggle(POSTERIZE)]_Poseterize ("Posterize", Float) = 0
+		_PosterizationCount ("Count", int) = 8
 	}
 	SubShader 
 	{
@@ -14,10 +17,17 @@
 		{
             HLSLPROGRAM
             #include "Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/SurfaceInput.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
+            
+            #pragma shader_feature RAW_OUTLINE
+            #pragma shader_feature POSTERIZE
             
             sampler2D _CameraDepthTexture;
+#ifndef RAW_OUTLINE
             sampler2D _MainTex;
+#endif
             float _Delta;
+            int _PosterizationCount;
             
             struct Attributes
             {
@@ -38,25 +48,21 @@
                 float4 hr = float4(0, 0, 0, 0);
                 float4 vt = float4(0, 0, 0, 0);
                 
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2(-1.0, -1.0) * delta)), _ZBufferParams) *  1.0;
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2( 1.0, -1.0) * delta)), _ZBufferParams) * -1.0;
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2(-1.0,  0.0) * delta)), _ZBufferParams) *  2.0;
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2( 1.0,  0.0) * delta)), _ZBufferParams) * -2.0;
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2(-1.0,  1.0) * delta)), _ZBufferParams) *  1.0;
-                hr += LinearEyeDepth(tex2D(tex, (uv + float2( 1.0,  1.0) * delta)), _ZBufferParams) * -1.0;
+                hr += tex2D(tex, (uv + float2(-1.0, -1.0) * delta)) *  1.0;
+                hr += tex2D(tex, (uv + float2( 1.0, -1.0) * delta)) * -1.0;
+                hr += tex2D(tex, (uv + float2(-1.0,  0.0) * delta)) *  2.0;
+                hr += tex2D(tex, (uv + float2( 1.0,  0.0) * delta)) * -2.0;
+                hr += tex2D(tex, (uv + float2(-1.0,  1.0) * delta)) *  1.0;
+                hr += tex2D(tex, (uv + float2( 1.0,  1.0) * delta)) * -1.0;
                 
-                //hr = LinearEyeDepth(hr, _ZBufferParams);
+                vt += tex2D(tex, (uv + float2(-1.0, -1.0) * delta)) *  1.0;
+                vt += tex2D(tex, (uv + float2( 0.0, -1.0) * delta)) *  2.0;
+                vt += tex2D(tex, (uv + float2( 1.0, -1.0) * delta)) *  1.0;
+                vt += tex2D(tex, (uv + float2(-1.0,  1.0) * delta)) * -1.0;
+                vt += tex2D(tex, (uv + float2( 0.0,  1.0) * delta)) * -2.0;
+                vt += tex2D(tex, (uv + float2( 1.0,  1.0) * delta)) * -1.0;
                 
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2(-1.0, -1.0) * delta)), _ZBufferParams) *  1.0;
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2( 0.0, -1.0) * delta)), _ZBufferParams) *  2.0;
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2( 1.0, -1.0) * delta)), _ZBufferParams) *  1.0;
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2(-1.0,  1.0) * delta)), _ZBufferParams) * -1.0;
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2( 0.0,  1.0) * delta)), _ZBufferParams) * -2.0;
-                vt += LinearEyeDepth(tex2D(tex, (uv + float2( 1.0,  1.0) * delta)), _ZBufferParams) * -1.0;
-                
-                //vt = LinearEyeDepth(vt, _ZBufferParams);
-                
-                return sqrt(hr * hr + vt * vt);
+                return sqrt(hr * hr + vt * vt).x;
             }
             
             Varyings vert(Attributes input)
@@ -72,9 +78,20 @@
             
             half4 frag (Varyings input) : SV_Target 
             {
-                float s = pow(sobel(_CameraDepthTexture, input.uv), 10);
-                half4 col = tex2D(_MainTex, input.uv) * (1 - s);
-                return col;
+                float s = pow(1 - saturate(sobel(_CameraDepthTexture, input.uv)), 50);
+#ifdef RAW_OUTLINE
+                return half4(s.xxx, 1);
+#else
+                half4 col = tex2D(_MainTex, input.uv);
+#ifdef POSTERIZE
+                col = pow(col, 0.4545);
+                half3 c = RgbToHsv(col);
+                c.z = round(c.z * _PosterizationCount) / _PosterizationCount;
+                col = half4(HsvToRgb(c), col.a);
+                col = pow(col, 2.2);
+#endif
+                return col * s;
+#endif
             }
             
 			#pragma vertex vert

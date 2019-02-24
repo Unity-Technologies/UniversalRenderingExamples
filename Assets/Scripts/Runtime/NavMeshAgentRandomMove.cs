@@ -6,12 +6,14 @@ using UnityEngine.AI;
 public class NavMeshAgentRandomMove : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private Animator anim;
     public float wanderRange = 10f;
     
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         if (!agent)
             enabled = false;
     }
@@ -19,12 +21,15 @@ public class NavMeshAgentRandomMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!agent.hasPath)
+        if (Vector3.Distance(transform.position, agent.destination) < 0.5f)
         {
-            var target = Random.insideUnitCircle * wanderRange;
+            Random.InitState((int)Time.time);
+            var target = Random.insideUnitSphere * wanderRange;
+            target.y = 0;
             NavMeshHit hit;
-            NavMesh.FindClosestEdge(new Vector3(target.x, 0f, target.y), out hit, NavMesh.AllAreas);
-            agent.destination = hit.position;
+            if(NavMesh.SamplePosition(target, out hit, 1f, NavMesh.AllAreas))
+                agent.destination = hit.position;
         }
+        anim.SetFloat("speed", agent.velocity.magnitude);
     }
 }
