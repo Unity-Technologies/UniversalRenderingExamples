@@ -6,8 +6,9 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEditor.Rendering;
+using UnityEngine.Rendering.LWRP;
 
-namespace UnityEngine.Rendering.LWRP 
+namespace UnityEditor.Rendering.LWRP 
 {
 	[CustomPropertyDrawer(typeof(RenderObjectsPassFeature.RenderObjectsSettings), true)]
     public class RenderObjectsPassFeatureEditor : PropertyDrawer
