@@ -61,6 +61,12 @@ namespace UnityEngine.Rendering.LWRP
         }
 
         /// <inheritdoc/>
+        public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
+        {
+            ConfigureTargetForBlit(destination.Identifier());
+        }
+
+        /// <inheritdoc/>
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
