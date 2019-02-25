@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dither Pass
   m_EditorClassIdentifier: 
   settings:
-    Event: 20
+    Event: 300
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   settings:
-    Event: 20
+    Event: 300
     filterSettings:
       RenderQueueType: 0
       LayerMask:

@@ -42,7 +42,13 @@ namespace UnityEngine.Rendering.LWRP
         {
             var src = colorAttachmentHandle;
             var dest = (settings.dest == Target.Color) ? colorAttachmentHandle : m_RenderTextureHandle;
-            
+
+            if (settings.blitMaterial == null)
+            {
+                Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
+                return;
+            }
+
             blitPass.Setup(src, dest);
             renderPasses.Add(blitPass);
         }

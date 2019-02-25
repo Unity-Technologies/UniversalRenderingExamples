@@ -14,18 +14,13 @@ public class DrawFullScreenPass : ScriptableRenderPass
         m_Settings = settings;
     }
 
-    public override bool ShouldExecute(ref RenderingData renderingData)
-    {
-        return m_Settings.material != null;
-    }
-
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
         Camera camera = renderingData.cameraData.camera;
 
         var cmd = CommandBufferPool.Get(m_ProfilerTag);
         cmd.SetViewProjectionMatrices(Matrix4x4.identity, Matrix4x4.identity);
-        cmd.DrawMesh(fullscreenMesh, Matrix4x4.identity, m_Settings.material);
+        cmd.DrawMesh(RenderingUtils.fullscreenMesh, Matrix4x4.identity, m_Settings.material);
         cmd.SetViewProjectionMatrices(camera.worldToCameraMatrix, camera.projectionMatrix);
         context.ExecuteCommandBuffer(cmd);
         CommandBufferPool.Release(cmd);

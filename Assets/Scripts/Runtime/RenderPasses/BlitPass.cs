@@ -49,18 +49,6 @@ namespace UnityEngine.Rendering.LWRP
         }
 
         /// <inheritdoc/>
-        public override bool ShouldExecute(ref RenderingData renderingData)
-        {
-            if (blitMaterial == null)
-            {
-                Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
-                return false;
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc/>
         public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
         {
             ConfigureTargetForBlit(destination.Identifier());

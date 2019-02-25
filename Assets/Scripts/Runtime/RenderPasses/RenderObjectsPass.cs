@@ -1,4 +1,4 @@
-using UnityEngine.Rendering;
+using System.Collections.Generic;
 
 namespace UnityEngine.Rendering.LWRP
 {
@@ -10,6 +10,8 @@ namespace UnityEngine.Rendering.LWRP
 
         public Material overrideMaterial { get; set; }
         public int overrideMaterialPassIndex { get; set; }
+
+        List<ShaderTagId> m_ShaderTagIdList = new List<ShaderTagId>();
 
         public void SetDetphState(bool writeEnabled, CompareFunction function = CompareFunction.Less)
         {
@@ -44,15 +46,16 @@ namespace UnityEngine.Rendering.LWRP
                 : RenderQueueRange.opaque;
             m_FilteringSettings = new FilteringSettings(renderQueueRange, layerMask);
 
+            
             if (shaderTags.Length > 0)
             {
                 foreach (var passName in shaderTags)
-                    RegisterShaderPassName(passName);
+                    m_ShaderTagIdList.Add(new ShaderTagId(passName));
             }
             else
             {
-                RegisterShaderPassName("LightweightForward");
-                RegisterShaderPassName("SRPDefaultUnlit");
+                m_ShaderTagIdList.Add(new ShaderTagId("LightweightForward"));
+                m_ShaderTagIdList.Add(new ShaderTagId("SRPDefaultUnlit"));
             }
 
             m_RenderStateBlock = new RenderStateBlock(RenderStateMask.Nothing);
@@ -66,7 +69,7 @@ namespace UnityEngine.Rendering.LWRP
                 ? SortingCriteria.CommonTransparent
                 : renderingData.cameraData.defaultOpaqueSortFlags;
 
-            DrawingSettings drawingSettings = CreateDrawingSettings(ref renderingData, sortingCriteria);
+            DrawingSettings drawingSettings = RenderingUtils.CreateDrawingSettings(m_ShaderTagIdList, ref renderingData, sortingCriteria);
             drawingSettings.overrideMaterial = overrideMaterial;
             drawingSettings.overrideMaterialPassIndex = overrideMaterialPassIndex;
 
