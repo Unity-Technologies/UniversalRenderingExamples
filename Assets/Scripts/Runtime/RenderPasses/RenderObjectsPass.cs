@@ -69,7 +69,7 @@ namespace UnityEngine.Rendering.LWRP
                 ? SortingCriteria.CommonTransparent
                 : renderingData.cameraData.defaultOpaqueSortFlags;
 
-            DrawingSettings drawingSettings = RenderingUtils.CreateDrawingSettings(m_ShaderTagIdList, ref renderingData, sortingCriteria);
+            DrawingSettings drawingSettings = CreateDrawingSettings(m_ShaderTagIdList, ref renderingData, sortingCriteria);
             drawingSettings.overrideMaterial = overrideMaterial;
             drawingSettings.overrideMaterialPassIndex = overrideMaterialPassIndex;
 
