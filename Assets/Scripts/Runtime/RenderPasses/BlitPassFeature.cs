@@ -35,7 +35,7 @@ namespace UnityEngine.Rendering.LWRP
             m_RenderTextureHandle.Init(settings.textureId);
         }
 
-        public override void AddRenderPasses(List<ScriptableRenderPass> renderPasses,
+        public override void AddRenderPasses(ScriptableRenderer renderer,
             RenderTextureDescriptor baseDescriptor,
             RenderTargetHandle colorAttachmentHandle,
             RenderTargetHandle depthAttachmentHandle)
@@ -50,7 +50,7 @@ namespace UnityEngine.Rendering.LWRP
             }
 
             blitPass.Setup(src, dest);
-            renderPasses.Add(blitPass);
+            renderer.EnqueuePass(blitPass);
         }
     }
 }
