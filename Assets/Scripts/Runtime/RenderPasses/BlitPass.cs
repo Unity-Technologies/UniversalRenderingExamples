@@ -62,7 +62,7 @@ namespace UnityEngine.Rendering.LWRP
             {
                 cmd.GetTemporaryRT(m_TemporaryColorTexture.id, opaqueDesc, filterMode);
                 Blit(context, src, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
-                Blit(context, m_TemporaryColorTexture.Identifier(), src);
+                Blit(context, m_TemporaryColorTexture.Identifier(), destination.Identifier());
             }
             else
             {
@@ -76,7 +76,8 @@ namespace UnityEngine.Rendering.LWRP
         /// <inheritdoc/>
         public override void FrameCleanup(CommandBuffer cmd)
         {
-            cmd.ReleaseTemporaryRT(destination.id);
+            if (source == destination)
+                cmd.ReleaseTemporaryRT(m_TemporaryColorTexture.id);
         }
     }
 }
