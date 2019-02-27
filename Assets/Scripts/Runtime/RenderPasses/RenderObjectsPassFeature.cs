@@ -66,7 +66,7 @@ namespace UnityEngine.Rendering.LWRP
         public override void Create()
         {
             FilterSettings filter = settings.filterSettings;
-            renderObjectsPass = new RenderObjectsPass(settings.Event, filter.PassNames, filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
+            renderObjectsPass = new RenderObjectsPass("RenderGun", settings.Event, filter.PassNames, filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
             renderObjectsPass.overrideMaterial = settings.overrideMaterial;
             renderObjectsPass.overrideMaterialPassIndex = settings.overrideMaterialPassIndex;
 
