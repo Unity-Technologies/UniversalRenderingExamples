@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Gun Transparent
   m_EditorClassIdentifier: 
   settings:
+    passTag: RenderObjectsFeature
     Event: 500
     filterSettings:
       RenderQueueType: 1
@@ -75,7 +76,8 @@ MonoBehaviour:
   m_Name: Gun Opaque
   m_EditorClassIdentifier: 
   settings:
-    Event: 500
+    passTag: RenderObjectsFeature
+    Event: 250
     filterSettings:
       RenderQueueType: 0
       LayerMask:

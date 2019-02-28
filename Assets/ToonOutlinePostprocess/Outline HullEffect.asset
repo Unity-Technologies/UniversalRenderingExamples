@@ -38,7 +38,8 @@ MonoBehaviour:
   m_Name: Outline
   m_EditorClassIdentifier: 
   settings:
-    Event: 20
+    passTag: RenderObjectsFeature
+    Event: 300
     filterSettings:
       RenderQueueType: 0
       LayerMask:

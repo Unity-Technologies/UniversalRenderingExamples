@@ -85,9 +85,9 @@
                 half4 col = tex2D(_MainTex, input.uv);
 #ifdef POSTERIZE
                 col = pow(col, 0.4545);
-                half3 c = RgbToHsv(col);
+                float3 c = RgbToHsv(col);
                 c.z = round(c.z * _PosterizationCount) / _PosterizationCount;
-                col = half4(HsvToRgb(c), col.a);
+                col = float4(HsvToRgb(c), col.a);
                 col = pow(col, 2.2);
 #endif
                 return col * s;

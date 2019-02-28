@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
-using UnityEditor;
 using UnityEditorInternal;
-using UnityEditor.Rendering;
 using UnityEngine.Rendering.LWRP;
 
 namespace UnityEditor.Rendering.LWRP 

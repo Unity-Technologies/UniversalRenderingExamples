@@ -24,8 +24,7 @@ public class Portal : MonoBehaviour
 
     void UpdateCamera(Camera camera)
     {
-        if (portalCamera && pairPortal &&
-            (camera.cameraType == CameraType.Game || camera.cameraType == CameraType.SceneView) &&
+        if ((camera.cameraType == CameraType.Game || camera.cameraType == CameraType.SceneView) &&
             camera.tag != "Portal Camera")
         {
             portalCamera.projectionMatrix = camera.projectionMatrix; // Match matrices
