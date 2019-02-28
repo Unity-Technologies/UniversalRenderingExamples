@@ -61,12 +61,12 @@ namespace UnityEngine.Rendering.LWRP
             if (source == destination)
             {
                 cmd.GetTemporaryRT(m_TemporaryColorTexture.id, opaqueDesc, filterMode);
-                Blit(context, src, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
-                Blit(context, m_TemporaryColorTexture.Identifier(), destination.Identifier());
+                Blit(cmd, src, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
+                Blit(cmd, m_TemporaryColorTexture.Identifier(), destination.Identifier());
             }
             else
             {
-                Blit(context, src, destination.Identifier(), blitMaterial, blitShaderPassIndex);
+                Blit(cmd, src, destination.Identifier(), blitMaterial, blitShaderPassIndex);
             }
             
             context.ExecuteCommandBuffer(cmd);
