@@ -54,7 +54,7 @@ namespace UnityEngine.Rendering.LWRP
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
             
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
-            opaqueDesc.msaaSamples = 1;
+            opaqueDesc.depthBufferBits = 0;
 
             RenderTargetIdentifier src = source.Identifier();
 
