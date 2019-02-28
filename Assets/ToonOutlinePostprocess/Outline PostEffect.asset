@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New BlitPassFeature
   m_EditorClassIdentifier: 
   settings:
-    Event: 40
+    Event: 400
     blitMaterial: {fileID: 2100000, guid: f012cc041ddc048eca800cbc9cc5fd6d, type: 2}
     blitMaterialPassIndex: -1
     dest: 0
