@@ -48,8 +48,7 @@ namespace UnityEngine.Rendering.LWRP
                 : RenderQueueRange.opaque;
             m_FilteringSettings = new FilteringSettings(renderQueueRange, layerMask);
 
-            
-            if (shaderTags.Length > 0)
+            if (shaderTags != null && shaderTags.Length > 0)
             {
                 foreach (var passName in shaderTags)
                     m_ShaderTagIdList.Add(new ShaderTagId(passName));
