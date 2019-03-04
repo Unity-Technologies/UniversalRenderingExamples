@@ -21,7 +21,7 @@ public class DrawFullScreenFeature : ScriptableRendererFeature
         m_RenderPass = new DrawFullScreenPass(m_Settings);
     }
 
-    public override void AddRenderPasses(ScriptableRenderer renderer, RenderTextureDescriptor cameraDescriptor, RenderTargetHandle colorAttachmentHandle, RenderTargetHandle depthAttachmentHandle)
+    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
         if (m_Settings.material != null)
             renderer.EnqueuePass(m_RenderPass);

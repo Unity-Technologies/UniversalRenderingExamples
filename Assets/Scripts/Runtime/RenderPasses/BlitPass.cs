@@ -19,7 +19,7 @@ namespace UnityEngine.Rendering.LWRP
         public int blitShaderPassIndex = 0;
         public FilterMode filterMode { get; set; }
 
-        private RenderTargetHandle source { get; set; }
+        private RenderTargetIdentifier source { get; set; }
         private RenderTargetHandle destination { get; set; }
 
         RenderTargetHandle m_TemporaryColorTexture;
@@ -42,7 +42,7 @@ namespace UnityEngine.Rendering.LWRP
         /// </summary>
         /// <param name="source">Source Render Target</param>
         /// <param name="destination">Destination Render Target</param>
-        public void Setup(RenderTargetHandle source, RenderTargetHandle destination)
+        public void Setup(RenderTargetIdentifier source, RenderTargetHandle destination)
         {
             this.source = source;
             this.destination = destination;
@@ -56,17 +56,16 @@ namespace UnityEngine.Rendering.LWRP
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
             opaqueDesc.depthBufferBits = 0;
 
-            RenderTargetIdentifier src = source.Identifier();
-
-            if (source == destination)
+            // Can't read and write to same color target, create a temp render target to blit. 
+            if (destination == RenderTargetHandle.CameraTarget)
             {
                 cmd.GetTemporaryRT(m_TemporaryColorTexture.id, opaqueDesc, filterMode);
-                Blit(cmd, src, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
-                Blit(cmd, m_TemporaryColorTexture.Identifier(), destination.Identifier());
+                Blit(cmd, source, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
+                Blit(cmd, m_TemporaryColorTexture.Identifier(), source);
             }
             else
             {
-                Blit(cmd, src, destination.Identifier(), blitMaterial, blitShaderPassIndex);
+                Blit(cmd, source, destination.Identifier(), blitMaterial, blitShaderPassIndex);
             }
             
             context.ExecuteCommandBuffer(cmd);
@@ -76,7 +75,7 @@ namespace UnityEngine.Rendering.LWRP
         /// <inheritdoc/>
         public override void FrameCleanup(CommandBuffer cmd)
         {
-            if (source == destination)
+            if (destination == RenderTargetHandle.CameraTarget)
                 cmd.ReleaseTemporaryRT(m_TemporaryColorTexture.id);
         }
     }

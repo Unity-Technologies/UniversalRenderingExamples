@@ -77,10 +77,7 @@ namespace UnityEngine.Rendering.LWRP
                 renderObjectsPass.SetStencilState(settings.stencilReference, settings.stencilCompareFunction, settings.passOperation, settings.failOperation, settings.zFailOperation);
         }
 
-        public override void AddRenderPasses(ScriptableRenderer renderer,
-            RenderTextureDescriptor baseDescriptor,
-            RenderTargetHandle colorAttachmentHandle,
-            RenderTargetHandle depthAttachmentHandle)
+        public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
             renderer.EnqueuePass(renderObjectsPass);
         }

@@ -35,13 +35,10 @@ namespace UnityEngine.Rendering.LWRP
             m_RenderTextureHandle.Init(settings.textureId);
         }
 
-        public override void AddRenderPasses(ScriptableRenderer renderer,
-            RenderTextureDescriptor baseDescriptor,
-            RenderTargetHandle colorAttachmentHandle,
-            RenderTargetHandle depthAttachmentHandle)
+        public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
-            var src = colorAttachmentHandle;
-            var dest = (settings.dest == Target.Color) ? colorAttachmentHandle : m_RenderTextureHandle;
+            var src = renderer.cameraColorTarget;
+            var dest = (settings.dest == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
 
             if (settings.blitMaterial == null)
             {
