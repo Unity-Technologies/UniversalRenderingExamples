@@ -30,15 +30,7 @@ namespace UnityEditor.Rendering.LWRP
 		    public static GUIContent overrideDepth = new GUIContent("Override Depth", "Override depth rendering.");
 		    public static GUIContent writeDepth = new GUIContent("Write Depth", "Chose to write depth to the screen.");
 		    public static GUIContent depthState = new GUIContent("Depth Test", "Choose a new test setting for the depth.");
-		    
-		    //Stencil Settings
-		    public static GUIContent overrideStencil = new GUIContent("Override Stencil", "Override stencil rendering.");
-		    public static GUIContent stencilIndex = new GUIContent("Value", "The stencil index to write to.");
-		    public static GUIContent stencilFunction = new GUIContent("Compare Function", "Choose the comparison function against the stencil value on screen.");
-		    public static GUIContent stencilPass = new GUIContent("Pass", "What happens to the stencil value when passing.");
-		    public static GUIContent stencilFail = new GUIContent("Fail", "What happens the the stencil value when failing.");
-		    public static GUIContent stencilZFail = new GUIContent("Z Fail", "What happens the the stencil value when failing Z testing.");
-		    
+
 		    //Camera Settings
 		    public static GUIContent overrideCamera = new GUIContent("Override Camera", "Override camera projections.");
 		    public static GUIContent cameraFOV = new GUIContent("Field Of View", "Field Of View to render this pass in.");
@@ -46,11 +38,6 @@ namespace UnityEditor.Rendering.LWRP
 		    public static GUIContent restoreCamera = new GUIContent("Restore", "Restore to the original camera projection before this pass.");
 
 	    }
-
-	    //Stencil rendering
-	    private const int stencilBits = 3;
-	    private const int minStencilValue = 0;
-	    private const int maxStencilValue = (1 << stencilBits) - 1;
 
 	    //Headers and layout
 	    private HeaderBool m_FiltersFoldout;
@@ -79,11 +66,6 @@ namespace UnityEditor.Rendering.LWRP
 	    private SerializedProperty m_DepthState;
 	    //Stencil props
 	    private SerializedProperty m_OverrideStencil;
-	    private SerializedProperty m_StencilIndex;
-	    private SerializedProperty m_StencilFunction;
-	    private SerializedProperty m_StencilPass;
-	    private SerializedProperty m_StencilFail;
-	    private SerializedProperty m_StencilZFail;
 	    //Caemra props
 	    private SerializedProperty m_CameraSettings;
 	    private SerializedProperty m_OverrideCamera;
@@ -114,12 +96,7 @@ namespace UnityEditor.Rendering.LWRP
 		    m_WriteDepth = property.FindPropertyRelative("enableWrite");
 		    m_DepthState = property.FindPropertyRelative("depthCompareFunction");
 		    //Stencil
-		    m_OverrideStencil = property.FindPropertyRelative("overrideStencilState");
-		    m_StencilIndex = property.FindPropertyRelative("stencilReference");
-		    m_StencilFunction = property.FindPropertyRelative("stencilCompareFunction");
-		    m_StencilPass = property.FindPropertyRelative("passOperation");
-		    m_StencilFail = property.FindPropertyRelative("failOperation");
-		    m_StencilZFail = property.FindPropertyRelative("zFailOperation");
+		    m_OverrideStencil = property.FindPropertyRelative("stencilSettings");
 		    //Camera
 		    m_CameraSettings = property.FindPropertyRelative("cameraSettings");
 		    m_OverrideCamera = m_CameraSettings.FindPropertyRelative("overrideCamera");
@@ -143,6 +120,8 @@ namespace UnityEditor.Rendering.LWRP
 		    m_ShaderPassesList.drawHeaderCallback = (Rect testHeaderRect) => {
 			    EditorGUI.LabelField(testHeaderRect, Styles.shaderPassFilter);
 		    };
+		    
+		    firstTime = false;
 	    }
 
 	    public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
@@ -173,21 +152,30 @@ namespace UnityEditor.Rendering.LWRP
 				if (EditorGUI.EndChangeCheck())
 					m_OverrideMaterialPass.intValue = Mathf.Max(0, m_OverrideMaterialPass.intValue);
 				rect.y += Styles.defaultLineSpace;
+				DoLine(ref rect);
 				//Override depth
 				DoDepthOverride(ref rect);
 				rect.y += Styles.defaultLineSpace;
+				DoLine(ref rect);
 				//Override stencil
-				DoStencilOverride(ref rect);
-				rect.y += Styles.defaultLineSpace;
+				EditorGUI.PropertyField(rect, m_OverrideStencil);
+				rect.y += EditorGUI.GetPropertyHeight(m_OverrideStencil);
+				DoLine(ref rect);
 				//Override camera
 				DoCameraOverride(ref rect);
 				rect.y += Styles.defaultLineSpace;
+				DoLine(ref rect);
 
 				EditorGUI.indentLevel--;
 			}
 			
 			EditorGUI.EndProperty();
-		    firstTime = false;
+	    }
+
+	    void DoLine(ref Rect rect)
+	    {
+		    //EditorGUI.DrawRect(new Rect(rect.x, rect.y, rect.width, 1), Color.grey);
+		    //rect.y += Styles.defaultLineSpace;
 	    }
 
 	    void DoFilters(ref Rect rect)
@@ -223,47 +211,6 @@ namespace UnityEditor.Rendering.LWRP
 			    rect.y += Styles.defaultLineSpace;
 			    //Depth testing options
 			    EditorGUI.PropertyField(rect, m_DepthState, Styles.depthState);
-			    EditorGUI.indentLevel--;
-		    }
-	    }
-
-	    void DoStencilOverride(ref Rect rect)
-	    {
-		    EditorGUI.PropertyField(rect, m_OverrideStencil, Styles.overrideStencil);
-		    if (m_OverrideStencil.boolValue)
-		    {
-			    EditorGUI.indentLevel++;
-			    rect.y += Styles.defaultLineSpace;
-			    //Stencil value
-			    EditorGUI.BeginChangeCheck();
-			    var stencilVal = m_StencilIndex.intValue;
-			    stencilVal = EditorGUI.IntSlider(rect, Styles.stencilIndex, stencilVal, minStencilValue, maxStencilValue);
-			    if (EditorGUI.EndChangeCheck())
-				    m_StencilIndex.intValue = stencilVal;
-			    rect.y += Styles.defaultLineSpace;
-			    //Stencil compare options
-			    EditorGUI.PropertyField(rect, m_StencilFunction, Styles.stencilFunction);
-			    rect.y += Styles.defaultLineSpace;
-			    //Stencil compare options
-			    EditorGUI.indentLevel++;
-			    var stencilOpLabelRect = new Rect(rect.x, rect.y, EditorGUIUtility.labelWidth, rect.height);
-			    EditorGUI.LabelField(stencilOpLabelRect, "Operations");
-			    var indentLevel = EditorGUI.indentLevel;
-			    EditorGUI.indentLevel = 0;
-			    var labelWidth = EditorGUIUtility.labelWidth;
-			    EditorGUIUtility.labelWidth = 50f;
-
-			    var stencilOpPassRect = new Rect(rect.x + stencilOpLabelRect.width, rect.y, (rect.width - stencilOpLabelRect.width) * 0.5f, rect.height);
-			    EditorGUI.PropertyField(stencilOpPassRect, m_StencilPass, Styles.stencilPass);
-					
-			    var stencilOpFailRect = new Rect(stencilOpPassRect.x + stencilOpPassRect.width, rect.y, stencilOpPassRect.width, rect.height);
-			    EditorGUI.PropertyField(stencilOpFailRect, m_StencilFail, Styles.stencilFail);
-					
-			    EditorGUI.indentLevel = indentLevel - 1;
-			    EditorGUIUtility.labelWidth = labelWidth;
-			    rect.y += Styles.defaultLineSpace;
-			    //Stencil compare options
-			    EditorGUI.PropertyField(rect, m_StencilFunction, Styles.stencilZFail);
 			    EditorGUI.indentLevel--;
 		    }
 	    }
@@ -305,7 +252,7 @@ namespace UnityEditor.Rendering.LWRP
 			    if (m_RenderFoldout.value)
 			    {
 				    height += Styles.defaultLineSpace * (m_OverrideDepth.boolValue ? m_DepthLines : 1);
-				    height += Styles.defaultLineSpace * (m_OverrideStencil.boolValue ? m_StencilLines : 1);
+				    height += EditorGUI.GetPropertyHeight(m_OverrideStencil);
 				    height += Styles.defaultLineSpace * (m_OverrideCamera.boolValue ? m_CameraLines : 1);
 			    }
 		    }

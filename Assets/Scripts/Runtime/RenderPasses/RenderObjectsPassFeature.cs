@@ -25,12 +25,7 @@ namespace UnityEngine.Rendering.LWRP
             public CompareFunction depthCompareFunction = CompareFunction.Less;
             public bool enableWrite = true;
 
-            public bool overrideStencilState = false;
-            public int stencilReference = 1;
-            public CompareFunction stencilCompareFunction = CompareFunction.Always;
-            public StencilOp passOperation = StencilOp.Keep;
-            public StencilOp failOperation = StencilOp.Keep;
-            public StencilOp zFailOperation = StencilOp.Keep;
+            public StencilStateData stencilSettings;
 
             public CustomCameraSettings cameraSettings;
         }
@@ -66,15 +61,19 @@ namespace UnityEngine.Rendering.LWRP
         public override void Create()
         {
             FilterSettings filter = settings.filterSettings;
-            renderObjectsPass = new RenderObjectsPass("RenderGun", settings.Event, filter.PassNames, filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
+            renderObjectsPass = new RenderObjectsPass("RenderGun", settings.Event, filter.PassNames,
+                filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
+            
             renderObjectsPass.overrideMaterial = settings.overrideMaterial;
             renderObjectsPass.overrideMaterialPassIndex = settings.overrideMaterialPassIndex;
 
             if (settings.overrideDepthState)
                 renderObjectsPass.SetDetphState(settings.enableWrite, settings.depthCompareFunction);
 
-            if (settings.overrideStencilState)
-                renderObjectsPass.SetStencilState(settings.stencilReference, settings.stencilCompareFunction, settings.passOperation, settings.failOperation, settings.zFailOperation);
+            if (settings.stencilSettings.overrideStencilState)
+                renderObjectsPass.SetStencilState(settings.stencilSettings.stencilReference,
+                    settings.stencilSettings.stencilCompareFunction, settings.stencilSettings.passOperation,
+                    settings.stencilSettings.failOperation, settings.stencilSettings.zFailOperation);
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)

@@ -23,7 +23,7 @@ public class NavMeshAgentRandomMove : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, agent.destination) < 0.5f)
         {
-            Random.InitState((int)Time.time);
+            Random.InitState((int)Time.time + gameObject.GetHashCode());
             var target = Random.insideUnitSphere * wanderRange;
             target.y = 0;
             NavMeshHit hit;
