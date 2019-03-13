@@ -5,7 +5,7 @@ using UnityEngine.Rendering.LWRP;
 
 namespace UnityEditor.Rendering.LWRP 
 {
-	[CustomPropertyDrawer(typeof(RenderObjectsPassFeature.RenderObjectsSettings), true)]
+	[CustomPropertyDrawer(typeof(RenderObjects.RenderObjectsSettings), true)]
     public class RenderObjectsPassFeatureEditor : PropertyDrawer
     {
 	    internal class Styles
@@ -15,7 +15,7 @@ namespace UnityEditor.Rendering.LWRP
 
 		    //Headers
 		    public static GUIContent filtersHeader = new GUIContent("Filters", "Filters.");
-		    public static GUIContent renderHeader = new GUIContent("Render Options", "Things.");
+		    public static GUIContent renderHeader = new GUIContent("Overrides", "Different parts fo the rendering that you can choose to override.");
 		    
 		    //Filters
 		    public static GUIContent renderQueueFilter = new GUIContent("Queue", "Filter the render queue range you want to render.");
@@ -27,12 +27,12 @@ namespace UnityEditor.Rendering.LWRP
 		    public static GUIContent overrideMaterialPass = new GUIContent("Pass Index", "The pass index for the override material to use.");
 		    
 		    //Depth Settings
-		    public static GUIContent overrideDepth = new GUIContent("Override Depth", "Override depth rendering.");
+		    public static GUIContent overrideDepth = new GUIContent("Depth", "Override depth rendering.");
 		    public static GUIContent writeDepth = new GUIContent("Write Depth", "Chose to write depth to the screen.");
 		    public static GUIContent depthState = new GUIContent("Depth Test", "Choose a new test setting for the depth.");
 
 		    //Camera Settings
-		    public static GUIContent overrideCamera = new GUIContent("Override Camera", "Override camera projections.");
+		    public static GUIContent overrideCamera = new GUIContent("Camera", "Override camera projections.");
 		    public static GUIContent cameraFOV = new GUIContent("Field Of View", "Field Of View to render this pass in.");
 		    public static GUIContent positionOffset = new GUIContent("Position Offset", "This Vector acts as a relative offset for the camera.");
 		    public static GUIContent restoreCamera = new GUIContent("Restore", "Restore to the original camera projection before this pass.");
@@ -43,7 +43,8 @@ namespace UnityEditor.Rendering.LWRP
 	    private HeaderBool m_FiltersFoldout;
 	    private int m_FilterLines = 3;
 	    private HeaderBool m_RenderFoldout;
-	    private int m_RenderLines = 3;
+	    private int m_RenderLines = 2;
+	    private int m_MaterialLines = 2;
 	    private int m_DepthLines = 3;
 	    private int m_StencilLines = 5;
 	    private int m_CameraLines = 4;
@@ -52,6 +53,7 @@ namespace UnityEditor.Rendering.LWRP
 	    
 	    // Serialized Properties
 	    private SerializedProperty m_Callback;
+	    private SerializedProperty m_PassTag;
 	    //Filter props
 	    private SerializedProperty m_FilterSettings;
 	    private SerializedProperty m_RenderQueue;
@@ -82,7 +84,9 @@ namespace UnityEditor.Rendering.LWRP
 		    m_FiltersFoldout = new HeaderBool($"{key}.FiltersFoldout", true);
 		    m_RenderFoldout = new HeaderBool($"{key}.RenderFoldout");
 
+		    
 		    m_Callback = property.FindPropertyRelative("Event");
+		    m_PassTag = property.FindPropertyRelative("passTag");
 		    //Filter props
 		    m_FilterSettings = property.FindPropertyRelative("filterSettings");
 		    m_RenderQueue = m_FilterSettings.FindPropertyRelative("RenderQueueType");
@@ -127,9 +131,17 @@ namespace UnityEditor.Rendering.LWRP
 	    public override void OnGUI(Rect rect, SerializedProperty property, GUIContent label)
 	    {
 			rect.height = EditorGUIUtility.singleLineHeight;
+			EditorGUI.BeginChangeCheck();
 			EditorGUI.BeginProperty(rect, label, property);
 			if(firstTime)
 			    Init(property);
+
+			var passName = property.serializedObject.FindProperty("m_Name").stringValue;
+			if (passName != m_PassTag.stringValue)
+			{
+				m_PassTag.stringValue = passName;
+				property.serializedObject.ApplyModifiedProperties();
+			}
 
 			//Forward Callbacks
 			EditorGUI.PropertyField(rect, m_Callback, Styles.callback);
@@ -144,44 +156,30 @@ namespace UnityEditor.Rendering.LWRP
 			{
 				EditorGUI.indentLevel++;
 				//Override material
-				EditorGUI.PropertyField(rect, m_OverrideMaterial, Styles.overrideMaterial);
+				DoMaterialOverride(ref rect);
 				rect.y += Styles.defaultLineSpace;
-				//Override material pass index
-				EditorGUI.BeginChangeCheck();
-				EditorGUI.PropertyField(rect, m_OverrideMaterialPass, Styles.overrideMaterialPass);
-				if (EditorGUI.EndChangeCheck())
-					m_OverrideMaterialPass.intValue = Mathf.Max(0, m_OverrideMaterialPass.intValue);
-				rect.y += Styles.defaultLineSpace;
-				DoLine(ref rect);
 				//Override depth
 				DoDepthOverride(ref rect);
 				rect.y += Styles.defaultLineSpace;
-				DoLine(ref rect);
 				//Override stencil
 				EditorGUI.PropertyField(rect, m_OverrideStencil);
 				rect.y += EditorGUI.GetPropertyHeight(m_OverrideStencil);
-				DoLine(ref rect);
 				//Override camera
 				DoCameraOverride(ref rect);
 				rect.y += Styles.defaultLineSpace;
-				DoLine(ref rect);
 
 				EditorGUI.indentLevel--;
 			}
 			
 			EditorGUI.EndProperty();
-	    }
-
-	    void DoLine(ref Rect rect)
-	    {
-		    //EditorGUI.DrawRect(new Rect(rect.x, rect.y, rect.width, 1), Color.grey);
-		    //rect.y += Styles.defaultLineSpace;
+			if (EditorGUI.EndChangeCheck())
+				property.serializedObject.ApplyModifiedProperties();
 	    }
 
 	    void DoFilters(ref Rect rect)
 	    {
-	        m_FiltersFoldout.value = EditorGUI.Foldout(rect, m_FiltersFoldout.value, Styles.filtersHeader, true);
-	        SaveHeaderBool(m_FiltersFoldout);
+		    m_FiltersFoldout.value = EditorGUI.Foldout(rect, m_FiltersFoldout.value, Styles.filtersHeader, true);
+		    SaveHeaderBool(m_FiltersFoldout);
 		    rect.y += Styles.defaultLineSpace;
 		    if (m_FiltersFoldout.value)
 		    {
@@ -196,6 +194,22 @@ namespace UnityEditor.Rendering.LWRP
 			    EditorGUI.indentLevel--;
 			    m_ShaderPassesList.DoList(rect);
 			    rect.y += m_ShaderPassesList.GetHeight();
+		    }
+	    }
+
+	    void DoMaterialOverride(ref Rect rect)
+	    {
+		    //Override material
+		    EditorGUI.PropertyField(rect, m_OverrideMaterial, Styles.overrideMaterial);
+		    if (m_OverrideMaterial.objectReferenceValue)
+		    {
+			    rect.y += Styles.defaultLineSpace;
+			    EditorGUI.indentLevel++;
+			    EditorGUI.BeginChangeCheck();
+			    EditorGUI.PropertyField(rect, m_OverrideMaterialPass, Styles.overrideMaterialPass);
+			    if (EditorGUI.EndChangeCheck())
+				    m_OverrideMaterialPass.intValue = Mathf.Max(0, m_OverrideMaterialPass.intValue);
+			    EditorGUI.indentLevel--;
 		    }
 	    }
 
@@ -245,12 +259,14 @@ namespace UnityEditor.Rendering.LWRP
 		    float height = Styles.defaultLineSpace;
 		    if (!firstTime)
 		    {
+			    
 		        height += Styles.defaultLineSpace * (m_FiltersFoldout.value ? m_FilterLines : 1);
 		        height += m_FiltersFoldout.value ? m_ShaderPassesList.GetHeight() : 0;
 
-		        height += Styles.defaultLineSpace * (m_RenderFoldout.value ? m_RenderLines : 1);
+		        height += Styles.defaultLineSpace; // add line for overrides dropdown
 			    if (m_RenderFoldout.value)
 			    {
+				    height += Styles.defaultLineSpace * (m_OverrideMaterial.objectReferenceValue != null ? m_MaterialLines : 1);
 				    height += Styles.defaultLineSpace * (m_OverrideDepth.boolValue ? m_DepthLines : 1);
 				    height += EditorGUI.GetPropertyHeight(m_OverrideStencil);
 				    height += Styles.defaultLineSpace * (m_OverrideCamera.boolValue ? m_CameraLines : 1);

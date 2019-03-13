@@ -6,7 +6,7 @@ namespace UnityEngine.Rendering.LWRP
     {
         RenderQueueType renderQueueType;
         FilteringSettings m_FilteringSettings;
-        RenderObjectsPassFeature.CustomCameraSettings m_CameraSettings;
+        RenderObjects.CustomCameraSettings m_CameraSettings;
         string m_ProfilerTag;
 
         public Material overrideMaterial { get; set; }
@@ -36,7 +36,7 @@ namespace UnityEngine.Rendering.LWRP
 
         RenderStateBlock m_RenderStateBlock;
 
-        public RenderObjectsPass(string profilerTag, RenderPassEvent renderPassEvent, string[] shaderTags, RenderQueueType renderQueueType, int layerMask, RenderObjectsPassFeature.CustomCameraSettings cameraSettings)
+        public RenderObjectsPass(string profilerTag, RenderPassEvent renderPassEvent, string[] shaderTags, RenderQueueType renderQueueType, int layerMask, RenderObjects.CustomCameraSettings cameraSettings)
         {
             m_ProfilerTag = profilerTag;
             this.renderPassEvent = renderPassEvent;

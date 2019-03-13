@@ -8,16 +8,16 @@ namespace UnityEngine.Rendering.LWRP
         Transparent,
     }
 
-    [CreateAssetMenu(fileName = "RenderObjectsFeature", menuName = "Rendering/Lightweight Render Pipeline/Renderer Features/RenderObjectsFeature", order = CoreUtils.assetCreateMenuPriority1)]
-    public class RenderObjectsPassFeature : ScriptableRendererFeature
+    public class RenderObjects : ScriptableRendererFeature
     {
         [System.Serializable]
         public class RenderObjectsSettings
         {
+            public string passTag = "RenderObjectsFeature";
             public RenderPassEvent Event = RenderPassEvent.AfterRenderingOpaques;
 
             public FilterSettings filterSettings = new FilterSettings();
-            
+
             public Material overrideMaterial = null;
             public int overrideMaterialPassIndex = 0;
 
@@ -61,9 +61,9 @@ namespace UnityEngine.Rendering.LWRP
         public override void Create()
         {
             FilterSettings filter = settings.filterSettings;
-            renderObjectsPass = new RenderObjectsPass("RenderGun", settings.Event, filter.PassNames,
+            renderObjectsPass = new RenderObjectsPass(settings.passTag, settings.Event, filter.PassNames,
                 filter.RenderQueueType, filter.LayerMask, settings.cameraSettings);
-            
+
             renderObjectsPass.overrideMaterial = settings.overrideMaterial;
             renderObjectsPass.overrideMaterialPassIndex = settings.overrideMaterialPassIndex;
 

@@ -2,8 +2,7 @@ using System.Collections.Generic;
 
 namespace UnityEngine.Rendering.LWRP
 {
-    [CreateAssetMenu(fileName = "BlitFeature", menuName = "Rendering/Lightweight Render Pipeline/Renderer Features/BlitFeature", order = CoreUtils.assetCreateMenuPriority1)]
-    public class BlitPassFeature : ScriptableRendererFeature
+    public class Blit : ScriptableRendererFeature
     {
         [System.Serializable]
         public class BlitSettings

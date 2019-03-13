@@ -20,7 +20,7 @@ MonoBehaviour:
   m_OpaqueDownsampling: 0
   m_SupportsHDR: 0
   m_MSAA: 2
-  m_RenderScale: 0.3515625
+  m_RenderScale: 1
   m_MainLightRenderingMode: 1
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 512

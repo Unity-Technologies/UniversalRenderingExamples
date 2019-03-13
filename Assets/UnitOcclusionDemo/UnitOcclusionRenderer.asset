@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dither Pass
   m_EditorClassIdentifier: 
   settings:
+    passTag: Dither Pass
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -25,12 +26,13 @@ MonoBehaviour:
     overrideDepthState: 1
     depthCompareFunction: 7
     enableWrite: 0
-    overrideStencilState: 0
-    stencilReference: 1
-    stencilCompareFunction: 8
-    passOperation: 0
-    failOperation: 0
-    zFailOperation: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
     cameraSettings:
       overrideCamera: 0
       restoreCamera: 1
@@ -49,6 +51,7 @@ MonoBehaviour:
   m_Name: Character
   m_EditorClassIdentifier: 
   settings:
+    passTag: Character
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -61,12 +64,13 @@ MonoBehaviour:
     overrideDepthState: 0
     depthCompareFunction: 2
     enableWrite: 1
-    overrideStencilState: 0
-    stencilReference: 1
-    stencilCompareFunction: 8
-    passOperation: 0
-    failOperation: 0
-    zFailOperation: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
     cameraSettings:
       overrideCamera: 0
       restoreCamera: 1
@@ -98,3 +102,10 @@ MonoBehaviour:
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 567
+  m_DefaultStencilState:
+    overrideStencilState: 0
+    stencilReference: 0
+    stencilCompareFunction: 8
+    passOperation: 0
+    failOperation: 0
+    zFailOperation: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Gun Transparent
   m_EditorClassIdentifier: 
   settings:
+    passTag: Gun Transparent
     Event: 500
     filterSettings:
       RenderQueueType: 1
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_Name: Gun Transparent Overlay
   m_EditorClassIdentifier: 
   settings:
+    passTag: Gun Transparent Overlay
     Event: 500
     filterSettings:
       RenderQueueType: 1
@@ -121,6 +123,7 @@ MonoBehaviour:
   m_Name: Gun Opaque
   m_EditorClassIdentifier: 
   settings:
+    passTag: Gun Opaque
     Event: 250
     filterSettings:
       RenderQueueType: 0
