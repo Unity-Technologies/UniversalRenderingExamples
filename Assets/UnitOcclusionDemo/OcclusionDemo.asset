@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MainLightShadowsSupported: 1
   m_MainLightShadowmapResolution: 512
   m_AdditionalLightsRenderingMode: 1
-  m_AdditionalLightsPerObjectLimit: 1
+  m_AdditionalLightsPerObjectLimit: 4
   m_AdditionalLightShadowsSupported: 0
   m_AdditionalLightsShadowmapResolution: 512
   m_ShadowDistance: 50
