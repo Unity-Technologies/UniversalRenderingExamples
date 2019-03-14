@@ -25,9 +25,9 @@ namespace UnityEngine.Rendering.LWRP
             public CompareFunction depthCompareFunction = CompareFunction.Less;
             public bool enableWrite = true;
 
-            public StencilStateData stencilSettings;
+            public StencilStateData stencilSettings = new StencilStateData();
 
-            public CustomCameraSettings cameraSettings;
+            public CustomCameraSettings cameraSettings = new CustomCameraSettings();
         }
         
         [System.Serializable]
