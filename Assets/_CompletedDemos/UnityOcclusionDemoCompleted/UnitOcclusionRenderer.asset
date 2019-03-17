@@ -1,44 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9142384321608025414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4621d1f0d19720d42a8884910fa9012c, type: 3}
-  m_Name: Dither Pass
-  m_EditorClassIdentifier: 
-  settings:
-    passTag: Dither Pass
-    Event: 300
-    filterSettings:
-      RenderQueueType: 0
-      LayerMask:
-        serializedVersion: 2
-        m_Bits: 256
-      PassNames: []
-    overrideMaterial: {fileID: 2100000, guid: 8040ca297378843bfbbcb1207273c7a7, type: 2}
-    overrideMaterialPassIndex: 0
-    overrideDepthState: 1
-    depthCompareFunction: 7
-    enableWrite: 0
-    stencilSettings:
-      overrideStencilState: 0
-      stencilReference: 0
-      stencilCompareFunction: 8
-      passOperation: 0
-      failOperation: 0
-      zFailOperation: 0
-    cameraSettings:
-      overrideCamera: 0
-      restoreCamera: 1
-      offset: {x: 0, y: 0, z: 0, w: 0}
-      cameraFieldOfView: 60
---- !u!114 &-3325908492841025417
+--- !u!114 &-7246735325581946562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,6 +38,44 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-4483489246691774159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4621d1f0d19720d42a8884910fa9012c, type: 3}
+  m_Name: Dither
+  m_EditorClassIdentifier: 
+  settings:
+    passTag: Dither
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 256
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 2c6a83d1303ce47228acf3a969d9b49a, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 0
+      stencilReference: 0
+      stencilCompareFunction: 8
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Name: UnitOcclusionRenderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: -9142384321608025414}
-  - {fileID: -3325908492841025417}
+  - {fileID: -4483489246691774159}
+  - {fileID: -7246735325581946562}
   m_BlitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
   m_CopyDepthShader: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
   m_ScreenSpaceShadowShader: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_SamplingShader: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 4026535479
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 4026535479
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0

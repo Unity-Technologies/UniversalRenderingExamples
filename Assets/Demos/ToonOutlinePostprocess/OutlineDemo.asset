@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: OutlineDemo
   m_EditorClassIdentifier: 
   k_AssetVersion: 4
-  m_RendererType: 0
-  m_RendererData: {fileID: 11400000, guid: 63827a5eafdfb664a8fc4594f4dd47e4, type: 2}
+  m_RendererType: 1
+  m_RendererData: {fileID: 11400000, guid: 618d298269e66c542b306de85db1faea, type: 2}
   m_RequireDepthTexture: 1
   m_RequireOpaqueTexture: 1
   m_OpaqueDownsampling: 3
