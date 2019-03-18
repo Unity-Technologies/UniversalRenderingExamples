@@ -233,6 +233,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 29
       objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125830, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Player02Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 6845567547487125825, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -282,6 +287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 536874807
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125824, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Depth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845567548200758261, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
@@ -632,6 +642,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125830, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Player03Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 6845567547487125825, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -671,6 +686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 1073745719
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125824, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Depth
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6845567548200758261, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
@@ -1121,6 +1141,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 31
       objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125830, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Player04Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 6845567547487125825, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -1165,6 +1190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 2147487543
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845567547487125824, guid: c03cab02c48da064186e92e57d9231a9,
+        type: 3}
+      propertyPath: m_Depth
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6845567548200758261, guid: c03cab02c48da064186e92e57d9231a9,
         type: 3}
