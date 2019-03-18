@@ -1,12 +1,12 @@
 ﻿namespace UnityEngine.Rendering.LWRP
 {
-    public class DrawFullScreenPass : ScriptableRenderPass
+    public class FullScreenQuadPass : ScriptableRenderPass
     {
         string m_ProfilerTag = "DrawFullScreenPass";
 
-        DrawFullScreen.DrawFullScreenFeatureSettings m_Settings;
+        FullScreenQuad.FullScreenQuadSettings m_Settings;
 
-        public DrawFullScreenPass(DrawFullScreen.DrawFullScreenFeatureSettings settings)
+        public FullScreenQuadPass(FullScreenQuad.FullScreenQuadSettings settings)
         {
             renderPassEvent = settings.renderPassEvent;
             m_Settings = settings;

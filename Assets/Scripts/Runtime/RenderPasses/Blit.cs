@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 namespace UnityEngine.Rendering.LWRP
 {
@@ -11,7 +12,7 @@ namespace UnityEngine.Rendering.LWRP
             
             public Material blitMaterial = null;
             public int blitMaterialPassIndex = -1;
-            public Target dest = Target.Color;
+            public Target destination = Target.Color;
             public string textureId = "_BlitPassTexture";
         }
         
@@ -37,7 +38,7 @@ namespace UnityEngine.Rendering.LWRP
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
             var src = renderer.cameraColorTarget;
-            var dest = (settings.dest == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
+            var dest = (settings.destination == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
 
             if (settings.blitMaterial == null)
             {
