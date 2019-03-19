@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: OcclusionDemo
   m_EditorClassIdentifier: 
   k_AssetVersion: 4
-  m_RendererType: 0
-  m_RendererData: {fileID: 11400000, guid: 6b462e24dd0b8485d9b3128b6c42f27a, type: 2}
+  m_RendererType: 1
+  m_RendererData: {fileID: 11400000, guid: 618d298269e66c542b306de85db1faea, type: 2}
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 1
   m_OpaqueDownsampling: 0
