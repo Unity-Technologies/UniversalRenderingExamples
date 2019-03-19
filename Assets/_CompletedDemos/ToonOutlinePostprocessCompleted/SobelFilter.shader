@@ -22,9 +22,12 @@
             #pragma shader_feature RAW_OUTLINE
             #pragma shader_feature POSTERIZE
             
-            sampler2D _CameraDepthTexture;
+            TEXTURE2D(_CameraDepthTexture);
+            SAMPLER(sampler_CameraDepthTexture);
+            
 #ifndef RAW_OUTLINE
-            sampler2D _MainTex;
+            TEXTURE2D(_MainTex);
+            SAMPLER(sampler_MainTex);
 #endif
             float _Delta;
             int _PosterizationCount;
@@ -39,35 +42,46 @@
             {
                 float2 uv        : TEXCOORD0;
                 float4 vertex : SV_POSITION;
+                UNITY_VERTEX_OUTPUT_STEREO
             };
             
-            float sobel (sampler2D tex, float2 uv) 
+            float SampleDepth(float2 uv)
+            {
+#if defined(UNITY_STEREO_INSTANCING_ENABLED) || defined(UNITY_STEREO_MULTIVIEW_ENABLED)
+                return SAMPLE_TEXTURE2D_ARRAY(_CameraDepthTexture, sampler_CameraDepthTexture, uv, unity_StereoEyeIndex).r;
+#else
+                return SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, uv);
+#endif
+            }
+            
+            float sobel (float2 uv) 
             {
                 float2 delta = float2(_Delta, _Delta);
                 
-                float4 hr = float4(0, 0, 0, 0);
-                float4 vt = float4(0, 0, 0, 0);
+                float hr = 0;
+                float vt = 0;
                 
-                hr += tex2D(tex, (uv + float2(-1.0, -1.0) * delta)) *  1.0;
-                hr += tex2D(tex, (uv + float2( 1.0, -1.0) * delta)) * -1.0;
-                hr += tex2D(tex, (uv + float2(-1.0,  0.0) * delta)) *  2.0;
-                hr += tex2D(tex, (uv + float2( 1.0,  0.0) * delta)) * -2.0;
-                hr += tex2D(tex, (uv + float2(-1.0,  1.0) * delta)) *  1.0;
-                hr += tex2D(tex, (uv + float2( 1.0,  1.0) * delta)) * -1.0;
+                hr += SampleDepth(uv + float2(-1.0, -1.0) * delta) *  1.0;
+                hr += SampleDepth(uv + float2( 1.0, -1.0) * delta) * -1.0;
+                hr += SampleDepth(uv + float2(-1.0,  0.0) * delta) *  2.0;
+                hr += SampleDepth(uv + float2( 1.0,  0.0) * delta) * -2.0;
+                hr += SampleDepth(uv + float2(-1.0,  1.0) * delta) *  1.0;
+                hr += SampleDepth(uv + float2( 1.0,  1.0) * delta) * -1.0;
                 
-                vt += tex2D(tex, (uv + float2(-1.0, -1.0) * delta)) *  1.0;
-                vt += tex2D(tex, (uv + float2( 0.0, -1.0) * delta)) *  2.0;
-                vt += tex2D(tex, (uv + float2( 1.0, -1.0) * delta)) *  1.0;
-                vt += tex2D(tex, (uv + float2(-1.0,  1.0) * delta)) * -1.0;
-                vt += tex2D(tex, (uv + float2( 0.0,  1.0) * delta)) * -2.0;
-                vt += tex2D(tex, (uv + float2( 1.0,  1.0) * delta)) * -1.0;
+                vt += SampleDepth(uv + float2(-1.0, -1.0) * delta) *  1.0;
+                vt += SampleDepth(uv + float2( 0.0, -1.0) * delta) *  2.0;
+                vt += SampleDepth(uv + float2( 1.0, -1.0) * delta) *  1.0;
+                vt += SampleDepth(uv + float2(-1.0,  1.0) * delta) * -1.0;
+                vt += SampleDepth(uv + float2( 0.0,  1.0) * delta) * -2.0;
+                vt += SampleDepth(uv + float2( 1.0,  1.0) * delta) * -1.0;
                 
-                return sqrt(hr * hr + vt * vt).x;
+                return sqrt(hr * hr + vt * vt);
             }
             
             Varyings vert(Attributes input)
             {
                 Varyings output = (Varyings)0;
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
 
                 VertexPositionInputs vertexInput = GetVertexPositionInputs(input.positionOS.xyz);
                 output.vertex = vertexInput.positionCS;
@@ -78,11 +92,13 @@
             
             half4 frag (Varyings input) : SV_Target 
             {
-                float s = pow(1 - saturate(sobel(_CameraDepthTexture, input.uv)), 50);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
+                
+                float s = pow(1 - saturate(sobel(input.uv)), 50);
 #ifdef RAW_OUTLINE
                 return half4(s.xxx, 1);
 #else
-                half4 col = tex2D(_MainTex, input.uv);
+                half4 col = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv);
 #ifdef POSTERIZE
                 col = pow(col, 0.4545);
                 float3 c = RgbToHsv(col);
