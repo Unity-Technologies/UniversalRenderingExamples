@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_RendererOverrideOption: 0
-  m_RendererData: {fileID: 11400000, guid: 4455b93ff11ad4f3d95bbd76b741f267, type: 2}
+  m_RendererData: {fileID: 11400000, guid: ffb04343e68de40f9a1e6c8ffc298d7b, type: 2}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
