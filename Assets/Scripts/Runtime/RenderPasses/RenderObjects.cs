@@ -22,7 +22,7 @@ namespace UnityEngine.Rendering.LWRP
             public int overrideMaterialPassIndex = 0;
 
             public bool overrideDepthState = false;
-            public CompareFunction depthCompareFunction = CompareFunction.Less;
+            public CompareFunction depthCompareFunction = CompareFunction.LessEqual;
             public bool enableWrite = true;
 
             public StencilStateData stencilSettings = new StencilStateData();
@@ -41,7 +41,7 @@ namespace UnityEngine.Rendering.LWRP
             public FilterSettings()
             {
                 RenderQueueType = RenderQueueType.Opaque;
-                LayerMask = -1;
+                LayerMask = 0;
             }
         }
 
