@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: FPSDemo
+  m_Name: OutlineDemo
   m_EditorClassIdentifier: 
   k_AssetVersion: 4
-  m_RendererType: 1
-  m_RendererData: {fileID: 11400000, guid: 618d298269e66c542b306de85db1faea, type: 2}
-  m_RequireDepthTexture: 0
+  m_RendererType: 0
+  m_RendererData: {fileID: 11400000, guid: 63827a5eafdfb664a8fc4594f4dd47e4, type: 2}
+  m_RequireDepthTexture: 1
   m_RequireOpaqueTexture: 1
-  m_OpaqueDownsampling: 0
-  m_SupportsHDR: 1
+  m_OpaqueDownsampling: 3
+  m_SupportsHDR: 0
   m_MSAA: 1
   m_RenderScale: 1
   m_MainLightRenderingMode: 1
@@ -28,7 +28,7 @@ MonoBehaviour:
   m_AdditionalLightsPerObjectLimit: 4
   m_AdditionalLightShadowsSupported: 0
   m_AdditionalLightsShadowmapResolution: 512
-  m_ShadowDistance: 40
+  m_ShadowDistance: 15
   m_ShadowCascades: 0
   m_Cascade2Split: 0.25
   m_Cascade4Split: {x: 0.067, y: 0.2, z: 0.467}
