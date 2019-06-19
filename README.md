@@ -51,8 +51,8 @@ Showcases a setup useful to create effects when an object moves behind another o
 - Uses the `Render Objects (Experimental)` feature that is provided with the LWRP Package
 - Shadergraph made Dither shader for the effect
 
-[MainImg]: https://gdurl.com/Zx6Y0
+[MainImg]: http://drive.google.com/uc?export=view&id=1hFiaaw4oN_dQOn9RgWE5ZWoWddh-DHjr
 
-[FPSMain]: https://gdurl.com/BI-M
-[OutlineMain]: https://gdurl.com/AkIk
-[OcclusionMain]: https://gdurl.com/az1f
+[FPSMain]: http://drive.google.com/uc?export=view&id=1_grNnDnCFZ8Y7EVJGgAda7fFr-PFVHfc
+[OutlineMain]: http://drive.google.com/uc?export=view&id=1Dn2WqgOp8gAcfbnd-qKj6k908N4XMfHg
+[OcclusionMain]: http://drive.google.com/uc?export=view&id=1EMQNnU40TQcCrd0Glrt4r0xOWqKiIwSF
