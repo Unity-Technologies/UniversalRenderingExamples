@@ -1,6 +1,6 @@
 # LWRP-CustomRendererExamples
 ###### This project contains a collection of Custom Renderer examples. This will be updated as we refine the feature and add more options.
-##### Current support : 2019.1.0f2 with LWRP 5.13.0
+##### Current support : 2019.3.0a10+ with UniversalRP 7.0.0
 ![CustomRendererExamples][MainImg]
 
 #### Usage of the project
