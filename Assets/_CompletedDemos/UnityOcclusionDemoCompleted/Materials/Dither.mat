@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_GeneratorAsset: {fileID: 0}
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -22,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dither
-  m_Shader: {fileID: -6465566751694194690, guid: 5830891a916ab4577b07d3402ce01b8d,
+  m_Shader: {fileID: -6465566751694194690, guid: 4cea2ffaa5917403d9c1f894733d7cea,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -86,7 +85,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_17F8DB71: {r: 0, g: 0.5448277, b: 1, a: 1}
+    - Color_17F8DB71: {r: 0, g: 0.5132181, b: 0.72, a: 1}
     - _BaseColor: {r: 0, g: 0.0802474, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

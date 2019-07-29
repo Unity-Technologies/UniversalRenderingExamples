@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.LWRP;
-using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.Universal;
 
 [ExecuteAlways]
 public class AutoLoadPipelineAsset : MonoBehaviour
 {
-    public LightweightRenderPipelineAsset pipelineAsset;
+    public UniversalRenderPipelineAsset pipelineAsset;
     
     private void OnEnable()
     {

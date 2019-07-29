@@ -1,4 +1,6 @@
-﻿namespace UnityEngine.Rendering.LWRP
+﻿using UnityEngine.Rendering.Universal;
+
+namespace UnityEngine.Experimental.Rendering.Universal
 {
     public class FullScreenQuad : ScriptableRendererFeature
     {
