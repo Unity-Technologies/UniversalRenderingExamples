@@ -16,7 +16,7 @@
 		Pass
 		{
             HLSLPROGRAM
-            #include "Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/SurfaceInput.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/SurfaceInput.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
             
             #pragma shader_feature RAW_OUTLINE
