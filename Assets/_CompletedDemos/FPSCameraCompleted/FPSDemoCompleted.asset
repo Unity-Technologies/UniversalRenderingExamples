@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
   m_Name: FPSDemoCompleted
   m_EditorClassIdentifier: 
-  k_AssetVersion: 4
+  k_AssetVersion: 5
+  k_AssetPreviousVersion: 5
   m_RendererType: 1
-  m_RendererData: {fileID: 11400000, guid: f4afacc0720ac412387b6dd5e432771b, type: 2}
+  m_RendererData: {fileID: 0}
+  m_RendererDataList:
+  - {fileID: 11400000, guid: 4f96b1ae408f66e41baedf4fa8a0b2be, type: 2}
+  - {fileID: 11400000, guid: ffb04343e68de40f9a1e6c8ffc298d7b, type: 2}
+  m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 1
   m_OpaqueDownsampling: 0
@@ -38,6 +43,9 @@ MonoBehaviour:
   m_UseSRPBatcher: 1
   m_SupportsDynamicBatching: 0
   m_MixedLightingSupported: 1
+  m_DebugLevel: 0
+  m_ColorGradingMode: 0
+  m_ColorGradingLutSize: 32
   m_ShadowType: 1
   m_LocalShadowsSupported: 0
   m_LocalShadowsAtlasResolution: 256
