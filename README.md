@@ -1,4 +1,4 @@
-# LWRP-CustomRendererExamples
+# Universal Rendering Examples
 ###### This project contains a collection of Custom Renderer examples. This will be updated as we refine the feature and add more options.
 ##### Current support : 2019.3.0a10+ with UniversalRP 7.0.0
 ![CustomRendererExamples][MainImg]
@@ -7,14 +7,14 @@
 - Clone the repo/Download the zip down to your computer
 - Load in Unity version 2019.1
 - Each scene contains a different example
-- Upon loading the scene the LWRP asset is switched automatically to the one for the specific example
+- Upon loading the scene the Universal Render Pipeline asset is switched automatically to the one for the specific example
 
 #### Project layout
 - `_CompletedDemos/XXX` This contains the demo data and scene files.
 - `External Assets` This folder contains shared assets such as meshes and textures.
 - `Scripts` Folder that contains some custom renderer features and utility scripts
 
-## [Click here for more details about the individual examples](https://github.com/Unity-Technologies/LWRP-CustomRendererExamples/wiki)
+## [Click here for more details about the individual examples](https://github.com/Unity-Technologies/UniversalRenderingExamples/wiki)
 
 # Examples
 There are three examples currently in this project, they are:
@@ -24,7 +24,7 @@ This demo showcases a setup to render first person perspective objects with a FO
 ![FOV][FPSMain]
 
 - Can be found at `_CompletedDemos/FPSCameraCompleted/FPSCameraDemo.unity`
-- Uses the `Render Objects (Experimental)` feature that is provided with the LWRP Package
+- Uses the `Render Objects (Experimental)` feature that is provided with the Universal Render Pipeline Package
 - Different FOV for GameObjects with the Layer set to `First Person Objects`
 - Depth settings to avoid rendering inside close objects like walls
 - Stencil settings to properly handle transparencies
@@ -38,7 +38,7 @@ Showcases a setup to create an effect of Toon styled outlines, there are two app
 - Can be found at `_CompletedDemos/ToonOutlinePostprocessCompleted/ToonOutlinePost.unity`
 - Uses the `Blit` custom feature(`Blit.cs` and `BlitPass.cs`) that is provided with this project for the `OutlinePostEffect` custom renderer
 - Custom Sobel Filter shader with Posterize option
-- Uses the `Render Objects (Experimental)` feature that is provided with the LWRP Package for the `OutlineHullEffect` custom renderer
+- Uses the `Render Objects (Experimental)` feature that is provided with the Universal Render Pipeline Package for the `OutlineHullEffect` custom renderer
 - Custom Toon Outline shader based of Unity Basic Toon shader
 
 ---
@@ -48,7 +48,7 @@ Showcases a setup useful to create effects when an object moves behind another o
 ![FOV][OcclusionMain]
 
 - Can be found at `_CompletedDemos/UnityOcclusionDemoCompleted/UnityOcclusionDemo.unity`
-- Uses the `Render Objects (Experimental)` feature that is provided with the LWRP Package
+- Uses the `Render Objects (Experimental)` feature that is provided with the Universal Render Pipeline Package
 - Shadergraph made Dither shader for the effect
 
 [MainImg]: http://drive.google.com/uc?export=view&id=1hFiaaw4oN_dQOn9RgWE5ZWoWddh-DHjr
