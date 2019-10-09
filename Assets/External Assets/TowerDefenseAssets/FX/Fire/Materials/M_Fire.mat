@@ -74,7 +74,7 @@ Material:
     m_Floats:
     - _Amplitude: 1
     - _AnimSpeed: 1
-    - _Blend: 1
+    - _Blend: 0.909
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
