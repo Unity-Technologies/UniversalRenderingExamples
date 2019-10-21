@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Rendering.LWRP;
+using UnityEngine.Rendering.Universal;
 
 [ExecuteAlways]
 public class AppSettings : MonoBehaviour
@@ -37,6 +37,6 @@ public class AppSettings : MonoBehaviour
         }
         var renderScale = Mathf.Clamp(res / Camera.main.pixelHeight, 0.1f, 1.0f);
         
-        LightweightRenderPipeline.asset.renderScale = renderScale;
+        UniversalRenderPipeline.asset.renderScale = renderScale;
     }
 }
