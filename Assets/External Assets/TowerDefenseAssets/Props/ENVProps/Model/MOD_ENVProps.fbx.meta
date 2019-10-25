@@ -1,134 +1,386 @@
 fileFormatVersion: 2
 guid: e2bf2f7c5c305ab458de633377353e9e
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: MOD_Bush1
-    100002: MOD_Bush2
-    100004: MOD_Bush3
-    100006: MOD_Bush4
-    100008: //RootNode
-    100010: MOD_ENVProps1
-    100012: MOD_ENVProps2
-    100014: MOD_ENVTrees
-    100016: MOD_Fencing1
-    100018: MOD_Fencing2
-    100020: MOD_Fencing3
-    100022: MOD_Flag
-    100024: MOD_Props1
-    100026: MOD_Props2
-    100028: MOD_Props3
-    100030: MOD_Rock1
-    100032: MOD_Rock2
-    100034: MOD_Rock3
-    100036: MOD_Trees1
-    100038: MOD_Trees2
-    100040: MOD_Trees3
-    100042: MOD_Fencing4
-    100044: MOD_Fencing5
-    100046: MOD_Fencing6
-    100048: MOD_Fencing7
-    100050: MOD_Fencing8
-    100052: MOD_Fencing9
-    400000: MOD_Bush1
-    400002: MOD_Bush2
-    400004: MOD_Bush3
-    400006: MOD_Bush4
-    400008: //RootNode
-    400010: MOD_ENVProps1
-    400012: MOD_ENVProps2
-    400014: MOD_ENVTrees
-    400016: MOD_Fencing1
-    400018: MOD_Fencing2
-    400020: MOD_Fencing3
-    400022: MOD_Flag
-    400024: MOD_Props1
-    400026: MOD_Props2
-    400028: MOD_Props3
-    400030: MOD_Rock1
-    400032: MOD_Rock2
-    400034: MOD_Rock3
-    400036: MOD_Trees1
-    400038: MOD_Trees2
-    400040: MOD_Trees3
-    400042: MOD_Fencing4
-    400044: MOD_Fencing5
-    400046: MOD_Fencing6
-    400048: MOD_Fencing7
-    400050: MOD_Fencing8
-    400052: MOD_Fencing9
-    2100000: MAT_ENVTrees
-    2100002: MAT_ENVProps2
-    2100004: MAT_ENVProps1
-    2300000: MOD_Bush1
-    2300002: MOD_Bush2
-    2300004: MOD_Bush3
-    2300006: MOD_Bush4
-    2300008: MOD_Fencing1
-    2300010: MOD_Fencing2
-    2300012: MOD_Fencing3
-    2300014: MOD_Flag
-    2300016: MOD_Props1
-    2300018: MOD_Props2
-    2300020: MOD_Props3
-    2300022: MOD_Rock1
-    2300024: MOD_Rock2
-    2300026: MOD_Rock3
-    2300028: MOD_Trees1
-    2300030: MOD_Trees2
-    2300032: MOD_Trees3
-    2300034: MOD_Fencing4
-    2300036: MOD_Fencing5
-    2300038: MOD_Fencing6
-    2300040: MOD_Fencing7
-    2300042: MOD_Fencing8
-    2300044: MOD_Fencing9
-    3300000: MOD_Bush1
-    3300002: MOD_Bush2
-    3300004: MOD_Bush3
-    3300006: MOD_Bush4
-    3300008: MOD_Fencing1
-    3300010: MOD_Fencing2
-    3300012: MOD_Fencing3
-    3300014: MOD_Flag
-    3300016: MOD_Props1
-    3300018: MOD_Props2
-    3300020: MOD_Props3
-    3300022: MOD_Rock1
-    3300024: MOD_Rock2
-    3300026: MOD_Rock3
-    3300028: MOD_Trees1
-    3300030: MOD_Trees2
-    3300032: MOD_Trees3
-    3300034: MOD_Fencing4
-    3300036: MOD_Fencing5
-    3300038: MOD_Fencing6
-    3300040: MOD_Fencing7
-    3300042: MOD_Fencing8
-    3300044: MOD_Fencing9
-    4300000: MOD_Trees3
-    4300002: MOD_Trees2
-    4300004: MOD_Trees1
-    4300006: MOD_Bush1
-    4300008: MOD_Bush4
-    4300010: MOD_Bush3
-    4300012: MOD_Bush2
-    4300014: MOD_Props1
-    4300016: MOD_Fencing3
-    4300018: MOD_Fencing2
-    4300020: MOD_Fencing1
-    4300022: MOD_Props2
-    4300024: MOD_Props3
-    4300026: MOD_Flag
-    4300028: MOD_Rock3
-    4300030: MOD_Rock2
-    4300032: MOD_Rock1
-    4300034: MOD_Fencing4
-    4300036: MOD_Fencing5
-    4300038: MOD_Fencing6
-    4300040: MOD_Fencing9
-    4300042: MOD_Fencing8
-    4300044: MOD_Fencing7
+  serializedVersion: 28
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: MOD_Bush1
+  - first:
+      1: 100002
+    second: MOD_Bush2
+  - first:
+      1: 100004
+    second: MOD_Bush3
+  - first:
+      1: 100006
+    second: MOD_Bush4
+  - first:
+      1: 100008
+    second: //RootNode
+  - first:
+      1: 100010
+    second: MOD_ENVProps1
+  - first:
+      1: 100012
+    second: MOD_ENVProps2
+  - first:
+      1: 100014
+    second: MOD_ENVTrees
+  - first:
+      1: 100016
+    second: MOD_Fencing1
+  - first:
+      1: 100018
+    second: MOD_Fencing2
+  - first:
+      1: 100020
+    second: MOD_Fencing3
+  - first:
+      1: 100022
+    second: MOD_Flag
+  - first:
+      1: 100024
+    second: MOD_Props1
+  - first:
+      1: 100026
+    second: MOD_Props2
+  - first:
+      1: 100028
+    second: MOD_Props3
+  - first:
+      1: 100030
+    second: MOD_Rock1
+  - first:
+      1: 100032
+    second: MOD_Rock2
+  - first:
+      1: 100034
+    second: MOD_Rock3
+  - first:
+      1: 100036
+    second: MOD_Trees1
+  - first:
+      1: 100038
+    second: MOD_Trees2
+  - first:
+      1: 100040
+    second: MOD_Trees3
+  - first:
+      1: 100042
+    second: MOD_Fencing4
+  - first:
+      1: 100044
+    second: MOD_Fencing5
+  - first:
+      1: 100046
+    second: MOD_Fencing6
+  - first:
+      1: 100048
+    second: MOD_Fencing7
+  - first:
+      1: 100050
+    second: MOD_Fencing8
+  - first:
+      1: 100052
+    second: MOD_Fencing9
+  - first:
+      4: 400000
+    second: MOD_Bush1
+  - first:
+      4: 400002
+    second: MOD_Bush2
+  - first:
+      4: 400004
+    second: MOD_Bush3
+  - first:
+      4: 400006
+    second: MOD_Bush4
+  - first:
+      4: 400008
+    second: //RootNode
+  - first:
+      4: 400010
+    second: MOD_ENVProps1
+  - first:
+      4: 400012
+    second: MOD_ENVProps2
+  - first:
+      4: 400014
+    second: MOD_ENVTrees
+  - first:
+      4: 400016
+    second: MOD_Fencing1
+  - first:
+      4: 400018
+    second: MOD_Fencing2
+  - first:
+      4: 400020
+    second: MOD_Fencing3
+  - first:
+      4: 400022
+    second: MOD_Flag
+  - first:
+      4: 400024
+    second: MOD_Props1
+  - first:
+      4: 400026
+    second: MOD_Props2
+  - first:
+      4: 400028
+    second: MOD_Props3
+  - first:
+      4: 400030
+    second: MOD_Rock1
+  - first:
+      4: 400032
+    second: MOD_Rock2
+  - first:
+      4: 400034
+    second: MOD_Rock3
+  - first:
+      4: 400036
+    second: MOD_Trees1
+  - first:
+      4: 400038
+    second: MOD_Trees2
+  - first:
+      4: 400040
+    second: MOD_Trees3
+  - first:
+      4: 400042
+    second: MOD_Fencing4
+  - first:
+      4: 400044
+    second: MOD_Fencing5
+  - first:
+      4: 400046
+    second: MOD_Fencing6
+  - first:
+      4: 400048
+    second: MOD_Fencing7
+  - first:
+      4: 400050
+    second: MOD_Fencing8
+  - first:
+      4: 400052
+    second: MOD_Fencing9
+  - first:
+      21: 2100000
+    second: MAT_ENVTrees
+  - first:
+      21: 2100002
+    second: MAT_ENVProps2
+  - first:
+      21: 2100004
+    second: MAT_ENVProps1
+  - first:
+      23: 2300000
+    second: MOD_Bush1
+  - first:
+      23: 2300002
+    second: MOD_Bush2
+  - first:
+      23: 2300004
+    second: MOD_Bush3
+  - first:
+      23: 2300006
+    second: MOD_Bush4
+  - first:
+      23: 2300008
+    second: MOD_Fencing1
+  - first:
+      23: 2300010
+    second: MOD_Fencing2
+  - first:
+      23: 2300012
+    second: MOD_Fencing3
+  - first:
+      23: 2300014
+    second: MOD_Flag
+  - first:
+      23: 2300016
+    second: MOD_Props1
+  - first:
+      23: 2300018
+    second: MOD_Props2
+  - first:
+      23: 2300020
+    second: MOD_Props3
+  - first:
+      23: 2300022
+    second: MOD_Rock1
+  - first:
+      23: 2300024
+    second: MOD_Rock2
+  - first:
+      23: 2300026
+    second: MOD_Rock3
+  - first:
+      23: 2300028
+    second: MOD_Trees1
+  - first:
+      23: 2300030
+    second: MOD_Trees2
+  - first:
+      23: 2300032
+    second: MOD_Trees3
+  - first:
+      23: 2300034
+    second: MOD_Fencing4
+  - first:
+      23: 2300036
+    second: MOD_Fencing5
+  - first:
+      23: 2300038
+    second: MOD_Fencing6
+  - first:
+      23: 2300040
+    second: MOD_Fencing7
+  - first:
+      23: 2300042
+    second: MOD_Fencing8
+  - first:
+      23: 2300044
+    second: MOD_Fencing9
+  - first:
+      33: 3300000
+    second: MOD_Bush1
+  - first:
+      33: 3300002
+    second: MOD_Bush2
+  - first:
+      33: 3300004
+    second: MOD_Bush3
+  - first:
+      33: 3300006
+    second: MOD_Bush4
+  - first:
+      33: 3300008
+    second: MOD_Fencing1
+  - first:
+      33: 3300010
+    second: MOD_Fencing2
+  - first:
+      33: 3300012
+    second: MOD_Fencing3
+  - first:
+      33: 3300014
+    second: MOD_Flag
+  - first:
+      33: 3300016
+    second: MOD_Props1
+  - first:
+      33: 3300018
+    second: MOD_Props2
+  - first:
+      33: 3300020
+    second: MOD_Props3
+  - first:
+      33: 3300022
+    second: MOD_Rock1
+  - first:
+      33: 3300024
+    second: MOD_Rock2
+  - first:
+      33: 3300026
+    second: MOD_Rock3
+  - first:
+      33: 3300028
+    second: MOD_Trees1
+  - first:
+      33: 3300030
+    second: MOD_Trees2
+  - first:
+      33: 3300032
+    second: MOD_Trees3
+  - first:
+      33: 3300034
+    second: MOD_Fencing4
+  - first:
+      33: 3300036
+    second: MOD_Fencing5
+  - first:
+      33: 3300038
+    second: MOD_Fencing6
+  - first:
+      33: 3300040
+    second: MOD_Fencing7
+  - first:
+      33: 3300042
+    second: MOD_Fencing8
+  - first:
+      33: 3300044
+    second: MOD_Fencing9
+  - first:
+      43: 4300000
+    second: MOD_Trees3
+  - first:
+      43: 4300002
+    second: MOD_Trees2
+  - first:
+      43: 4300004
+    second: MOD_Trees1
+  - first:
+      43: 4300006
+    second: MOD_Bush1
+  - first:
+      43: 4300008
+    second: MOD_Bush4
+  - first:
+      43: 4300010
+    second: MOD_Bush3
+  - first:
+      43: 4300012
+    second: MOD_Bush2
+  - first:
+      43: 4300014
+    second: MOD_Props1
+  - first:
+      43: 4300016
+    second: MOD_Fencing3
+  - first:
+      43: 4300018
+    second: MOD_Fencing2
+  - first:
+      43: 4300020
+    second: MOD_Fencing1
+  - first:
+      43: 4300022
+    second: MOD_Props2
+  - first:
+      43: 4300024
+    second: MOD_Props3
+  - first:
+      43: 4300026
+    second: MOD_Flag
+  - first:
+      43: 4300028
+    second: MOD_Rock3
+  - first:
+      43: 4300030
+    second: MOD_Rock2
+  - first:
+      43: 4300032
+    second: MOD_Rock1
+  - first:
+      43: 4300034
+    second: MOD_Fencing4
+  - first:
+      43: 4300036
+    second: MOD_Fencing5
+  - first:
+      43: 4300038
+    second: MOD_Fencing6
+  - first:
+      43: 4300040
+    second: MOD_Fencing9
+  - first:
+      43: 4300042
+    second: MOD_Fencing8
+  - first:
+      43: 4300044
+    second: MOD_Fencing7
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -146,7 +398,7 @@ ModelImporter:
       name: MAT_ENVTrees
     second: {fileID: 2100000, guid: 9bfac0b6620d5ef478eb63e3e5c04cc5, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -179,6 +431,7 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -186,18 +439,19 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -206,10 +460,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -219,6 +473,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -226,6 +481,7 @@ ModelImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
