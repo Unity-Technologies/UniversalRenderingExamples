@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.analytics": "3.3.2",
     "com.unity.cinemachine": "2.3.4",
     "com.unity.ext.nunit": "1.0.0",
