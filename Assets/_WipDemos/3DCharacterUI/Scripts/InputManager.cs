@@ -1,19 +1,27 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
+    
     public Camera mainCamera;
+    public Camera interactionCamera;
     public NavMeshAgent agent;
     public Animator animator;
     
-    private bool firstTouchHappened = false;
-    private Vector3 touchStartPosition;
-    private float groundZ = 0;
+    private bool m_FirstTouchHappened = false;
+    private Vector3 m_TouchStartPosition;
+    private float m_GroundZ = 0;
 
-    
-    
+    private void OnEnable()
+    {
+        if (!Instance)
+            Instance = this;
+    }
+
     void Update()
     {
         #if UNITY_EDITOR
@@ -78,8 +86,29 @@ public class InputManager : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit))
         {
-            agent.SetDestination(hit.point);
-            //GameManager.Instance.ObjectClicked(hit.collider.gameObject, hit.point);
+            Interactable interaction;
+
+            if (hit.transform.gameObject.TryGetComponent(out interaction))
+            {
+                interaction.StartInteraction();
+                Interact();
+            }
+            else if(!agent.isStopped)
+            {
+                agent.SetDestination(hit.point);
+            }
         }
+    }
+
+    void Interact()
+    {
+        interactionCamera.enabled = true;
+        agent.isStopped = true;
+    }
+
+    public void ExitInteraction()
+    {
+        interactionCamera.enabled = false;
+        agent.isStopped = false;
     }
 }

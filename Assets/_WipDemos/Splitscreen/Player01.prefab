@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 6845567547487125824}
   - component: {fileID: 6845567547487125831}
   - component: {fileID: 5816246257661122525}
+  - component: {fileID: 5612616604195191632}
   m_Layer: 28
   m_Name: Player01Camera
   m_TagString: MainCamera
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845567547487125830}
-  m_LocalRotation: {x: -0.08642879, y: -0.6426285, z: -0.0866729, w: 0.7563376}
+  m_LocalRotation: {x: -0.08642878, y: -0.6426285, z: -0.0866729, w: 0.75633764}
   m_LocalPosition: {x: -118.3441, y: 58.90105, z: -223.38737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -188,8 +189,8 @@ Camera:
     width: 0.5
     height: 0.5
   near clip plane: 2
-  far clip plane: 600
-  field of view: 80
+  far clip plane: 5000
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -231,7 +232,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -245,13 +246,41 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+--- !u!114 &5612616604195191632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845567547487125830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_CameraOutput: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &6845567548182210346
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,9 +367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 3
   m_FollowOffset: {x: 0, y: 6, z: -12}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0.5
+  m_YDamping: 0.5
+  m_ZDamping: 0.5
   m_AngularDampingMode: 0
   m_PitchDamping: 2
   m_YawDamping: 2
@@ -370,7 +399,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845567548200758261}
-  m_LocalRotation: {x: -0.08642879, y: -0.6426285, z: -0.0866729, w: 0.7563376}
+  m_LocalRotation: {x: -0.08642878, y: -0.6426285, z: -0.0866729, w: 0.75633764}
   m_LocalPosition: {x: -118.3441, y: 58.90105, z: -223.38737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -399,10 +428,10 @@ MonoBehaviour:
   m_LookAt: {fileID: 6845567546473569932}
   m_Follow: {fileID: 6845567547142117307}
   m_Lens:
-    FieldOfView: 80
+    FieldOfView: 90
     OrthographicSize: 10
     NearClipPlane: 2
-    FarClipPlane: 600
+    FarClipPlane: 2500
     Dutch: 0
     LensShift: {x: 0, y: 0}
   m_Transitions:
@@ -411,8 +440,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 6845567548182210347}
 --- !u!1 &6845567548250117609
@@ -456,10 +483,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6845567547142117307}
     m_Modifications:
-    - target: {fileID: 100010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
-      propertyPath: m_Name
-      value: AircraftJet
-      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -504,10 +527,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_Name
+      value: AircraftJet
+      objectReference: {fileID: 0}
     - target: {fileID: 100086, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 19800004, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -516,13 +551,9 @@ PrefabInstance:
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 19800006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800006, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
+    - target: {fileID: 2300036, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: m_Enabled
@@ -543,10 +574,6 @@ PrefabInstance:
     - target: {fileID: 19800008, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300036, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
-      propertyPath: m_CastShadows
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400010, guid: 147d826ca4c5a834a9dfe5db390c47f4, type: 3}
