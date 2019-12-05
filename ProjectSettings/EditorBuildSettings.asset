@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_CompletedDemos/Shooter/FPSCameraCompletedStacked/FPSCameraDemoStacked.unity
+    guid: 5b782ad6059b8d041b9bcc1e51c05961
   m_configObjects: {}
