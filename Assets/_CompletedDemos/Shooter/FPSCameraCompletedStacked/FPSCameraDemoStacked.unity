@@ -871,7 +871,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 5
+  far clip plane: 50
   field of view: 40
   orthographic: 0
   orthographic size: 5
@@ -1784,6 +1784,11 @@ PrefabInstance:
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 820704496}
+    - target: {fileID: 4292833512985246036, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      propertyPath: m_Antialiasing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4862496445836924010, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 3}
       propertyPath: m_IsActive
@@ -2079,6 +2084,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Name
       value: FPSControllerP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Layer
@@ -3131,7 +3140,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505559707}
-  m_LocalRotation: {x: 0.008488009, y: 0.7781765, z: -0.0226334, w: -0.62758046}
+  m_LocalRotation: {x: 0.008487994, y: 0.7781765, z: -0.02263337, w: -0.62758046}
   m_LocalPosition: {x: 7.95, y: 4.21, z: -17.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3373,7 +3382,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 5
+  far clip plane: 50
   field of view: 40
   orthographic: 0
   orthographic size: 5
