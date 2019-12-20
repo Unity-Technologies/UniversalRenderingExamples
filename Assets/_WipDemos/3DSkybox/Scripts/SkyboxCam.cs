@@ -6,7 +6,7 @@ public class SkyboxCam : MonoBehaviour
 {
     public Transform playerCam;
 
-    public float proportion;
+    public float proportionality;
 
     private Vector3 startPos;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class SkyboxCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos + playerCam.position * proportion;
+        transform.position = startPos + playerCam.position * proportionality;
         transform.rotation = playerCam.rotation;
     }
 }
