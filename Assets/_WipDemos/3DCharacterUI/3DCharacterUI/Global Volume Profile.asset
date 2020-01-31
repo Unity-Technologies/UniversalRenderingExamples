@@ -16,7 +16,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 2
   contrast:
     m_OverrideState: 0
     m_Value: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   threshold:
-    m_OverrideState: 0
-    m_Value: 0.9
+    m_OverrideState: 1
+    m_Value: 1
     min: 0
   intensity:
     m_OverrideState: 1
@@ -102,6 +102,24 @@ MonoBehaviour:
   - {fileID: 4522006872120691801}
   - {fileID: -2554391710144761997}
   - {fileID: 5912456756333780949}
+  - {fileID: 1802849537473289102}
+--- !u!114 &1802849537473289102
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &4522006872120691801
 MonoBehaviour:
   m_ObjectHideFlags: 3
