@@ -1,7 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+[RequireComponent(typeof(Camera)), ExecuteAlways]
 public class CameraMatch : MonoBehaviour
 {
     public Camera camera;
@@ -18,8 +18,10 @@ public class CameraMatch : MonoBehaviour
         TryGetComponent(out m_ThisCamData);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        throw new NotImplementedException();
+        if(!camera || !m_CamData || !m_ThisCamera || !m_ThisCamData) return;
+
+        m_ThisCamera.projectionMatrix = camera.projectionMatrix;
     }
 }

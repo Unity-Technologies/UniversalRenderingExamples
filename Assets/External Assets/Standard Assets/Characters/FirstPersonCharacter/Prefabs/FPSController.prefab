@@ -400,9 +400,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
-  m_RendererIndex: 1
+  m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -412,6 +411,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -486,16 +486,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400002}
     m_Modifications:
-    - target: {fileID: 1907542497101108687, guid: c7ff7b11ecd70b047bc439debf401185,
-        type: 3}
-      propertyPath: m_Name
-      value: Terraformer_1P_Rig
-      objectReference: {fileID: 0}
-    - target: {fileID: 1907542497101108687, guid: c7ff7b11ecd70b047bc439debf401185,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1907542497101108684, guid: c7ff7b11ecd70b047bc439debf401185,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,6 +540,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907542497101108687, guid: c7ff7b11ecd70b047bc439debf401185,
+        type: 3}
+      propertyPath: m_Name
+      value: Terraformer_1P_Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907542497101108687, guid: c7ff7b11ecd70b047bc439debf401185,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7761032947906048160, guid: c7ff7b11ecd70b047bc439debf401185,
         type: 3}
@@ -1216,6 +1216,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7761032947919650214, guid: c7ff7b11ecd70b047bc439debf401185,
+        type: 3}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539124220091448578, guid: c7ff7b11ecd70b047bc439debf401185,
+        type: 3}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8539124220094623744, guid: c7ff7b11ecd70b047bc439debf401185,
         type: 3}
       propertyPath: m_Layer
@@ -1355,16 +1365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539124220091448578, guid: c7ff7b11ecd70b047bc439debf401185,
-        type: 3}
-      propertyPath: m_ProbeAnchor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7761032947919650214, guid: c7ff7b11ecd70b047bc439debf401185,
-        type: 3}
-      propertyPath: m_ProbeAnchor
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7ff7b11ecd70b047bc439debf401185, type: 3}

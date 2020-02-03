@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 73ab7354927844f6b8fb1c16a6906702
 ModelImporter:
-  serializedVersion: 28
+  serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
@@ -17,6 +17,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Default
     second: {fileID: 2100000, guid: dc273d3d4698d4a498a314997ba39f78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Monitor
+    second: {fileID: 2100000, guid: f7439cc932ede4fb2b8d586cd98e42f3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -129,6 +134,7 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
