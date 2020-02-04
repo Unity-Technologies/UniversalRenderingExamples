@@ -19,6 +19,7 @@ MonoBehaviour:
   m_RendererDataList:
   - {fileID: 11400000, guid: fc942843eda4d43d19faec2fb18dc290, type: 2}
   - {fileID: 11400000, guid: 26961a25b1def4407a8dc9e34e5ecd8b, type: 2}
+  - {fileID: 11400000, guid: 380ff95863a574d1d825f0d78a2f9bc4, type: 2}
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
@@ -35,8 +36,8 @@ MonoBehaviour:
   m_AdditionalLightShadowsSupported: 0
   m_AdditionalLightsShadowmapResolution: 512
   m_ShadowDistance: 50
-  m_ShadowCascades: 0
-  m_Cascade2Split: 0.25
+  m_ShadowCascades: 1
+  m_Cascade2Split: 0.29186022
   m_Cascade4Split: {x: 0.067, y: 0.2, z: 0.467}
   m_ShadowDepthBias: 1
   m_ShadowNormalBias: 1

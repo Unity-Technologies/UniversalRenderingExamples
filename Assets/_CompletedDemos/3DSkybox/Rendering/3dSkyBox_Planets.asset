@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
-  m_Name: 3dSkyBox_Ship
+  m_Name: 3dSkyBox_Planets
   m_EditorClassIdentifier: 
   m_RendererFeatures: []
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -28,10 +28,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_DefaultStencilState:
-    overrideStencilState: 0
+    overrideStencilState: 1
     stencilReference: 0
     stencilCompareFunction: 3
     passOperation: 5
-    failOperation: 0
+    failOperation: 5
     zFailOperation: 0
   m_ShadowTransparentReceive: 1
