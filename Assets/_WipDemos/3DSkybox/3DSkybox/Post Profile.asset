@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3755330918003541006
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
 --- !u!114 &-2039377295367558087
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -52,15 +69,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.69
+    m_Value: 0.75
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.48
+    m_Value: 1
     min: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.8
     min: 0
     max: 1
   clamp:
@@ -99,6 +116,7 @@ MonoBehaviour:
   - {fileID: -654337767814035726}
   - {fileID: 6256736330504010063}
   - {fileID: -2039377295367558087}
+  - {fileID: -3755330918003541006}
 --- !u!114 &6256736330504010063
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -115,15 +133,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.28
+    m_Value: 1.5
   contrast:
     m_OverrideState: 1
     m_Value: -5.2
     min: -100
     max: 100
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.88461196, g: 0.94864637, b: 0.9716981, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
