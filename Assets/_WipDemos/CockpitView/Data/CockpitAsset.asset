@@ -43,7 +43,7 @@ MonoBehaviour:
   m_UseSRPBatcher: 1
   m_SupportsDynamicBatching: 0
   m_MixedLightingSupported: 1
-  m_DebugLevel: 1
+  m_DebugLevel: 0
   m_PostProcessingFeatureSet: 0
   m_ColorGradingMode: 1
   m_ColorGradingLutSize: 16
