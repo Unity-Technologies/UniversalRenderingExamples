@@ -170,14 +170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_Name
-      value: ArcherTowerBody (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -191,6 +183,14 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_Name
+      value: ArcherTowerBody (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -286,19 +286,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5445,14 +5445,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_Name
-      value: ArcherTowerBody (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -5466,6 +5458,14 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_Name
+      value: ArcherTowerBody (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5561,19 +5561,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5669,19 +5669,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5777,19 +5777,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -5930,19 +5930,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -6038,19 +6038,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11063,18 +11063,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_Name
-      value: MagicTowerBody (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -11100,6 +11088,18 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerBody (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -11287,8 +11287,9 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_RendererOverrideOption: 1
-  m_RendererData: {fileID: 0}
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -11298,6 +11299,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -11331,13 +11333,9 @@ MonoBehaviour:
   m_CameraCutEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11392,6 +11390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 1623442508, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11436,10 +11438,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 8952157885068599015, guid: 4d4319dde2f198845ac34608a1013ffc,
         type: 3}
       propertyPath: m_IsActive
@@ -11544,8 +11542,6 @@ MonoBehaviour:
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 369509472}
 --- !u!4 &1137471681
@@ -11592,6 +11588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage Blue (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 1623442508, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.79
@@ -11636,10 +11636,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 8952157885068599015, guid: 4d4319dde2f198845ac34608a1013ffc,
         type: 3}
       propertyPath: m_IsActive
@@ -11660,18 +11656,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_Name
-      value: MagicTowerBody (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -11697,6 +11681,18 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerBody (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21479,19 +21475,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21638,6 +21634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage Blue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 1623442508, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.17
@@ -21682,10 +21682,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 8952157885068599015, guid: 4d4319dde2f198845ac34608a1013ffc,
         type: 3}
       propertyPath: m_IsActive
@@ -21704,6 +21700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage Blue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 1623442508, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.91
@@ -21748,10 +21748,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1623442507, guid: 4d4319dde2f198845ac34608a1013ffc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9d1407693db784d42b88384b7f7f5029, type: 2}
     - target: {fileID: 8952157885068599015, guid: 4d4319dde2f198845ac34608a1013ffc,
         type: 3}
       propertyPath: m_IsActive
@@ -21772,14 +21768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_Name
-      value: ArcherTowerBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -21793,6 +21781,14 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
+      propertyPath: m_Name
+      value: ArcherTowerBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 573be51befacc0840ae26ab882e0583b, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -21914,19 +21910,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_Name
-      value: BarracksTowerBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
+      propertyPath: m_Name
+      value: BarracksTowerBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 646aef89ec669b6419b96d287b0260eb, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -22015,18 +22011,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 543020679}
     m_Modifications:
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_Name
-      value: MagicTowerBody
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -22052,6 +22036,18 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 5fc65d7b0a17d12428eb1eb4021dd145, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
