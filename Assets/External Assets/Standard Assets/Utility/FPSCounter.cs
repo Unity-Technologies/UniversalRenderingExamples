@@ -1,10 +1,9 @@
-using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UnityStandardAssets.Utility
 {
-    [RequireComponent(typeof (Text))]
     public class FPSCounter : MonoBehaviour
     {
         const float fpsMeasurePeriod = 0.5f;
@@ -12,18 +11,19 @@ namespace UnityStandardAssets.Utility
         private float m_FpsNextPeriod = 0;
         private int m_CurrentFps;
         const string display = "{0} FPS";
-        private Text m_Text;
+        public Component m_Text;
 
 
         private void Start()
         {
             m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
-            m_Text = GetComponent<Text>();
         }
 
 
         private void Update()
         {
+            if (!m_Text) return;
+
             // measure average frames per second
             m_FpsAccumulator++;
             if (Time.realtimeSinceStartup > m_FpsNextPeriod)
@@ -31,7 +31,16 @@ namespace UnityStandardAssets.Utility
                 m_CurrentFps = (int) (m_FpsAccumulator/fpsMeasurePeriod);
                 m_FpsAccumulator = 0;
                 m_FpsNextPeriod += fpsMeasurePeriod;
-                m_Text.text = string.Format(display, m_CurrentFps);
+                if (m_Text.GetType() == typeof(Text))
+                {
+                    var t = m_Text as Text;
+                    t.text = $"{m_CurrentFps} fps\n{(Time.deltaTime * 1000f):0.00} ms";
+                }
+                else if (m_Text.GetType() == typeof(TextMeshProUGUI))
+                {
+                    var t = m_Text as TextMeshProUGUI;
+                    t.text = $"{m_CurrentFps} fps\n{(Time.deltaTime * 1000f):0.00} ms";
+                }
             }
         }
     }
