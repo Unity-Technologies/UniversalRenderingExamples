@@ -1,11 +1,11 @@
 # Universal Rendering Examples
 ###### This project contains a collection of Custom Renderer examples. This will be updated as we refine the feature and add more options.
-##### Current support : 2019.3.0a10+ with UniversalRP 7.0.0
+##### Current support : 2019.3.0f6 or later with UniversalRP 7.2.0
 ![CustomRendererExamples][MainImg]
 
 #### Usage of the project
 - Clone the repo/Download the zip down to your computer
-- Load in Unity version 2019.1
+- Load in Unity version 2019.3.0f6 or later.
 - Each scene contains a different example
 - Upon loading the scene the Universal Render Pipeline asset is switched automatically to the one for the specific example
 
