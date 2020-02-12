@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEngine;
-using Unity.Mathematics;
+﻿using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Serialization;
-using UnityEngine.Rendering.LWRP;
 using UnityEngine.Experimental.Rendering;
 using Object = UnityEngine.Object;
 
@@ -36,11 +33,11 @@ using Object = UnityEngine.Object;
         [FormerlySerializedAs("camOffset")] public float m_planeOffset;
         
         private static Camera m_ReflectionCamera;
-        private int2 m_TextureSize = new int2(256, 128);
+        private Vector2Int m_TextureSize = new Vector2Int(256, 128);
         private RenderTexture m_ReflectionTexture = null;
         private int planarReflectionTextureID = Shader.PropertyToID("_PlanarReflectionTexture");
         
-        private int2 m_OldReflectionTextureSize;
+        private Vector2Int m_OldReflectionTextureSize;
 
         private void OnEnable()
         {
@@ -180,7 +177,7 @@ using Object = UnityEngine.Object;
         }
         
         // Compare two int2
-        private static bool Int2Compare(int2 a, int2 b)
+        private static bool Int2Compare(Vector2Int a, Vector2Int b)
         {
             if(a.x == b.x && a.y == b.y)
                 return true;
@@ -221,11 +218,11 @@ using Object = UnityEngine.Object;
             return reflectionCamera;
         }
 
-        private int2 ReflectionResolution(Camera cam, float scale)
+        private Vector2Int ReflectionResolution(Camera cam, float scale)
         {
             var x = (int)(cam.pixelWidth * scale * GetScaleValue());
             var y = (int)(cam.pixelHeight * scale * GetScaleValue());
-            return new int2(x, y);
+            return new Vector2Int(x, y);
         }
 
         public void ExecuteBeforeCameraRender(ScriptableRenderContext context, Camera camera)
