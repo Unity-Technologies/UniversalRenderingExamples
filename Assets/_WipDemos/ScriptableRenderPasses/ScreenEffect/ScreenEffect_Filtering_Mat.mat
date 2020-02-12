@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ScreenEffect_Filtering_Mat
+  m_Shader: {fileID: 4800000, guid: b5d6bee179536d547b21c6ca3f3ce821, type: 3}
+  m_ShaderKeywords: BOOLEAN_69F1731F_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ScreenTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_69F1731F: 1
+    - Vector1_5B1D1BD8: 0.01
+    - Vector1_70DE0724: 0.01
+    - Vector1_8975C694: 0.151
+    m_Colors:
+    - Color_28161C8B: {r: 1, g: 0, b: 0, a: 0}
+    - Color_30A7A299: {r: 0.7372549, g: 0.11120453, b: 0.02352941, a: 0}
