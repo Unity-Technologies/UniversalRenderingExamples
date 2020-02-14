@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     StartDistance: -5
-    EndDistance: 80
+    EndDistance: 60
     NearColor: {r: 0, g: 0.2, b: 0.35, a: 1}
     MiddleColor: {r: 0.62, g: 0.86, b: 1, a: 1}
     FarColor: {r: 0.85, g: 0.96, b: 1, a: 1}
