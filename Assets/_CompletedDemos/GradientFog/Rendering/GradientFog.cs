@@ -8,10 +8,10 @@ public class GradientFog : ScriptableRendererFeature
     public class GradientFogSettings
     {
         public float StartDistance = 0;
-        public float EndDistance = 30;
-        public Color NearColor = Color.black;
-        public Color MiddleColor = Color.grey;
-        public Color FarColor = Color.white;
+        public float EndDistance = 50;
+        public Color NearColor = new Color(0, 0.2f, 0.35f, 1);
+        public Color MiddleColor = new Color(0.62f, 0.86f, 1, 1);
+        public Color FarColor = new Color(0.85f, 0.96f, 1, 1);
     }
     
     

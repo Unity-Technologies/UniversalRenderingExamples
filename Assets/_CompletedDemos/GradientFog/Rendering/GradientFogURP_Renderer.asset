@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6976392439849458783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6d56d31696441abbd7be8b1c04c5b3, type: 3}
+  m_Name: Gradient Fog
+  m_EditorClassIdentifier: 
+  settings:
+    StartDistance: 0
+    EndDistance: 50
+    NearColor: {r: 0, g: 0.2, b: 0.35, a: 1}
+    MiddleColor: {r: 0.62, g: 0.86, b: 1, a: 1}
+    FarColor: {r: 0.85, g: 0.96, b: 1, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,14 +30,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
   m_Name: GradientFogURP_Renderer
   m_EditorClassIdentifier: 
-  m_RendererFeatures: []
-  postProcessData: {fileID: 0}
+  m_RendererFeatures:
+  - {fileID: -6976392439849458783}
+  postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
-    blitPS: {fileID: 0}
-    copyDepthPS: {fileID: 0}
-    screenSpaceShadowPS: {fileID: 0}
-    samplingPS: {fileID: 0}
-    fallbackErrorPS: {fileID: 0}
+    blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    copyDepthPS: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
+    screenSpaceShadowPS: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd,
+      type: 3}
+    samplingPS: {fileID: 4800000, guid: 04c410c9937594faa893a11dceb85f7e, type: 3}
+    fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
