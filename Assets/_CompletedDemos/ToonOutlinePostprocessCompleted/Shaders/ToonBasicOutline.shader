@@ -34,7 +34,7 @@ Shader "Toon/Basic Outline"
             {
                 float4 positionOS : POSITION;
                 float3 normalOS : NORMAL;
-				UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
         
             struct Varyings 
@@ -42,7 +42,7 @@ Shader "Toon/Basic Outline"
                 float4 positionCS : SV_POSITION;
                 half fogCoord : TEXCOORD0;
                 half4 color : COLOR;
-				UNITY_VERTEX_OUTPUT_STEREO
+                UNITY_VERTEX_OUTPUT_STEREO
             };
             
             Varyings vert(Attributes input) 
