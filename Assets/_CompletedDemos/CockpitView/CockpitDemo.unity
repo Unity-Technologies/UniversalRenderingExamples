@@ -372,7 +372,7 @@ MonoBehaviour:
   m_WalkSpeed: 3
   m_RunSpeed: 6
   m_RunstepLenghten: 0.5
-  m_JumpSpeed: 0
+  m_JumpSpeed: 5
   m_StickToGroundForce: 0
   m_GravityMultiplier: 1
   m_MouseLook:
@@ -457,9 +457,13 @@ MonoBehaviour:
     BobDuration: 0
     BobAmount: 0
   m_StepInterval: 1.5
-  m_FootstepSounds: []
-  m_JumpSound: {fileID: 0}
-  m_LandSound: {fileID: 0}
+  m_FootstepSounds:
+  - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  - {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+  m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
 --- !u!82 &359533734
 AudioSource:
   m_ObjectHideFlags: 0
