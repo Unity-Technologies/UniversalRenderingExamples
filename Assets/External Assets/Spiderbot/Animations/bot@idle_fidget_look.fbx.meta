@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: 77e1d0f44cd75ab4cad17c9329907980
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Body
+    100002: //RootNode
+    100004: Eye
+    100006: L_BackLeg_1
+    100008: L_BackLeg_2
+    100010: L_BackLeg_Toe
+    100012: L_FrontLeg_1
+    100014: L_FrontLeg_2
+    100016: L_FrontLeg_Toe
+    100018: L_MiddleLeg_1
+    100020: L_MiddleLeg_2
+    100022: L_MiddleLeg_Toe
+    100024: R_BackLeg_1
+    100026: R_BackLeg_2
+    100028: R_BackLeg_Toe
+    100030: R_FrontLeg_1
+    100032: R_FrontLeg_2
+    100034: R_FrontLeg_Toe
+    100036: R_MiddleLeg_1
+    100038: R_MiddleLeg_2
+    100040: R_MiddleLeg_Toe
+    100042: Root
+    400000: Body
+    400002: //RootNode
+    400004: Eye
+    400006: L_BackLeg_1
+    400008: L_BackLeg_2
+    400010: L_BackLeg_Toe
+    400012: L_FrontLeg_1
+    400014: L_FrontLeg_2
+    400016: L_FrontLeg_Toe
+    400018: L_MiddleLeg_1
+    400020: L_MiddleLeg_2
+    400022: L_MiddleLeg_Toe
+    400024: R_BackLeg_1
+    400026: R_BackLeg_2
+    400028: R_BackLeg_Toe
+    400030: R_FrontLeg_1
+    400032: R_FrontLeg_2
+    400034: R_FrontLeg_Toe
+    400036: R_MiddleLeg_1
+    400038: R_MiddleLeg_2
+    400040: R_MiddleLeg_Toe
+    400042: Root
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    pivotNodeName: 
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: Root
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 620216aa4858015458322c245690e761,
+    type: 3}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
