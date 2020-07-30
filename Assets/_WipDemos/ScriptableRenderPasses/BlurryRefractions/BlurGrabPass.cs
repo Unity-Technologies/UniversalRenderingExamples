@@ -53,7 +53,7 @@ public class BlurGrabPass : UnityEngine.Rendering.Universal.ScriptableRendererFe
 
 public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
 {
-    const string k_RenderGrabPassTag = "Blur Refraction Pass";
+    ProfilingSampler m_ProfilingSampler = new ProfilingSampler("Blur Refraction Pass");
 
     private Material m_BlurMaterial;
     
@@ -88,9 +88,8 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
 
     public override void Execute(ScriptableRenderContext context, ref UnityEngine.Rendering.Universal.RenderingData renderingData)
     {
-        CommandBuffer buf = CommandBufferPool.Get(k_RenderGrabPassTag);
-
-        using (new ProfilingSample(buf, k_RenderGrabPassTag))
+        CommandBuffer buf = CommandBufferPool.Get();
+        using (new ProfilingScope(buf, m_ProfilingSampler))
         {
             // copy screen into temporary RT
             int screenCopyID = Shader.PropertyToID("_ScreenCopyTexture");
@@ -123,8 +122,6 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
             // vertical blur
             buf.SetGlobalVector("offsets", new Vector4(0, m_BlurAmount.y * 2 / Screen.height, 0, 0));
             buf.Blit(blurredID2, blurredID, m_BlurMaterial);
-
-
 
             //Set Texture for Shader Graph
             buf.SetGlobalTexture("_GrabBlurTexture", blurredID);

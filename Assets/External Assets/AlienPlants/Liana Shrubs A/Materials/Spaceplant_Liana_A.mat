@@ -7,18 +7,17 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Grass_Alien_D
+  m_Name: Spaceplant_Liana_A
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP
-  m_LightmapFlags: 2
-  m_EnableInstancingVariants: 1
+  m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
+  m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
   - DistortionVectors
-  - TransparentBackfaceDebugDisplay
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
@@ -31,15 +30,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 06cca7ed9198d9e4f99f887c99c9f4f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: e70e9783c2572a140bc00870c64553d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: ef68f429930d17b4d98fc6e1a6b51d8b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 423cac027154e2341a06e357bbbb84a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
-        m_Texture: {fileID: 2800000, guid: aa0523c543363b64b8607db998d44ae8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMapOS:
@@ -47,7 +46,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 7552343426786ac4b99a7044580f5187, type: 3}
+        m_Texture: {fileID: 2800000, guid: afdbf42bfa7cb0648b35c6c51258df89, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ClearCoatMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
@@ -63,15 +66,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: ef68f429930d17b4d98fc6e1a6b51d8b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
-        m_Texture: {fileID: 2800000, guid: acb35fc946df1cb41b1754198ad08d1f, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: f13f39671a55bfe45a14d85a6405f200, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IridescenceMaskMap:
@@ -83,19 +86,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ef68f429930d17b4d98fc6e1a6b51d8b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 423cac027154e2341a06e357bbbb84a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: c189005936eac9d4fb2c1c80f5cb9916, type: 3}
+        m_Texture: {fileID: 2800000, guid: cf4ce21ec659f214ebe3e41827e11c1a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: c206d45ede0a25244a0af7515ed89f3c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 07f1101b1f97d7447b164e5c9b891578, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 9fd7f68c736f68c42a7f69b6033c3c0e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 10ef642987161634faf3bb342c9a3610, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -118,10 +121,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SubsurfaceRadiusMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _TangentMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -131,7 +130,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
-        m_Texture: {fileID: 2800000, guid: fdabca3a6c11f2b4ab64f4a12edda086, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6858289e823862044b1f28377a579ea3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TransmittanceColorMap:
@@ -151,9 +150,9 @@ Material:
     - _Anisotropy: 0
     - _Blend: 0
     - _BlendMode: 0
-    - _BumpScale: 1
-    - _CoatCoverage: 1
-    - _CoatIOR: 0.5
+    - _BumpScale: 0.1
+    - _ClearCoat: 0
+    - _ClearCoatMask: 0
     - _CoatMask: 0
     - _Cull: 2
     - _CullMode: 2
@@ -163,7 +162,7 @@ Material:
     - _DetailAlbedoScale: 1
     - _DetailNormalScale: 1
     - _DetailSmoothnessScale: 1
-    - _DiffusionProfile: 2
+    - _DiffusionProfile: 4
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
@@ -174,10 +173,9 @@ Material:
     - _DistortionBlurRemapMin: 0
     - _DistortionBlurScale: 1
     - _DistortionBlurSrcBlend: 1
-    - _DistortionDepthTest: 0
+    - _DistortionDepthTest: 1
     - _DistortionDstBlend: 1
     - _DistortionEnable: 0
-    - _DistortionOnly: 0
     - _DistortionScale: 1
     - _DistortionSrcBlend: 1
     - _DistortionVectorBias: -1
@@ -193,13 +191,12 @@ Material:
     - _EnableFpsMode: 0
     - _EnableGeometricSpecularAA: 0
     - _EnableMotionVectorForVertexAnimation: 0
-    - _EnablePerPixelDisplacement: 0
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 1
     - _EnergyConservingSpecularColor: 1
     - _EnvironmentReflections: 1
     - _FpsModeFov: 60
-    - _GlossMapScale: 0.749
+    - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HdrpVersion: 1
@@ -237,9 +234,9 @@ Material:
     - _RefractionSSRayModel: 0
     - _SSRefractionProjectionModel: 0
     - _ShiverDirectionality: 1
-    - _ShiverDrag: 0.04
-    - _Smoothness: 0.749
-    - _SmoothnessRemapMax: 0.6326312
+    - _ShiverDrag: 0.15
+    - _Smoothness: 1
+    - _SmoothnessRemapMax: 0.48667622
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularAAScreenSpaceVariance: 0.1
@@ -250,11 +247,10 @@ Material:
     - _StencilRefMV: 128
     - _StencilWriteMask: 7
     - _StencilWriteMaskMV: 128
-    - _Stiffness: 0.54
+    - _Stiffness: 0.5
     - _SubsurfaceMask: 1
-    - _SubsurfaceProfile: 2
-    - _SubsurfaceRadius: 1
     - _SupportDBuffer: 1
+    - _SupportDecals: 1
     - _Surface: 0
     - _SurfaceType: 0
     - _TexWorldScale: 1
@@ -273,24 +269,25 @@ Material:
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 3
     - _ZTestMode: 8
-    - _ZTestModeDistortion: 8
+    - _ZTestModeDistortion: 4
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 0.58962256, b: 0.9606902, a: 1}
+    - _Color: {r: 1, g: 0.5896226, b: 0.9606902, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _EmissionColor: {r: 0.40091825, g: 0.40091825, b: 0.40091825, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _ThicknessRemap: {r: 0.1000246, g: 1, b: 0, a: 0}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
---- !u!114 &5093635296827281098
+  m_BuildTextureStacks: []
+--- !u!114 &1802869022631111208
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,4 +299,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
+  version: 2
