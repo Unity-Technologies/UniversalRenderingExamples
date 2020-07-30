@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
+  m_CustomRenderQueue: 2000
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -115,6 +115,7 @@ Material:
     - _ReflectColor: {r: 0.49264705, g: 0.32996362, b: 0.22458911, a: 1}
     - _SpecColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
     - _SpecularColor: {r: 0.18382353, g: 0.18382353, b: 0.18382353, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &97842124883299666
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -127,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
+  version: 2
