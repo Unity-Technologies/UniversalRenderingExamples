@@ -15,7 +15,7 @@ void FindColor_float(float4 waterDeep, float4 waterShallow, float4 landLow, floa
     float4 waterColor = lerp(waterDeep, waterShallow, saturate(value/waterHeight));
     float4 landColor = lerp(landLow, landHigh, saturate((value-waterHeight)/(1-waterHeight)));
     float isWater = step(value, waterHeight);
-    color = waterColor * isWater+ landColor * (1-isWater);
+    color = saturate(waterColor * isWater + landColor * (1-isWater));
 }
 
 #endif
