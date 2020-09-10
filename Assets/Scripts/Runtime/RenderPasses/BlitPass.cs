@@ -84,7 +84,6 @@ namespace UnityEngine.Rendering.Universal
             settings.blitMaterialPassIndex = Mathf.Clamp(settings.blitMaterialPassIndex, -1, passIndex);
 
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
-            //cmd.SetGlobalTexture("_MainTex", source);
 
             // Can't read and write to same color target, create a temp render target to blit. 
             if (isSourceAndDestinationSameTarget)

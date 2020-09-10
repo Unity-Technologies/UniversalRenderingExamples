@@ -24,12 +24,10 @@ namespace UnityEngine.Rendering.Universal
 
         public BlitSettings settings = new BlitSettings();
         BlitPass blitPass;
-        //RenderTargetHandle m_RenderTextureHandle;
 
         public override void Create()
         {
             blitPass = new BlitPass(name);
-            //m_RenderTextureHandle.Init(settings.textureId);
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
