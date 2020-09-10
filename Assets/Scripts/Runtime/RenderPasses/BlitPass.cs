@@ -20,6 +20,7 @@ namespace UnityEngine.Rendering.Universal
 
         RenderTargetIdentifier source;
         RenderTargetIdentifier destination;
+        int temporaryRTId = Shader.PropertyToID("_TempRT");
 
         int sourceId;
         int destinationId;
@@ -59,7 +60,7 @@ namespace UnityEngine.Rendering.Universal
 
             if (isSourceAndDestinationSameTarget)
             {
-                destinationId = Shader.PropertyToID("_TempRT");
+                destinationId = temporaryRTId;
                 cmd.GetTemporaryRT(destinationId, blitTargetDescriptor, filterMode);
                 destination = new RenderTargetIdentifier(destinationId);
             }
@@ -89,7 +90,7 @@ namespace UnityEngine.Rendering.Universal
             if (isSourceAndDestinationSameTarget)
             {
                 Blit(cmd, source, destination, settings.blitMaterial, passIndex);
-                Blit(cmd, destination, source, settings.blitMaterial, passIndex);
+                Blit(cmd, destination, source);
             }
             else
             {
