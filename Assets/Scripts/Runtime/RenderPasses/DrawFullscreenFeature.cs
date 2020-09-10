@@ -1,4 +1,3 @@
-
 namespace UnityEngine.Rendering.Universal
 {
     public enum BufferType
@@ -7,10 +6,10 @@ namespace UnityEngine.Rendering.Universal
         Custom 
     }
 
-    public class Blit : ScriptableRendererFeature
+    public class DrawFullscreenFeature : ScriptableRendererFeature
     {
         [System.Serializable]
-        public class BlitSettings
+        public class Settings
         {
             public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
 
@@ -22,12 +21,12 @@ namespace UnityEngine.Rendering.Universal
             public string destinationTextureId = "_DestinationTexture";
         }
 
-        public BlitSettings settings = new BlitSettings();
-        BlitPass blitPass;
+        public Settings settings = new Settings();
+        DrawFullscreenPass blitPass;
 
         public override void Create()
         {
-            blitPass = new BlitPass(name);
+            blitPass = new DrawFullscreenPass(name);
         }
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)

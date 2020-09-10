@@ -7,10 +7,10 @@ namespace UnityEngine.Rendering.Universal
     /// so you can use it later in rendering. For example, you can copy
     /// the opaque texture to use it for distortion effects.
     /// </summary>
-    internal class BlitPass : ScriptableRenderPass
+    internal class DrawFullscreenPass : ScriptableRenderPass
     {
         public FilterMode filterMode { get; set; }
-        public Blit.BlitSettings settings;
+        public DrawFullscreenFeature.Settings settings;
 
         RenderTargetIdentifier source;
         RenderTargetIdentifier destination;
@@ -22,10 +22,7 @@ namespace UnityEngine.Rendering.Universal
 
         string m_ProfilerTag;
 
-        /// <summary>
-        /// Create the CopyColorPass
-        /// </summary>
-        public BlitPass(string tag)
+        public DrawFullscreenPass(string tag)
         {
             m_ProfilerTag = tag;
         }
