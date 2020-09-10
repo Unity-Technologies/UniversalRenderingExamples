@@ -9,12 +9,6 @@ namespace UnityEngine.Rendering.Universal
     /// </summary>
     internal class BlitPass : ScriptableRenderPass
     {
-        public enum RenderTarget
-        {
-            Color,
-            RenderTexture,
-        }
-
         public FilterMode filterMode { get; set; }
         public Blit.BlitSettings settings;
 
@@ -80,20 +74,17 @@ namespace UnityEngine.Rendering.Universal
         /// <inheritdoc/>
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
-            var passIndex = settings.blitMaterial != null ? settings.blitMaterial.passCount - 1 : 1;
-            settings.blitMaterialPassIndex = Mathf.Clamp(settings.blitMaterialPassIndex, -1, passIndex);
-
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
 
             // Can't read and write to same color target, create a temp render target to blit. 
             if (isSourceAndDestinationSameTarget)
             {
-                Blit(cmd, source, destination, settings.blitMaterial, passIndex);
+                Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
                 Blit(cmd, destination, source);
             }
             else
             {
-                Blit(cmd, source, destination, settings.blitMaterial, passIndex);
+                Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
             }
 
             context.ExecuteCommandBuffer(cmd);
