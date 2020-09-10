@@ -1,11 +1,7 @@
 namespace UnityEngine.Rendering.Universal
 {
     /// <summary>
-    /// Copy the given color buffer to the given destination color buffer.
-    ///
-    /// You can use this pass to copy a color buffer to the destination,
-    /// so you can use it later in rendering. For example, you can copy
-    /// the opaque texture to use it for distortion effects.
+    /// Draws full screen mesh using given material and pass and reading from source target.
     /// </summary>
     internal class DrawFullscreenPass : ScriptableRenderPass
     {
