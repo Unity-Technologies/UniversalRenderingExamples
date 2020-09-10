@@ -1,7 +1,4 @@
-using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
-
-namespace UnityEngine.Experiemntal.Rendering.Universal
+namespace UnityEngine.Rendering.Universal
 {
     /// <summary>
     /// Copy the given color buffer to the given destination color buffer.
@@ -18,59 +15,87 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
             RenderTexture,
         }
 
-        public Material blitMaterial = null;
-        public int blitShaderPassIndex = 0;
         public FilterMode filterMode { get; set; }
+        public Blit.BlitSettings settings;
 
-        private RenderTargetIdentifier source { get; set; }
-        private RenderTargetHandle destination { get; set; }
+        RenderTargetIdentifier source;
+        RenderTargetIdentifier destination;
 
-        RenderTargetHandle m_TemporaryColorTexture;
+        int sourceId;
+        int destinationId;
+        bool isSourceAndDestinationSameTarget;
+
         string m_ProfilerTag;
 
         /// <summary>
         /// Create the CopyColorPass
         /// </summary>
-        public BlitPass(RenderPassEvent renderPassEvent, Material blitMaterial, int blitShaderPassIndex, string tag)
+        public BlitPass(string tag)
         {
-            this.renderPassEvent = renderPassEvent;
-            this.blitMaterial = blitMaterial;
-            this.blitShaderPassIndex = blitShaderPassIndex;
             m_ProfilerTag = tag;
-            m_TemporaryColorTexture.Init("_TemporaryColorTexture");
         }
 
-        /// <summary>
-        /// Configure the pass with the source and destination to execute on.
-        /// </summary>
-        /// <param name="source">Source Render Target</param>
-        /// <param name="destination">Destination Render Target</param>
-        public void Setup(RenderTargetIdentifier source, RenderTargetHandle destination)
+        public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
         {
-            this.source = source;
-            this.destination = destination;
+            RenderTextureDescriptor blitTargetDescriptor = renderingData.cameraData.cameraTargetDescriptor;
+            blitTargetDescriptor.depthBufferBits = 0;
+
+            isSourceAndDestinationSameTarget = settings.sourceType == settings.destinationType &&
+                (settings.sourceType == BufferType.CameraColor || settings.sourceTextureId == settings.destinationTextureId);
+
+            var renderer = renderingData.cameraData.renderer;
+
+            if (settings.sourceType == BufferType.CameraColor)
+            {
+                sourceId = -1;
+                source = renderer.cameraColorTarget;
+            }
+            else
+            {
+                sourceId = Shader.PropertyToID(settings.sourceTextureId);
+                cmd.GetTemporaryRT(sourceId, blitTargetDescriptor, filterMode);
+                source = new RenderTargetIdentifier(sourceId);
+            }
+
+            if (isSourceAndDestinationSameTarget)
+            {
+                destinationId = Shader.PropertyToID("_TempRT");
+                cmd.GetTemporaryRT(destinationId, blitTargetDescriptor, filterMode);
+                destination = new RenderTargetIdentifier(destinationId);
+            }
+            else if (settings.destinationType == BufferType.CameraColor)
+            {
+                destinationId = -1;
+                destination = renderer.cameraColorTarget;
+            }
+            else
+            {
+                destinationId = Shader.PropertyToID(settings.destinationTextureId);
+                cmd.GetTemporaryRT(destinationId, blitTargetDescriptor, filterMode);
+                destination = new RenderTargetIdentifier(destinationId);
+            }
         }
 
         /// <inheritdoc/>
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
+            var passIndex = settings.blitMaterial != null ? settings.blitMaterial.passCount - 1 : 1;
+            settings.blitMaterialPassIndex = Mathf.Clamp(settings.blitMaterialPassIndex, -1, passIndex);
+
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
-            
-            RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
-            opaqueDesc.depthBufferBits = 0;
+            //cmd.SetGlobalTexture("_MainTex", source);
 
             // Can't read and write to same color target, create a temp render target to blit. 
-            if (destination == RenderTargetHandle.CameraTarget)
+            if (isSourceAndDestinationSameTarget)
             {
-                cmd.GetTemporaryRT(m_TemporaryColorTexture.id, opaqueDesc, filterMode);
-                Blit(cmd, source, m_TemporaryColorTexture.Identifier(), blitMaterial, blitShaderPassIndex);
-                Blit(cmd, m_TemporaryColorTexture.Identifier(), source);
+                Blit(cmd, source, destination, settings.blitMaterial, passIndex);
+                Blit(cmd, destination, source, settings.blitMaterial, passIndex);
             }
             else
             {
-                Blit(cmd, source, destination.Identifier(), blitMaterial, blitShaderPassIndex);
+                Blit(cmd, source, destination, settings.blitMaterial, passIndex);
             }
-            
+
             context.ExecuteCommandBuffer(cmd);
             CommandBufferPool.Release(cmd);
         }
@@ -78,8 +103,11 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
         /// <inheritdoc/>
         public override void FrameCleanup(CommandBuffer cmd)
         {
-            if (destination == RenderTargetHandle.CameraTarget)
-                cmd.ReleaseTemporaryRT(m_TemporaryColorTexture.id);
+            if (destinationId != -1)
+                cmd.ReleaseTemporaryRT(destinationId);
+
+            if (source == destination && sourceId != -1)
+                cmd.ReleaseTemporaryRT(sourceId);
         }
     }
 }
