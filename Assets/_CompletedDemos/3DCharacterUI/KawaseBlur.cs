@@ -36,12 +36,8 @@ public class KawaseBlur : ScriptableRendererFeature
 
         RenderTargetIdentifier tmpRT1;
         RenderTargetIdentifier tmpRT2;
-        
-        private RenderTargetIdentifier source { get; set; }
 
-        public void Setup(RenderTargetIdentifier source) {
-            this.source = source;
-        }
+        RenderTargetIdentifier cameraColorTexture;
 
         public CustomRenderPass(string profilerTag)
         {
@@ -67,6 +63,7 @@ public class KawaseBlur : ScriptableRendererFeature
 
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
+            cameraColorTexture = renderingData.cameraData.renderer.cameraColorTarget;
             CommandBuffer cmd = CommandBufferPool.Get(profilerTag);
 
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
@@ -75,7 +72,7 @@ public class KawaseBlur : ScriptableRendererFeature
             // first pass
             // cmd.GetTemporaryRT(tmpId1, opaqueDesc, FilterMode.Bilinear);
             cmd.SetGlobalFloat("_offset", 1.5f);
-            cmd.Blit(source, tmpRT1, blurMaterial);
+            cmd.Blit(cameraColorTexture, tmpRT1, blurMaterial);
 
             for (var i=1; i<passes-1; i++) {
                 cmd.SetGlobalFloat("_offset", 0.5f + i);
@@ -90,7 +87,7 @@ public class KawaseBlur : ScriptableRendererFeature
             // final pass
             cmd.SetGlobalFloat("_offset", 0.5f + passes - 1f);
             if (copyToFramebuffer) {
-                cmd.Blit(tmpRT1, source, blurMaterial);
+                cmd.Blit(tmpRT1, cameraColorTexture, blurMaterial);
             } else {
                 cmd.Blit(tmpRT1, tmpRT2, blurMaterial);
                 cmd.SetGlobalTexture(targetName, tmpRT2);
@@ -123,8 +120,6 @@ public class KawaseBlur : ScriptableRendererFeature
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        var src = renderer.cameraColorTarget;
-        scriptablePass.Setup(src);
         renderer.EnqueuePass(scriptablePass);
     }
 }
