@@ -6,6 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_CompletedDemos/Shooter/FPSCameraCompletedStacked/FPSCameraDemoStacked.unity
+    path: Assets/Loader.unity
+    guid: 46816b8c6b20f433eb72940804063a07
+  - enabled: 1
+    path: Assets/_CompletedDemos/FPS/FPSCameraStacking/FPSCameraDemoStacked.unity
     guid: 5b782ad6059b8d041b9bcc1e51c05961
+  - enabled: 1
+    path: Assets/_CompletedDemos/3DCharacterUI/3DCharacterUI.unity
+    guid: 44f55fa574c8148358a259fc12ec01ab
+  - enabled: 1
+    path: Assets/_CompletedDemos/3DSkybox/3DSkybox.unity
+    guid: 0823948fb845845fc95b6f111d90c639
+  - enabled: 1
+    path: Assets/_WipDemos/ScriptableRenderPasses/BlurryRefractions.unity
+    guid: 85ff7513f02ecdd41ba0ff01934db709
+  - enabled: 1
+    path: Assets/_CompletedDemos/CockpitView/CockpitDemo.unity
+    guid: 445d8ad832e62438081ddd3d0fb63765
+  - enabled: 1
+    path: Assets/_CompletedDemos/FPS/FPSRenderPass/FPSCameraDemo.unity
+    guid: 73be1f88b8c2b44f6b6d1165d76e3da2
+  - enabled: 1
+    path: Assets/_CompletedDemos/FPS/FPSCameraCompletedStackedWithTerrain/FPSCameraDemoStackedWithTerrain.unity
+    guid: 364fef6a29a47431ca144c48bd6ff12d
+  - enabled: 1
+    path: Assets/_WipDemos/ScriptableRenderPasses/PlanarReflections.unity
+    guid: 244af203eaa03f84d89c0680a86a4615
+  - enabled: 1
+    path: Assets/_WipDemos/Portals/PortalsDemo.unity
+    guid: 5877c01b6f013e5438d969314b34e315
+  - enabled: 1
+    path: Assets/_WipDemos/ScriptableRenderPasses/ScreenEffect.unity
+    guid: 4d3a01829f7693c438fb385547ce2a97
+  - enabled: 1
+    path: Assets/_WipDemos/Splitscreen/SplitscreenDemo.unity
+    guid: e84527ada365cac40be68f7dbee409e7
+  - enabled: 1
+    path: Assets/External Assets/Standard Assets/Effects/TessellationShaders/Scenes/TessellationSample.unity
+    guid: 31f6763de0920574092c8a69a66c717e
+  - enabled: 1
+    path: Assets/_CompletedDemos/ToonOutlinePostprocessCompleted/ToonOutlinePost.unity
+    guid: afafdc34128d44abd9ce847dd9fe5b37
+  - enabled: 1
+    path: Assets/_CompletedDemos/UnityOcclusionDemoCompleted/UnityOcclusionDemo.unity
+    guid: 81de0b9b05bab4036a0929fda41a5de1
   m_configObjects: {}
