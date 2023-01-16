@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ScreenEffect_Filtering_Mat
   m_Shader: {fileID: 4800000, guid: b5d6bee179536d547b21c6ca3f3ce821, type: 3}
-  m_ShaderKeywords: BOOLEAN_69F1731F_ON
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - BOOLEAN_69F1731F_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,6 +25,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Boolean_69F1731F: 1
     - Vector1_5B1D1BD8: 0.01
@@ -31,3 +34,17 @@ Material:
     m_Colors:
     - Color_28161C8B: {r: 1, g: 0, b: 0, a: 0}
     - Color_30A7A299: {r: 0.7372549, g: 0.11120453, b: 0.02352941, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &4088024554137510714
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

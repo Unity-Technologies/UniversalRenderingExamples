@@ -2,14 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Mage_Blue
   m_Shader: {fileID: 4800000, guid: 41bdcf874fd27b34ab48103a6fc3db56, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -95,6 +96,7 @@ Material:
         m_Texture: {fileID: 2800000, guid: 44de917a634f59e45af3595d39b8b2df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_C83CA6B1: 1
     - Vector1_E2E3DEB3: 1
@@ -102,3 +104,16 @@ Material:
     - Color_7A1F3D95: {r: 1, g: 0.2459554, b: 0, a: 0}
     - Color_B07BFB3F: {r: 1.342683, g: 0.29705372, b: 2.519016, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &6311633489588187429
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

@@ -93,7 +93,7 @@ TextureImporter:
       213: 21300058
     second: RobotBoyIdle29
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,6 +114,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -122,9 +123,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: 1
-    mipBias: -100
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -145,10 +146,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -208,6 +213,30 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -853,6 +882,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      RobotBoyIdle14: 21300028
+      RobotBoyIdle25: 21300050
+      RobotBoyIdle26: 21300052
+      RobotBoyIdle06: 21300012
+      RobotBoyIdle21: 21300042
+      RobotBoyIdle28: 21300056
+      RobotBoyIdle02: 21300004
+      RobotBoyIdle05: 21300010
+      RobotBoyIdle10: 21300020
+      RobotBoyIdle29: 21300058
+      RobotBoyIdle27: 21300054
+      RobotBoyIdle22: 21300044
+      RobotBoyIdle01: 21300002
+      RobotBoyIdle15: 21300030
+      RobotBoyIdle16: 21300032
+      RobotBoyIdle12: 21300024
+      RobotBoyIdle11: 21300022
+      RobotBoyIdle08: 21300016
+      RobotBoyIdle03: 21300006
+      RobotBoyIdle17: 21300034
+      RobotBoyIdle23: 21300046
+      RobotBoyIdle13: 21300026
+      RobotBoyIdle07: 21300014
+      RobotBoyIdle20: 21300040
+      RobotBoyIdle04: 21300008
+      RobotBoyIdle19: 21300038
+      RobotBoyIdle00: 21300000
+      RobotBoyIdle18: 21300036
+      RobotBoyIdle24: 21300048
+      RobotBoyIdle09: 21300018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
