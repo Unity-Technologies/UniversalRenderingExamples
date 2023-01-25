@@ -11,10 +11,10 @@ public class KawaseBlur : ScriptableRendererFeature
         public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
         public Material blurMaterial = null;
 
-        [Range(2,15)]
+        [Range(2, 15)]
         public int blurPasses = 1;
 
-        [Range(1,4)]
+        [Range(1, 4)]
         public int downsample = 1;
         public bool copyToFramebuffer;
         public string targetName = "_blurTexture";
@@ -28,7 +28,7 @@ public class KawaseBlur : ScriptableRendererFeature
         public int passes;
         public int downsample;
         public bool copyToFramebuffer;
-        public string targetName;        
+        public string targetName;
         string profilerTag;
 
         int tmpId1;
@@ -56,9 +56,9 @@ public class KawaseBlur : ScriptableRendererFeature
 
             tmpRT1 = new RenderTargetIdentifier(tmpId1);
             tmpRT2 = new RenderTargetIdentifier(tmpId2);
-            
-            ConfigureTarget(tmpRT1);
-            ConfigureTarget(tmpRT2);
+
+            // ConfigureTarget(tmpRT1);
+            // ConfigureTarget(tmpRT2);
         }
 
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
@@ -74,7 +74,8 @@ public class KawaseBlur : ScriptableRendererFeature
             cmd.SetGlobalFloat("_offset", 1.5f);
             cmd.Blit(cameraColorTexture, tmpRT1, blurMaterial);
 
-            for (var i=1; i<passes-1; i++) {
+            for (var i = 1; i < passes - 1; i++)
+            {
                 cmd.SetGlobalFloat("_offset", 0.5f + i);
                 cmd.Blit(tmpRT1, tmpRT2, blurMaterial);
 
@@ -86,9 +87,12 @@ public class KawaseBlur : ScriptableRendererFeature
 
             // final pass
             cmd.SetGlobalFloat("_offset", 0.5f + passes - 1f);
-            if (copyToFramebuffer) {
+            if (copyToFramebuffer)
+            {
                 cmd.Blit(tmpRT1, cameraColorTexture, blurMaterial);
-            } else {
+            }
+            else
+            {
                 cmd.Blit(tmpRT1, tmpRT2, blurMaterial);
                 cmd.SetGlobalTexture(targetName, tmpRT2);
             }

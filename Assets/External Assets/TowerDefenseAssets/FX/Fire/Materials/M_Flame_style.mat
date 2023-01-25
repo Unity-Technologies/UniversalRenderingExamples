@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Flame_style
   m_Shader: {fileID: 4800000, guid: d87e126f03b0f9d4199aa1af559e7d92, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,9 +19,14 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_94556732:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_C0594E55:
         m_Texture: {fileID: 2800000, guid: 26c5cc3a24a458a4885b1b3ad54052f9, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -28,13 +35,39 @@ Material:
         m_Texture: {fileID: 2800000, guid: 6b19bab4e8e236946942cec9fd20f0dd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_E60E6ECB:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - Vector1_381761BA: 23.3
+    - Vector1_4EF77C77: 1
     - Vector1_68E3F29A: 1
+    - Vector1_A466CCC4: 1
     - Vector1_A67EF5BD: 12.9
+    - Vector1_CE052BBA: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
+    - Color_1D5368D9: {r: 2.608238, g: 1.404251, b: 0, a: 0}
     - Color_FFCA4499: {r: 3.4822028, g: 1.1880457, b: 0, a: 0}
+    - Vector2_2715229A: {r: 0, g: -0.2, b: 0, a: 0}
+    - Vector2_67653E4C: {r: -0.1, g: -0.5, b: 0, a: 0}
+    - Vector2_84B30534: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_B5B390F1: {r: 0.2, g: 0.2, b: 0, a: 0}
     - Vector2_BDB5F60A: {r: 0, g: -0.2, b: 0, a: 0}
     - Vector2_D122C23C: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_D61580B9: {r: 0.2, g: 0.2, b: 0, a: 0}
@@ -52,4 +85,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 5
+  version: 7

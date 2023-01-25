@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Barrel_Glass_Mat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _METALLICSPECGLOSSMAP
@@ -25,6 +27,7 @@ Material:
   disabledShaderPasses:
   - SHADOWCASTER
   - DepthOnly
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -91,7 +94,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 1
+    - _AlphaToMask: 0
+    - _Blend: 0
+    - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _ClearCoat: 0
     - _ClearCoatMask: 0
@@ -101,6 +106,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.299
@@ -114,6 +120,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _SrcBlendAlpha: 1
     - _Surface: 1
     - _WorkflowMode: 1
     - _ZWrite: 0
@@ -135,4 +142,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 5
+  version: 7

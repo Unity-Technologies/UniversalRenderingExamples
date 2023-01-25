@@ -70,15 +70,15 @@ namespace UnityEngine.Rendering.Universal
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
 
             // Can't read and write to same color target, create a temp render target to blit. 
-            if (isSourceAndDestinationSameTarget)
-            {
-                Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
-                Blit(cmd, destination, source);
-            }
-            else
-            {
-                Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
-            }
+            // if (isSourceAndDestinationSameTarget)
+            // {
+            //     Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
+            //     Blit(cmd, destination, source);
+            // }
+            // else
+            // {
+            //     Blit(cmd, source, destination, settings.blitMaterial, settings.blitMaterialPassIndex);
+            // }
 
             context.ExecuteCommandBuffer(cmd);
             CommandBufferPool.Release(cmd);

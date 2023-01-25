@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: ScreenEffect_Filtering_Mat
   m_Shader: {fileID: 4800000, guid: b5d6bee179536d547b21c6ca3f3ce821, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - BOOLEAN_69F1731F_ON
@@ -18,10 +20,23 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _ScreenTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -31,6 +46,8 @@ Material:
     - Vector1_5B1D1BD8: 0.01
     - Vector1_70DE0724: 0.01
     - Vector1_8975C694: 0.151
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_28161C8B: {r: 1, g: 0, b: 0, a: 0}
     - Color_30A7A299: {r: 0.7372549, g: 0.11120453, b: 0.02352941, a: 0}
@@ -47,4 +64,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 5
+  version: 7
