@@ -1,0 +1,11 @@
+# Please add any additional branches that you will be running in this file, make sure not to forget to add corresponding project information in "projects.metafile"
+# yamatoTags[allowExternalUse]
+branches:
+  - name: trunk
+    safeName: trunk
+  - name: 2021.3/staging
+    safeName: 2021.3
+  - name: 2023.1/staging
+    safeName: 2023.1
+  - name: 2022.2/staging
+    safeName: 2022.2

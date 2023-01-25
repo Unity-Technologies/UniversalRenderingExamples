@@ -1,0 +1,63 @@
+{% metadata_file .yamato/meta/branches.metafile %}
+{% metadata_file .yamato/meta/targets.metafile %}
+---
+{%- for branch in branches -%}
+{{ branch.safeName }}_Run_All:
+  name: {{ branch.safeName }} Run All Jobs
+  variables:
+    UNITY_BRANCH: "{{ branch.name }}"
+  triggers:
+    external:
+    {%- if branch.name == "trunk" -%}
+      source: git@github.cds.internal.unity3d.com:unity/unity.git
+      expression: push.branch eq "{{ branch.name }}"
+      refs_on_this_repository:
+      - master
+    {%- elsif branch.name == "2022.2/staging" -%}
+      source: git@github.cds.internal.unity3d.com:unity/unity.git
+      expression: push.branch eq "{{ branch.name }}"
+      refs_on_this_repository:
+      - master
+    {%- elsif branch.name == "2021.3/staging" -%}
+      source: git@github.cds.internal.unity3d.com:unity/unity.git
+      expression: push.branch eq "{{ branch.name }}"
+      refs_on_this_repository:
+      - master
+    {%- elsif branch.name == "2023.1/staging" -%}
+      source: git@github.cds.internal.unity3d.com:unity/unity.git
+      expression: push.branch eq "{{ branch.name }}"
+      refs_on_this_repository:
+      - master
+    {%- endif -%}
+
+  dependencies:
+{%- for targetPlatform in targetPlatforms.android -%}
+{%- for model in targetPlatform.agent.models -%}   
+  - path: .yamato/android.yml#{{ branch.safeName }}_Run_Test_With_Android_Player_On_{{ targetPlatform.name | replace: ' ', '_' }}_{{ model }}
+    rerun: always
+{%- endfor -%} 
+{%- endfor -%} 
+{%- for targetPlatform in targetPlatforms.ios -%}
+{%- for model in targetPlatform.agent.models -%}
+  - path: .yamato/ios.yml#{{ branch.safeName }}_Run_Test_With_iOS_Player_On_{{ targetPlatform.name }}_{{ model }} 
+    rerun: always
+{%- endfor -%}
+{%- endfor -%}
+{%- for targetPlatform in targetPlatforms.gamecorexboxone -%}
+  - path: .yamato/xbox_one.yml#{{ branch.safeName }}_Run_Test_With_{{ targetPlatform.name | replace: ' ', '_' }}_Player
+    rerun: always
+{%- endfor -%}
+{%- for targetPlatform in targetPlatforms.gamecorescarlett -%}
+  - path: .yamato/xbox_series.yml#{{ branch.safeName }}_Run_Test_With_{{ targetPlatform.name | replace: ' ', '_' }}_Player
+    rerun: always
+{%- endfor -%}
+{%- for targetPlatform in targetPlatforms.ps5 -%}
+  - path: .yamato/ps5.yml#{{ branch.safeName }}_Run_Test_With_{{ targetPlatform.name | replace: ' ', '_' }}_Player
+    rerun: always
+{%- endfor -%}
+{%- for targetPlatform in targetPlatforms.ps4 -%}
+  - path: .yamato/ps4.yml#{{ branch.safeName }}_Run_Test_With_{{ targetPlatform.name | replace: ' ', '_' }}_Player
+    rerun: always
+{%- endfor -%}
+{%- endfor -%}
+

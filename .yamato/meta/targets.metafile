@@ -1,0 +1,44 @@
+targetPlatforms:
+ android:
+  - name: Samsung Galaxy
+    agent:
+     type: Unity::mobile::samsung
+     image: mobile/android-execution-base:stable
+     flavor: b1.large
+     models:
+      - s10e-eu
+      - s10e-us
+      - s21-eu
+      - s21-us
+ ios:
+  - name: iPhone
+    agent:
+     type: Unity::mobile::iPhone
+     image: mobile/ios-macos-11:stable
+     flavor: b1.medium
+     models:
+      - SE
+ gamecorexboxone:
+  - name: GameCoreXboxOne
+    agent:
+      type: Unity::console::xbox
+      image: gamecore/gamecore-ci:v3.0.16
+      flavor: b1.large
+ gamecorescarlett:
+  - name: GameCoreScarlett
+    agent:
+      type: Unity::console::scarlett
+      image: gamecore/gamecore-ci:v3.0.16
+      flavor: b1.large
+ ps5:
+  - name: ps5
+    agent:
+      type: Unity::console::ps5
+      image: playstation/ps5-buildandexecute:latest
+      flavor: b1.large
+ ps4:
+  - name: ps4
+    agent:
+      type: Unity::console::ps4
+      image: playstation/ps4-buildandexecute:v10.0.0-1246637
+      flavor: b1.large

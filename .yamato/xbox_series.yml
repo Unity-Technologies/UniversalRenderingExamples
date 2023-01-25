@@ -1,0 +1,28 @@
+{% metadata_file .yamato/meta/branches.metafile %}
+{% metadata_file .yamato/meta/targets.metafile %}
+---
+{%- for branch in branches -%}
+{%- for targetPlatform in targetPlatforms.gamecorescarlett -%}
+{{ branch.safeName }}_Run_Test_With_{{ targetPlatform.name | replace: ' ', '_' }}_Player:
+  name: "[{{ branch.safeName }}] Run test with {{ targetPlatform.name }} player"
+  variables:
+    UNITY_BRANCH: {{ branch.name }}
+  agent:
+      # Running tests is fast, building it not requried, therefore flavor can be smaller. see https://internaldocs.hq.unity3d.com/bokken/reference/flavors/
+      # Now we can use an 'expensive' type. 
+      type: {{ targetPlatform.agent.type }}
+      image: {{ targetPlatform.agent.image }}
+      flavor: {{ targetPlatform.agent.flavor }}
+  commands:
+    - gsudo NetSh Advfirewall set allprofiles state off
+    - '"%GameDK%/bin/xbconnect" /WS %BOKKEN_DEVICE_IP%'
+    - pip install performance-runner-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
+    - pip install unity-downloader-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
+    - unity-downloader-cli -u %UNITY_BRANCH% -p editor -c GameCoreScarlett -c editor --wait --fast
+    - performance-runner-cli --version=editor --project=. --test-id=urp-rendering-examples --platform=GameCoreScarlett --run-count=5
+  artifacts:
+    logs:
+        paths:
+          - "build/test-results/**"
+{%- endfor -%}
+{%- endfor -%}
