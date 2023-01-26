@@ -177,25 +177,6 @@
       },
       "url": "https://artifactory.prd.cds.internal.unity3d.com/artifactory/api/npm/upm-candidates"
     },
-    "com.unity.services.mediation": {
-      "version": "1.0.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.settings-manager": "1.0.3",
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.services.core": "1.4.0",
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://artifactory.prd.cds.internal.unity3d.com/artifactory/api/npm/upm-candidates"
-    },
-    "com.unity.settings-manager": {
-      "version": "1.0.3",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://artifactory.prd.cds.internal.unity3d.com/artifactory/api/npm/upm-candidates"
-    },
     "com.unity.shadergraph": {
       "version": "12.1.7",
       "depth": 1,

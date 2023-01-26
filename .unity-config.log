@@ -68,3 +68,53 @@
 2023-01-26 11:24:10.4162|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
 2023-01-26 11:24:10.4197|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
 2023-01-26 11:24:10.4574|INFO|System.Object|FAIL
+2023-01-26 11:49:52.5645|TRACE|System.Object|Invocation: project add dependency com.unity.test-framework.performance@2.4.0
+2023-01-26 11:49:52.7768|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 11:49:52.7806|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 11:49:52.9103|TRACE|UnityConfig.Api.Project.ProjectDependencyService|Adding 'com.unity.test-framework.performance' version '2.4.0' to manifest
+2023-01-26 11:49:52.9137|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Deserializing Project manifest for 
+2023-01-26 11:49:53.1060|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Saving Project manifest to 'Packages/manifest.json'
+2023-01-26 11:49:53.8208|TRACE|System.Object|Invocation: project set registry candidates
+2023-01-26 11:49:54.0301|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 11:49:54.0338|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 11:49:54.0721|INFO|System.Object|FAIL
+2023-01-26 11:53:06.9475|TRACE|System.Object|Invocation: project add dependency com.unity.test-framework.performance@2.4.0
+2023-01-26 11:53:07.1637|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 11:53:07.1677|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 11:53:07.2992|TRACE|UnityConfig.Api.Project.ProjectDependencyService|Adding 'com.unity.test-framework.performance' version '2.4.0' to manifest
+2023-01-26 11:53:07.3024|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Deserializing Project manifest for 
+2023-01-26 11:53:07.5022|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Saving Project manifest to 'Packages/manifest.json'
+2023-01-26 11:53:08.2717|TRACE|System.Object|Invocation: project set registry candidates
+2023-01-26 11:53:08.4935|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 11:53:08.4972|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 11:53:08.5366|INFO|System.Object|FAIL
+2023-01-26 12:06:17.7896|TRACE|System.Object|Invocation: project add dependency com.unity.test-framework.performance@2.4.0
+2023-01-26 12:06:18.0263|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:06:18.0307|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:06:18.1765|TRACE|UnityConfig.Api.Project.ProjectDependencyService|Adding 'com.unity.test-framework.performance' version '2.4.0' to manifest
+2023-01-26 12:06:18.1804|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Deserializing Project manifest for 
+2023-01-26 12:06:18.4066|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Saving Project manifest to 'Packages/manifest.json'
+2023-01-26 12:06:19.2486|TRACE|System.Object|Invocation: project set registry candidates
+2023-01-26 12:06:19.5101|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:06:19.5150|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:06:19.5730|INFO|System.Object|FAIL
+2023-01-26 12:07:42.8786|TRACE|System.Object|Invocation: project add dependency com.unity.test-framework.performance@2.4.0
+2023-01-26 12:07:43.1598|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:07:43.1639|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:07:43.3038|TRACE|UnityConfig.Api.Project.ProjectDependencyService|Adding 'com.unity.test-framework.performance' version '2.4.0' to manifest
+2023-01-26 12:07:43.3079|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Deserializing Project manifest for 
+2023-01-26 12:07:43.5504|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Saving Project manifest to 'Packages/manifest.json'
+2023-01-26 12:07:44.3960|TRACE|System.Object|Invocation: project set registry candidates
+2023-01-26 12:07:44.6681|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:07:44.6728|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:07:44.7212|INFO|System.Object|FAIL
+2023-01-26 12:10:05.2294|TRACE|System.Object|Invocation: project add dependency com.unity.test-framework.performance@2.4.0
+2023-01-26 12:10:05.4778|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:10:05.4819|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:10:05.6216|TRACE|UnityConfig.Api.Project.ProjectDependencyService|Adding 'com.unity.test-framework.performance' version '2.4.0' to manifest
+2023-01-26 12:10:05.6249|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Deserializing Project manifest for 
+2023-01-26 12:10:05.8351|TRACE|UnityConfig.Api.Repositories.ProjectManifestRepository|Saving Project manifest to 'Packages/manifest.json'
+2023-01-26 12:10:06.6085|TRACE|System.Object|Invocation: project set registry candidates
+2023-01-26 12:10:06.8394|TRACE|UnityConfig.Core.Settings.Settings|Reading settings data
+2023-01-26 12:10:06.8431|TRACE|UnityConfig.Core.Settings.Settings|Project path was empty in settings file. Returning default value ''
+2023-01-26 12:10:06.8828|INFO|System.Object|FAIL
