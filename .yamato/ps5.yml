@@ -19,7 +19,7 @@
     - pip install performance-runner-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
     - pip install unity-downloader-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
     - unity-downloader-cli -u %UNITY_BRANCH% -p editor -c ps5 -c editor --wait --fast
-    - performance-runner-cli --version=editor --project=. --test-id=urp-rendering-examples --platform=ps5 --run-count=5
+    - performance-runner-cli --version=editor --project=. --test-id=tech-partnerships-urp-rendering-examples --platform=ps5 --run-count=5
   artifacts:
     logs:
         paths:
