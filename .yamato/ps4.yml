@@ -17,9 +17,9 @@
   commands:
     - gsudo NetSh Advfirewall set allprofiles state off
     - orbis-ctrl add %BOKKEN_DEVICE_IP%
-    - git clone --filter=blob:none --sparse --no-checkout --depth 1 -v --branch trunk "https://github.cds.internal.unity3d.com/unity/unity.git"
+    - git clone --filter=blob:none --sparse --no-checkout --depth 1 -v --branch {{ branch.name }} "https://github.cds.internal.unity3d.com/unity/unity.git"
     - cd unity && git sparse-checkout init --cone && git sparse-checkout set Platforms && git checkout {{ branch.name }}
-    - gsudo xcopy unity\Platforms\PS5\Packages\com.unity.render-pipelines.ps4 .\Packages\com.unity.render-pipelines.PS4\ /O /X /E /H /K
+    - gsudo xcopy unity\Platforms\PS4\Packages\com.unity.render-pipelines.ps4 .\Packages\com.unity.render-pipelines.PS4\ /O /X /E /H /K
     - pip install performance-runner-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
     - pip install unity-downloader-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
     - unity-downloader-cli -u %UNITY_BRANCH% -p editor -c ps4 -c editor --wait --fast
