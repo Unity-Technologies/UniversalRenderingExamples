@@ -3,8 +3,6 @@
 branches:
   - name: trunk
     safeName: trunk
-  - name: 2021.3/staging
-    safeName: 2021.3
   - name: 2023.1/staging
     safeName: 2023.1
   - name: 2022.2/staging
