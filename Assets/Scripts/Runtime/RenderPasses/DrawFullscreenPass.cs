@@ -36,7 +36,7 @@ namespace UnityEngine.Rendering.Universal
             if (settings.sourceType == BufferType.CameraColor)
             {
                 sourceId = -1;
-                source = renderer.cameraColorTarget;
+                source = renderer.cameraColorTargetHandle;
             }
             else
             {
@@ -54,7 +54,7 @@ namespace UnityEngine.Rendering.Universal
             else if (settings.destinationType == BufferType.CameraColor)
             {
                 destinationId = -1;
-                destination = renderer.cameraColorTarget;
+                destination = renderer.cameraColorTargetHandle;
             }
             else
             {

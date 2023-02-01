@@ -63,7 +63,7 @@ public class KawaseBlur : ScriptableRendererFeature
 
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
-            cameraColorTexture = renderingData.cameraData.renderer.cameraColorTarget;
+            cameraColorTexture = renderingData.cameraData.renderer.cameraColorTargetHandle;
             CommandBuffer cmd = CommandBufferPool.Get(profilerTag);
 
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;

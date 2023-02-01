@@ -1,16 +1,17 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
-public class BlurGrabPass : UnityEngine.Rendering.Universal.ScriptableRendererFeature
+public class BlurGrabPass : ScriptableRendererFeature
 {
     [Serializable]
     public class Settings
     {
         public Vector2 m_BlurAmount;
     }
-    
+
     const string k_BasicBlitShader = "Hidden/BasicBlit";
     private Material m_BasicBlitMaterial;
 
@@ -26,37 +27,37 @@ public class BlurGrabPass : UnityEngine.Rendering.Universal.ScriptableRendererFe
     public override void Create()
     {
         m_grabPass = new GrabPassImpl(m_BlurMaterial, currentBlurAmount, m_BasicBlitMaterial);
-        m_grabPass.renderPassEvent = UnityEngine.Rendering.Universal.RenderPassEvent.AfterRenderingSkybox;
+        m_grabPass.renderPassEvent = RenderPassEvent.AfterRenderingSkybox;
         m_BasicBlitMaterial = CoreUtils.CreateEngineMaterial(Shader.Find(k_BasicBlitShader));
         m_BlurMaterial = CoreUtils.CreateEngineMaterial(Shader.Find(k_BlurShader));
         currentBlurAmount = settings.m_BlurAmount;
     }
 
-    public override void AddRenderPasses(UnityEngine.Rendering.Universal.ScriptableRenderer renderer, ref UnityEngine.Rendering.Universal.RenderingData renderingData)
+    public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
         renderer.EnqueuePass(m_grabPass);
     }
 
     void Update()
     {
-        if(m_grabPass != null)
+        if (m_grabPass != null)
         {
-            if(currentBlurAmount != settings.m_BlurAmount)
+            if (currentBlurAmount != settings.m_BlurAmount)
             {
                 currentBlurAmount = settings.m_BlurAmount;
                 m_grabPass.UpdateBlurAmount(currentBlurAmount);
             }
-        } 
+        }
     }
 }
 
 
-public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
+public class GrabPassImpl : ScriptableRenderPass
 {
     ProfilingSampler m_ProfilingSampler = new ProfilingSampler("Blur Refraction Pass");
 
     private Material m_BlurMaterial;
-    
+
     private Material m_BlitMaterial;
 
     private Vector2 m_BlurAmount;
@@ -64,12 +65,12 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
     ShaderTagId screenCopyID = new ShaderTagId("_ScreenCopyTexture");
     private RenderTextureDescriptor m_OpaqueDesc;
     private RenderTextureDescriptor m_BaseDescriptor;
-    private UnityEngine.Rendering.Universal.RenderTargetHandle m_ColorHandle;
+    private RTHandle m_ColorHandle;
 
     public GrabPassImpl(Material blurMaterial, Vector2 blurAmount, Material blitMaterial)
     {
         m_BlurMaterial = blurMaterial;
-        m_ColorHandle = UnityEngine.Rendering.Universal.RenderTargetHandle.CameraTarget;
+        // m_ColorHandle = RTHandle.CameraTarget;
         m_BlitMaterial = blitMaterial;
         m_BlurAmount = blurAmount;
     }
@@ -78,7 +79,7 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
     {
         cameraTextureDescriptor.msaaSamples = 1;
         m_OpaqueDesc = cameraTextureDescriptor;
-        cmd.GetTemporaryRT(m_ColorHandle.id, cameraTextureDescriptor, FilterMode.Bilinear);
+        // cmd.GetTemporaryRT(m_ColorHandle.id, cameraTextureDescriptor, FilterMode.Bilinear);
     }
 
     public void UpdateBlurAmount(Vector2 newBlurAmount)
@@ -86,7 +87,7 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
         m_BlurAmount = newBlurAmount;
     }
 
-    public override void Execute(ScriptableRenderContext context, ref UnityEngine.Rendering.Universal.RenderingData renderingData)
+    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
         CommandBuffer buf = CommandBufferPool.Get();
         using (new ProfilingScope(buf, m_ProfilingSampler))
@@ -94,7 +95,7 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
             // copy screen into temporary RT
             int screenCopyID = Shader.PropertyToID("_ScreenCopyTexture");
             buf.GetTemporaryRT(screenCopyID, m_OpaqueDesc, FilterMode.Bilinear);
-            buf.Blit(m_ColorHandle.Identifier(), screenCopyID);
+            // buf.Blit(m_ColorHandle.Identifier(), screenCopyID);
 
             m_OpaqueDesc.width /= 2;
             m_OpaqueDesc.height /= 2;
@@ -108,7 +109,7 @@ public class GrabPassImpl : UnityEngine.Rendering.Universal.ScriptableRenderPass
             // downsample screen copy into smaller RT, release screen RT
             buf.Blit(screenCopyID, blurredID);
             buf.ReleaseTemporaryRT(screenCopyID);
-            
+
             // horizontal blur
             buf.SetGlobalVector("offsets", new Vector4(m_BlurAmount.x / Screen.width, 0, 0, 0));
             buf.Blit(blurredID, blurredID2, m_BlurMaterial);
