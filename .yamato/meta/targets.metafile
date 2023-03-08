@@ -22,13 +22,13 @@ targetPlatforms:
   - name: GameCoreXboxOne
     agent:
       type: Unity::console::xbox
-      image: gamecore/gamecore-ci:v3.0.16
+      image: gamecore/gamecore-ci:v3.0.17
       flavor: b1.large
  gamecorescarlett:
   - name: GameCoreScarlett
     agent:
       type: Unity::console::scarlett
-      image: gamecore/gamecore-ci:v3.0.16
+      image: gamecore/gamecore-ci:v3.0.17
       flavor: b1.large
  ps5:
   - name: ps5
