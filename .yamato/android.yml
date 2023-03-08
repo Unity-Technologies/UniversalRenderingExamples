@@ -17,7 +17,7 @@
       model: {{ model }}
   commands:
     - pip install performance-runner-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
-    - pip install unity-downloader-cli --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple --upgrade
+    - pip install unity-downloader-cli==1.2.0 --index-url https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple
     - unity-downloader-cli -u %UNITY_BRANCH% -p editor -c editor -c Android --wait --fast
     - performance-runner-cli --version=editor --project=. --test-id=tech-partnerships-urp-rendering-examples --platform=Android --run-count=5
   artifacts:
