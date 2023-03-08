@@ -12,17 +12,17 @@
       source: git@github.cds.internal.unity3d.com:unity/unity.git
       expression: push.branch eq "{{ branch.name }}"
       refs_on_this_repository:
-      - master
+      - performance-runner-cli-2
     {%- elsif branch.name == "2022.2/staging" -%}
       source: git@github.cds.internal.unity3d.com:unity/unity.git
       expression: push.branch eq "{{ branch.name }}"
       refs_on_this_repository:
-      - master
+      - performance-runner-cli-2
     {%- elsif branch.name == "2023.1/staging" -%}
       source: git@github.cds.internal.unity3d.com:unity/unity.git
       expression: push.branch eq "{{ branch.name }}"
       refs_on_this_repository:
-      - master
+      - performance-runner-cli-2
     {%- endif -%}
 
   dependencies:
