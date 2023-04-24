@@ -1,4 +1,4 @@
-###### This project is no longer maintained and will not work in Unity 2022 or newer.
+# This project is no longer maintained and will not work in Unity 2022 or newer.
 
 # Universal Rendering Examples
 ###### This project contains a collection of Custom Renderer examples. This will be updated as we refine the feature and add more options.
